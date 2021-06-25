@@ -37,7 +37,6 @@ namespace POS_ADET.Modules.UsersManagement
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.picboxItem = new System.Windows.Forms.PictureBox();
-            this.txtEmployeePosition = new Bunifu.UI.WinForms.BunifuDropdown();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lblFilePath = new System.Windows.Forms.Label();
@@ -115,7 +114,6 @@ namespace POS_ADET.Modules.UsersManagement
             // 
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.picboxItem);
-            this.panel2.Controls.Add(this.txtEmployeePosition);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.lblFilePath);
@@ -139,7 +137,7 @@ namespace POS_ADET.Modules.UsersManagement
             this.label9.Dock = System.Windows.Forms.DockStyle.Top;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(0, 356);
+            this.label9.Location = new System.Drawing.Point(0, 324);
             this.label9.Name = "label9";
             this.label9.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.label9.Size = new System.Drawing.Size(173, 38);
@@ -157,50 +155,6 @@ namespace POS_ADET.Modules.UsersManagement
             this.picboxItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picboxItem.TabIndex = 13;
             this.picboxItem.TabStop = false;
-            // 
-            // txtEmployeePosition
-            // 
-            this.txtEmployeePosition.BackColor = System.Drawing.Color.Transparent;
-            this.txtEmployeePosition.BackgroundColor = System.Drawing.Color.White;
-            this.txtEmployeePosition.BorderColor = System.Drawing.Color.Silver;
-            this.txtEmployeePosition.BorderRadius = 1;
-            this.txtEmployeePosition.Color = System.Drawing.Color.Silver;
-            this.txtEmployeePosition.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.txtEmployeePosition.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtEmployeePosition.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtEmployeePosition.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtEmployeePosition.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtEmployeePosition.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.txtEmployeePosition.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtEmployeePosition.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtEmployeePosition.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.txtEmployeePosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtEmployeePosition.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.txtEmployeePosition.FillDropDown = true;
-            this.txtEmployeePosition.FillIndicator = false;
-            this.txtEmployeePosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtEmployeePosition.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmployeePosition.ForeColor = System.Drawing.Color.Black;
-            this.txtEmployeePosition.FormattingEnabled = true;
-            this.txtEmployeePosition.Icon = null;
-            this.txtEmployeePosition.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.txtEmployeePosition.IndicatorColor = System.Drawing.Color.Gray;
-            this.txtEmployeePosition.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.txtEmployeePosition.ItemBackColor = System.Drawing.Color.White;
-            this.txtEmployeePosition.ItemBorderColor = System.Drawing.Color.White;
-            this.txtEmployeePosition.ItemForeColor = System.Drawing.Color.Black;
-            this.txtEmployeePosition.ItemHeight = 26;
-            this.txtEmployeePosition.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.txtEmployeePosition.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.txtEmployeePosition.ItemTopMargin = 3;
-            this.txtEmployeePosition.Location = new System.Drawing.Point(0, 324);
-            this.txtEmployeePosition.Name = "txtEmployeePosition";
-            this.txtEmployeePosition.Size = new System.Drawing.Size(288, 32);
-            this.txtEmployeePosition.TabIndex = 13;
-            this.txtEmployeePosition.Text = null;
-            this.txtEmployeePosition.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.txtEmployeePosition.TextLeftMargin = 5;
-            this.txtEmployeePosition.SelectedIndexChanged += new System.EventHandler(this.bunifuDropdown1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -475,7 +429,6 @@ namespace POS_ADET.Modules.UsersManagement
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picboxItem;
         private System.Windows.Forms.Button button1;
-        private Bunifu.UI.WinForms.BunifuDropdown txtEmployeePosition;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn emp_id;

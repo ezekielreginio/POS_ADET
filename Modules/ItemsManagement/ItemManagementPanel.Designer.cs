@@ -29,6 +29,7 @@ namespace POS_ADET.Modules.ItemsManagement
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemManagementPanel));
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tableItemCatalog = new System.Windows.Forms.TableLayoutPanel();
+            this.bunifuDatePicker1 = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxItem)).BeginInit();
@@ -64,7 +66,6 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label2.TabIndex = 3;
             this.label2.Text = "Items Management";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel1
             // 
@@ -86,7 +87,6 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label1.TabIndex = 2;
             this.label1.Text = "Add an Item";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtItemCode
             // 
@@ -348,7 +348,29 @@ namespace POS_ADET.Modules.ItemsManagement
             this.tableItemCatalog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableItemCatalog.Size = new System.Drawing.Size(645, 612);
             this.tableItemCatalog.TabIndex = 8;
-            this.tableItemCatalog.Paint += new System.Windows.Forms.PaintEventHandler(this.tableItemCatalog_Paint);
+            // 
+            // bunifuDatePicker1
+            // 
+            this.bunifuDatePicker1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDatePicker1.BorderRadius = 1;
+            this.bunifuDatePicker1.Color = System.Drawing.Color.Silver;
+            this.bunifuDatePicker1.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.bunifuDatePicker1.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.bunifuDatePicker1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDatePicker1.DisplayWeekNumbers = false;
+            this.bunifuDatePicker1.DPHeight = 0;
+            this.bunifuDatePicker1.FillDatePicker = false;
+            this.bunifuDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuDatePicker1.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDatePicker1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuDatePicker1.Icon")));
+            this.bunifuDatePicker1.IconColor = System.Drawing.Color.Gray;
+            this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.bunifuDatePicker1.LeftTextMargin = 5;
+            this.bunifuDatePicker1.Location = new System.Drawing.Point(444, 38);
+            this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(0, 32);
+            this.bunifuDatePicker1.Name = "bunifuDatePicker1";
+            this.bunifuDatePicker1.Size = new System.Drawing.Size(220, 32);
+            this.bunifuDatePicker1.TabIndex = 9;
             // 
             // ItemManagementPanel
             // 
@@ -356,6 +378,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(993, 720);
+            this.Controls.Add(this.bunifuDatePicker1);
             this.Controls.Add(this.tableItemCatalog);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -395,5 +418,6 @@ namespace POS_ADET.Modules.ItemsManagement
         private System.Windows.Forms.TableLayoutPanel tableItemCatalog;
         private System.Windows.Forms.Label lblFilePath;
         private System.Windows.Forms.Button buttonAddItem;
+        private Bunifu.UI.WinForms.BunifuDatePicker bunifuDatePicker1;
     }
 }
