@@ -175,7 +175,7 @@ namespace POS_ADET.Modules.ItemsManagement
             {
                 int itemCode = (int)reader.GetValue(0);
                 string itemName = reader.GetValue(1).ToString();
-                string itemPrice = reader.GetValue(2).ToString();
+                string itemPrice = reader.GetValue(2).ToString(); 
                 string imageURL = reader.GetValue(4).ToString();
                 generateItem(itemCode, itemName, itemPrice, imageURL);
             }
@@ -215,6 +215,21 @@ namespace POS_ADET.Modules.ItemsManagement
             buttonAddItem.Visible = false;
             buttonSaveItem.Text = "Save";
             resetFields();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableItemCatalog_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -64,6 +64,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label2.TabIndex = 3;
             this.label2.Text = "Items Management";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel1
             // 
@@ -85,6 +86,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label1.TabIndex = 2;
             this.label1.Text = "Add an Item";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtItemCode
             // 
@@ -346,6 +348,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.tableItemCatalog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableItemCatalog.Size = new System.Drawing.Size(645, 612);
             this.tableItemCatalog.TabIndex = 8;
+            this.tableItemCatalog.Paint += new System.Windows.Forms.PaintEventHandler(this.tableItemCatalog_Paint);
             // 
             // ItemManagementPanel
             // 
