@@ -63,6 +63,16 @@ namespace POS_ADET.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap check {
+            get {
+                object obj = ResourceManager.GetObject("check", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Conact {
             get {
                 object obj = ResourceManager.GetObject("Conact", resourceCulture);
@@ -96,6 +106,16 @@ namespace POS_ADET.Properties {
         internal static System.Drawing.Bitmap diagram2 {
             get {
                 object obj = ResourceManager.GetObject("diagram2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iphone {
+            get {
+                object obj = ResourceManager.GetObject("iphone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

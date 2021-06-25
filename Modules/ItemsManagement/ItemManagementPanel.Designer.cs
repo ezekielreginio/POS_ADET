@@ -35,6 +35,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.txtItemCode = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblFilePath = new System.Windows.Forms.Label();
+            this.buttonAddItem = new System.Windows.Forms.Button();
             this.buttonSaveItem = new System.Windows.Forms.Button();
             this.picboxItem = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -113,6 +114,7 @@ namespace POS_ADET.Modules.ItemsManagement
             // panel2
             // 
             this.panel2.Controls.Add(this.lblFilePath);
+            this.panel2.Controls.Add(this.buttonAddItem);
             this.panel2.Controls.Add(this.buttonSaveItem);
             this.panel2.Controls.Add(this.picboxItem);
             this.panel2.Controls.Add(this.button1);
@@ -136,9 +138,19 @@ namespace POS_ADET.Modules.ItemsManagement
             this.lblFilePath.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblFilePath.Location = new System.Drawing.Point(5, 337);
             this.lblFilePath.Name = "lblFilePath";
-            this.lblFilePath.Size = new System.Drawing.Size(52, 13);
+            this.lblFilePath.Size = new System.Drawing.Size(0, 13);
             this.lblFilePath.TabIndex = 12;
-            this.lblFilePath.Text = "               ";
+            // 
+            // buttonAddItem
+            // 
+            this.buttonAddItem.Location = new System.Drawing.Point(3, 560);
+            this.buttonAddItem.Name = "buttonAddItem";
+            this.buttonAddItem.Size = new System.Drawing.Size(92, 23);
+            this.buttonAddItem.TabIndex = 11;
+            this.buttonAddItem.Text = "Add New Item";
+            this.buttonAddItem.UseVisualStyleBackColor = true;
+            this.buttonAddItem.Visible = false;
+            this.buttonAddItem.Click += new System.EventHandler(this.buttonAddItem_Click);
             // 
             // buttonSaveItem
             // 
@@ -379,5 +391,6 @@ namespace POS_ADET.Modules.ItemsManagement
         private Guna.UI2.WinForms.Guna2TextBox txtQty;
         private System.Windows.Forms.TableLayoutPanel tableItemCatalog;
         private System.Windows.Forms.Label lblFilePath;
+        private System.Windows.Forms.Button buttonAddItem;
     }
 }

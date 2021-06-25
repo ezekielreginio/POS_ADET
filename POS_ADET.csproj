@@ -161,7 +161,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\DB\connector.cs" />
+    <Compile Include="Classes\DAL\connector.cs" />
     <Compile Include="Classes\Dropbox\DropBox.cs" />
     <Compile Include="Controls\ItemCard.cs">
       <SubType>UserControl</SubType>
@@ -169,6 +169,7 @@
     <Compile Include="Controls\ItemCard.Designer.cs">
       <DependentUpon>ItemCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\DAL\Models\ItemCatalog.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +257,15 @@
   <ItemGroup>
     <None Include="Resources\money-bag.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\iphone.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\check.png" />
+    <None Include="Resources\check1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\DB\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
