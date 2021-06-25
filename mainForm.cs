@@ -1,6 +1,8 @@
 ﻿using POS_ADET.Classes.Dropbox;
 using POS_ADET.Modules.Dashboard;
 using POS_ADET.Modules.ItemsManagement;
+using POS_ADET.Modules.UsersManagement;
+using POS_ADET.Modules.UsersManagement.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,6 +66,27 @@ namespace POS_ADET
             ItemManagementPanel itemMgmt = new ItemManagementPanel();
             itemMgmt.queryItems();
             openPanel(itemMgmt);
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            EmployeeManagementPanel empMgmt = new EmployeeManagementPanel();
+            //empMgmt.queryItems();
+            openPanel(empMgmt);
+        }
+
+        private void btnClients_Click(object sender, EventArgs e)
+        {
+            ClientManagementPanel clientMgmt = new ClientManagementPanel();
+            //empMgmt.queryItems();
+            clientMgmt.showClients();
+            openPanel(clientMgmt);
+
         }
     }
 }

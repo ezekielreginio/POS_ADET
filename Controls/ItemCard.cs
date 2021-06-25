@@ -30,8 +30,9 @@ namespace POS_ADET.Controls
 
         public void setItemImage(string imagePath)
         {
-            pictureItem.Load(@"C:\Users\Zeke\Pictures\icons\products\iphone.jpg");
-            //pictureItem.Load(imagePath+"&raw=1");
+            
+            pictureItem.Load(imagePath+"&raw=1");
+            
         }
 
 

@@ -152,6 +152,7 @@ namespace POS_ADET
             this.btnClients.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClients.UseVisualStyleBackColor = true;
+            this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
             // 
             // btnEmployees
             // 
@@ -172,6 +173,7 @@ namespace POS_ADET
             this.btnEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmployees.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEmployees.UseVisualStyleBackColor = true;
+            this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // btnUsersManagement
             // 
@@ -350,6 +352,7 @@ namespace POS_ADET
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(993, 720);
             this.mainPanel.TabIndex = 2;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // mainForm
             // 

@@ -21,14 +21,15 @@ namespace POS_ADET.Classes.DB
             MessageBox.Show("Query Successful");
         }
 
-        public MySqlDataReader readProcedure(string procedure_name, Dictionary<string, string> data)
+        public MySqlDataReader readProcedure(string procedure_name, Dictionary<string, string> data=null)
         {
             this.procedure_name = procedure_name;
             this.data = data;
             MySqlCommand mySqlCmd = createProcedure();
+            
             MySqlDataReader reader  = mySqlCmd.ExecuteReader();
             return reader;
-        }
+         }
 
     }
 
