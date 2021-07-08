@@ -1,6 +1,7 @@
 ﻿using POS_ADET.Classes.Dropbox;
 using POS_ADET.Modules.Dashboard;
 using POS_ADET.Modules.ItemsManagement;
+using POS_ADET.Modules.POSManagement;
 using POS_ADET.Modules.UsersManagement;
 using POS_ADET.Modules.UsersManagement.Client;
 using System;
@@ -87,6 +88,13 @@ namespace POS_ADET
             clientMgmt.showClients();
             openPanel(clientMgmt);
 
+        }
+
+        private void btnPOS_Click(object sender, EventArgs e)
+        {
+            POSManagement posMgmt = new POSManagement();
+            posMgmt.queryItems();
+            openPanel(posMgmt);
         }
     }
 }

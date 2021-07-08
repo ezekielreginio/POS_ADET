@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace POS_ADET.Modules.ItemsManagement
     {
         private connector conn = new connector();
         ItemCard currentItem;
+        OpenFileDialog choofdlog = new OpenFileDialog();
         public ItemManagementPanel()
         {
             InitializeComponent();
@@ -62,12 +64,29 @@ namespace POS_ADET.Modules.ItemsManagement
             string qty = txtQty.Text;
             string itemPicture = lblFilePath.Text;
 
-            DropBox dbx = new DropBox();
-            var url = "";
-            if (itemPicture != string.Empty)
+            //DropBox dbx = new DropBox();
+            //var url = "";
+            //if (itemPicture != string.Empty)
+            //{
+            //    url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
+            //}
+            string fpath = @"\Items\" + itemName+@".png";
+            string appPath = Path.GetDirectoryName(Application.ExecutablePath) + fpath;
+            try
             {
-                url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
+                File.Copy(itemPicture, appPath);
+                //picProduct.Image = new Bitmap(itemPicture);
             }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Unable to open file " + exp.Message);
+            }
+
+            //var url = "";
+            //if (itemPicture != string.Empty)
+            //{
+            //    //url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
+            //}
 
             var data = new Dictionary<string, string>()
                 {
@@ -75,7 +94,7 @@ namespace POS_ADET.Modules.ItemsManagement
                     { "name", itemName },
                     { "price", itemPrice },
                     { "qty", qty },
-                    { "photo", url }
+                    { "photo", fpath }
                 };
 
             if (buttonSaveItem.Text == "Save")
@@ -133,7 +152,7 @@ namespace POS_ADET.Modules.ItemsManagement
             itemInst.setItemPrice(itemPrice);
             itemInst.setItemImage(imageUrl);
 
-            itemInst.GetPictureBox().MouseClick += (sender, e)=>singleSelect(sender, e);
+            itemInst.GetPictureBox().MouseClick += (sender, e) => singleSelect(sender, e);
             itemInst.GetItemName().MouseClick += (sender, e) => singleSelect(sender, e);
             itemInst.GetItemPrice().MouseClick += (sender, e) => singleSelect(sender, e);
             tableItemCatalog.Controls.Add(itemInst);
@@ -156,7 +175,7 @@ namespace POS_ADET.Modules.ItemsManagement
                     txtItemName.Text = reader["name"].ToString();
                     txtItemPrice.Text = reader["price"].ToString();
                     txtQty.Text = reader["qty"].ToString();
-                    picboxItem.Load(reader["photo"].ToString()+"&raw=1");
+                    //picboxItem.Load(reader["photo"].ToString()+"&raw=1");
                     buttonAddItem.Visible = true;
                     buttonSaveItem.Text = "Update";
                 }
@@ -193,7 +212,6 @@ namespace POS_ADET.Modules.ItemsManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog choofdlog = new OpenFileDialog();
             choofdlog.Filter = "All Files (*.*)|*.*";
             choofdlog.FilterIndex = 1;
             choofdlog.Multiselect = true;

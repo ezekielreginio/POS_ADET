@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -11,9 +12,13 @@ using System.Windows.Forms;
 
 namespace POS_ADET.Controls
 {
+
     public partial class ItemCard : UserControl
     {
         private int _itemID;
+
+        private DataGridViewRow rowPosition;
+
         public ItemCard()
         {
             InitializeComponent();
@@ -31,6 +36,8 @@ namespace POS_ADET.Controls
             }
         }
 
+        public DataGridViewRow RowPosition { get => rowPosition; set => rowPosition = value; }
+
         public PictureBox GetPictureBox()
         {
             return pictureItem;
@@ -40,17 +47,15 @@ namespace POS_ADET.Controls
         {
             return labelItemName;
         }
-
-        public Label GetItemPrice()
-        {
-            return labelPrice;
-        }
-
         public void setItemName(string itemName)
         {
             labelItemName.Text = itemName;
         }
 
+        public Label GetItemPrice()
+        {
+            return labelPrice;
+        }
         public void setItemPrice(string itemPrice)
         {
             labelPrice.Text = "PHP "+itemPrice;
@@ -58,10 +63,19 @@ namespace POS_ADET.Controls
 
         public void setItemImage(string imagePath)
         { 
-            //pictureItem.BackgroundImage = Properties.Resources.iphone;
-            //pictureItem.Load(@"C:\Users\Zeke\Pictures\icons\products\iphone.jpg");
-            if(imagePath != string.Empty)
-                pictureItem.Load(imagePath+"&raw=1");
+            pictureItem.Load(Path.GetDirectoryName(Application.ExecutablePath)+imagePath);
+        }
+
+        public bool getSelectedStatus()
+        {
+            if ((Color)panelBorder.BackgroundColor == Color.Transparent)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public void setSelected()
@@ -89,20 +103,14 @@ namespace POS_ADET.Controls
 
         }
 
-        private void pictureItem_Click(object sender, EventArgs e)
-        {
-
-            
-            //Console.WriteLine(pictureItem.Parent.Parent.Parent);
-            //Control control = pictureItem.Parent.Parent.Parent;
-
-        }
+        
 
         private void labelItemName_Paint(object sender, PaintEventArgs e)
         {
             labelItemName.Parent = pictureItem;
             
         }
+
     }
     
 }

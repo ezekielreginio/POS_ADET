@@ -50,7 +50,6 @@ namespace POS_ADET.Controls
             this.labelPrice.Size = new System.Drawing.Size(72, 23);
             this.labelPrice.TabIndex = 0;
             this.labelPrice.Text = "PHP 89990";
-            this.labelPrice.Click += new System.EventHandler(this.pictureItem_Click);
             // 
             // labelItemName
             // 
@@ -63,7 +62,6 @@ namespace POS_ADET.Controls
             this.labelItemName.TabIndex = 1;
             this.labelItemName.Text = "IPhone 12 Pro Max";
             this.labelItemName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelItemName.Click += new System.EventHandler(this.pictureItem_Click);
             this.labelItemName.Paint += new System.Windows.Forms.PaintEventHandler(this.labelItemName_Paint);
             // 
             // pictureItem

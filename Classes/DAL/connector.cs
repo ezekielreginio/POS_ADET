@@ -29,7 +29,8 @@ namespace POS_ADET.Classes.DB
             
             MySqlDataReader reader  = mySqlCmd.ExecuteReader();
             return reader;
-         }
+        }
+
 
     }
 
@@ -61,6 +62,7 @@ namespace POS_ADET.Classes.DB
                 return null;
             }
         }
+
 
         public void closeConn()
         {

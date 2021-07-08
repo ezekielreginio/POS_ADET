@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Desktop\Bunifu.Licensing.dll</HintPath>
@@ -139,6 +148,9 @@
     <Reference Include="Guna.UI2, Version=1.0.1.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.1.7\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="MessagingToolkit.QRCode">
+      <HintPath>..\..\..\Documents\lib\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -163,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DAL\connector.cs" />
+    <Compile Include="Classes\DAL\Models\TotalTransaction.cs" />
     <Compile Include="Classes\Dropbox\DropBox.cs" />
     <Compile Include="Controls\ItemCard.cs">
       <SubType>UserControl</SubType>
@@ -171,6 +184,12 @@
       <DependentUpon>ItemCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\DAL\Models\ItemCatalog.cs" />
+    <Compile Include="Controls\sample.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\sample.Designer.cs">
+      <DependentUpon>sample.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +214,12 @@
     <Compile Include="Modules\ItemsManagement\ItemManagementPanel.Designer.cs">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\POSManagement\POSManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\POSManagement\POSManagement.Designer.cs">
+      <DependentUpon>POSManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\UsersManagement\Client\ClientManagementPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,10 +232,18 @@
     <Compile Include="Modules\UsersManagement\Employee\EmployeeManagementPanel.Designer.cs">
       <DependentUpon>EmployeeManagementPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="pos_adetDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pos_adetDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\ItemCard.resx">
       <DependentUpon>ItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\sample.resx">
+      <DependentUpon>sample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -223,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ItemsManagement\ItemManagementPanel.resx">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\POSManagement\POSManagement.resx">
+      <DependentUpon>POSManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\UsersManagement\Client\ClientManagementPanel.resx">
       <DependentUpon>ClientManagementPanel.cs</DependentUpon>
@@ -242,6 +278,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="pos_adetDataSet.xsc">
+      <DependentUpon>pos_adetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pos_adetDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pos_adetDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pos_adetDataSet.xss">
+      <DependentUpon>pos_adetDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
