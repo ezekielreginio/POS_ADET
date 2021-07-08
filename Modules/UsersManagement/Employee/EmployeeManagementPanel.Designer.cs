@@ -30,13 +30,24 @@ namespace POS_ADET.Modules.UsersManagement
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeManagementPanel));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.EmpPanel = new Bunifu.UI.WinForms.BunifuPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtEmployeeId = new System.Windows.Forms.TextBox();
+            this.empTable = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonEmployeeDisable = new System.Windows.Forms.Button();
+            this.buttonAddNew = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.picboxItem = new System.Windows.Forms.PictureBox();
+            this.txtEmployeePosition = new Bunifu.UI.WinForms.BunifuDropdown();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lblFilePath = new System.Windows.Forms.Label();
@@ -55,7 +66,7 @@ namespace POS_ADET.Modules.UsersManagement
             this.emp_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emp_position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxItem)).BeginInit();
@@ -69,7 +80,8 @@ namespace POS_ADET.Modules.UsersManagement
             this.EmpPanel.BorderColor = System.Drawing.Color.Transparent;
             this.EmpPanel.BorderRadius = 3;
             this.EmpPanel.BorderThickness = 1;
-            this.EmpPanel.Controls.Add(this.dataGridView1);
+            this.EmpPanel.Controls.Add(this.txtEmployeeId);
+            this.EmpPanel.Controls.Add(this.empTable);
             this.EmpPanel.Controls.Add(this.panel1);
             this.EmpPanel.Controls.Add(this.panel2);
             this.EmpPanel.Controls.Add(this.label2);
@@ -81,13 +93,101 @@ namespace POS_ADET.Modules.UsersManagement
             this.EmpPanel.TabIndex = 0;
             this.EmpPanel.Click += new System.EventHandler(this.bunifuPanel1_Click);
             // 
-            // dataGridView1
+            // txtEmployeeId
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(70, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 10;
+            this.txtEmployeeId.Location = new System.Drawing.Point(447, 700);
+            this.txtEmployeeId.Name = "txtEmployeeId";
+            this.txtEmployeeId.Size = new System.Drawing.Size(100, 20);
+            this.txtEmployeeId.TabIndex = 14;
+            this.txtEmployeeId.Visible = false;
+            // 
+            // empTable
+            // 
+            this.empTable.AllowCustomTheming = false;
+            this.empTable.AllowUserToAddRows = false;
+            this.empTable.AllowUserToResizeColumns = false;
+            this.empTable.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.empTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.empTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.empTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.empTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.empTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.empTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.empTable.ColumnHeadersHeight = 40;
+            this.empTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.empTable.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
+            this.empTable.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.empTable.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.White;
+            this.empTable.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(117)))), ((int)(((byte)(119)))));
+            this.empTable.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.empTable.CurrentTheme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            this.empTable.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.empTable.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            this.empTable.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.empTable.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.empTable.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.empTable.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.empTable.CurrentTheme.Name = null;
+            this.empTable.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.empTable.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.empTable.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.White;
+            this.empTable.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(117)))), ((int)(((byte)(119)))));
+            this.empTable.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(117)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.empTable.DefaultCellStyle = dataGridViewCellStyle3;
+            this.empTable.EnableHeadersVisualStyles = false;
+            this.empTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.empTable.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            this.empTable.HeaderBgColor = System.Drawing.Color.Empty;
+            this.empTable.HeaderForeColor = System.Drawing.Color.White;
+            this.empTable.Location = new System.Drawing.Point(12, 124);
+            this.empTable.Name = "empTable";
+            this.empTable.RowHeadersVisible = false;
+            this.empTable.RowTemplate.Height = 40;
+            this.empTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.empTable.Size = new System.Drawing.Size(687, 512);
+            this.empTable.TabIndex = 13;
+            this.empTable.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Dark;
+            this.empTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.empTable_CellMouseClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Employee ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Employee Name";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Employee Email";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Employee Position";
+            this.Column4.Name = "Column4";
             // 
             // panel1
             // 
@@ -112,8 +212,11 @@ namespace POS_ADET.Modules.UsersManagement
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonEmployeeDisable);
+            this.panel2.Controls.Add(this.buttonAddNew);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.picboxItem);
+            this.panel2.Controls.Add(this.txtEmployeePosition);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.lblFilePath);
@@ -131,13 +234,35 @@ namespace POS_ADET.Modules.UsersManagement
             this.panel2.Size = new System.Drawing.Size(288, 612);
             this.panel2.TabIndex = 8;
             // 
+            // buttonEmployeeDisable
+            // 
+            this.buttonEmployeeDisable.Location = new System.Drawing.Point(109, 556);
+            this.buttonEmployeeDisable.Name = "buttonEmployeeDisable";
+            this.buttonEmployeeDisable.Size = new System.Drawing.Size(75, 23);
+            this.buttonEmployeeDisable.TabIndex = 18;
+            this.buttonEmployeeDisable.Text = "Terminate";
+            this.buttonEmployeeDisable.UseVisualStyleBackColor = true;
+            this.buttonEmployeeDisable.Visible = false;
+            this.buttonEmployeeDisable.Click += new System.EventHandler(this.buttonEmployeeDisable_Click);
+            // 
+            // buttonAddNew
+            // 
+            this.buttonAddNew.Location = new System.Drawing.Point(28, 556);
+            this.buttonAddNew.Name = "buttonAddNew";
+            this.buttonAddNew.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddNew.TabIndex = 17;
+            this.buttonAddNew.Text = "Add New Client";
+            this.buttonAddNew.UseVisualStyleBackColor = true;
+            this.buttonAddNew.Visible = false;
+            this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Top;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(0, 324);
+            this.label9.Location = new System.Drawing.Point(0, 356);
             this.label9.Name = "label9";
             this.label9.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.label9.Size = new System.Drawing.Size(173, 38);
@@ -155,6 +280,52 @@ namespace POS_ADET.Modules.UsersManagement
             this.picboxItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picboxItem.TabIndex = 13;
             this.picboxItem.TabStop = false;
+            // 
+            // txtEmployeePosition
+            // 
+            this.txtEmployeePosition.BackColor = System.Drawing.Color.Transparent;
+            this.txtEmployeePosition.BackgroundColor = System.Drawing.Color.White;
+            this.txtEmployeePosition.BorderColor = System.Drawing.Color.Silver;
+            this.txtEmployeePosition.BorderRadius = 1;
+            this.txtEmployeePosition.Color = System.Drawing.Color.Silver;
+            this.txtEmployeePosition.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.txtEmployeePosition.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtEmployeePosition.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtEmployeePosition.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtEmployeePosition.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtEmployeePosition.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.txtEmployeePosition.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtEmployeePosition.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtEmployeePosition.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.txtEmployeePosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtEmployeePosition.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.txtEmployeePosition.FillDropDown = true;
+            this.txtEmployeePosition.FillIndicator = false;
+            this.txtEmployeePosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtEmployeePosition.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEmployeePosition.ForeColor = System.Drawing.Color.Black;
+            this.txtEmployeePosition.FormattingEnabled = true;
+            this.txtEmployeePosition.Icon = null;
+            this.txtEmployeePosition.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.txtEmployeePosition.IndicatorColor = System.Drawing.Color.Gray;
+            this.txtEmployeePosition.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.txtEmployeePosition.ItemBackColor = System.Drawing.Color.White;
+            this.txtEmployeePosition.ItemBorderColor = System.Drawing.Color.White;
+            this.txtEmployeePosition.ItemForeColor = System.Drawing.Color.Black;
+            this.txtEmployeePosition.ItemHeight = 26;
+            this.txtEmployeePosition.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.txtEmployeePosition.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.txtEmployeePosition.Items.AddRange(new object[] {
+            "Position 1",
+            "Poistion 2"});
+            this.txtEmployeePosition.ItemTopMargin = 3;
+            this.txtEmployeePosition.Location = new System.Drawing.Point(0, 324);
+            this.txtEmployeePosition.Name = "txtEmployeePosition";
+            this.txtEmployeePosition.Size = new System.Drawing.Size(288, 32);
+            this.txtEmployeePosition.TabIndex = 13;
+            this.txtEmployeePosition.Text = null;
+            this.txtEmployeePosition.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.txtEmployeePosition.TextLeftMargin = 5;
             // 
             // button1
             // 
@@ -193,7 +364,7 @@ namespace POS_ADET.Modules.UsersManagement
             // 
             // buttonSaveEmployee
             // 
-            this.buttonSaveEmployee.Location = new System.Drawing.Point(108, 546);
+            this.buttonSaveEmployee.Location = new System.Drawing.Point(190, 556);
             this.buttonSaveEmployee.Name = "buttonSaveEmployee";
             this.buttonSaveEmployee.Size = new System.Drawing.Size(75, 23);
             this.buttonSaveEmployee.TabIndex = 11;
@@ -400,7 +571,7 @@ namespace POS_ADET.Modules.UsersManagement
             this.Load += new System.EventHandler(this.Form1_Load);
             this.EmpPanel.ResumeLayout(false);
             this.EmpPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empTable)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -429,12 +600,20 @@ namespace POS_ADET.Modules.UsersManagement
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picboxItem;
         private System.Windows.Forms.Button button1;
+        private Bunifu.UI.WinForms.BunifuDropdown txtEmployeePosition;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn emp_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn mp_fullname;
         private System.Windows.Forms.DataGridViewTextBoxColumn emp_email;
         private System.Windows.Forms.DataGridViewTextBoxColumn emp_position;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private Bunifu.UI.WinForms.BunifuDataGridView empTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.TextBox txtEmployeeId;
+        private System.Windows.Forms.Button buttonAddNew;
+        private System.Windows.Forms.Button buttonEmployeeDisable;
     }
 }

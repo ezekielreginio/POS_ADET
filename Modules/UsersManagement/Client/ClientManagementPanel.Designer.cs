@@ -34,6 +34,8 @@ namespace POS_ADET.Modules.UsersManagement.Client
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonClientDisable = new System.Windows.Forms.Button();
+            this.buttonAddNew = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.picboxItem = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -53,7 +55,6 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.client_fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.client_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.client_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -65,6 +66,8 @@ namespace POS_ADET.Modules.UsersManagement.Client
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonClientDisable);
+            this.panel2.Controls.Add(this.buttonAddNew);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.picboxItem);
             this.panel2.Controls.Add(this.button1);
@@ -83,6 +86,28 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.panel2.Size = new System.Drawing.Size(288, 612);
             this.panel2.TabIndex = 10;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // buttonClientDisable
+            // 
+            this.buttonClientDisable.Location = new System.Drawing.Point(98, 550);
+            this.buttonClientDisable.Name = "buttonClientDisable";
+            this.buttonClientDisable.Size = new System.Drawing.Size(75, 23);
+            this.buttonClientDisable.TabIndex = 17;
+            this.buttonClientDisable.Text = "Disable";
+            this.buttonClientDisable.UseVisualStyleBackColor = true;
+            this.buttonClientDisable.Visible = false;
+            this.buttonClientDisable.Click += new System.EventHandler(this.buttonClientDisable_Click);
+            // 
+            // buttonAddNew
+            // 
+            this.buttonAddNew.Location = new System.Drawing.Point(17, 550);
+            this.buttonAddNew.Name = "buttonAddNew";
+            this.buttonAddNew.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddNew.TabIndex = 16;
+            this.buttonAddNew.Text = "Add New Client";
+            this.buttonAddNew.UseVisualStyleBackColor = true;
+            this.buttonAddNew.Visible = false;
+            this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
             // 
             // label9
             // 
@@ -130,7 +155,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             // 
             // buttonSaveClient
             // 
-            this.buttonSaveClient.Location = new System.Drawing.Point(108, 546);
+            this.buttonSaveClient.Location = new System.Drawing.Point(179, 550);
             this.buttonSaveClient.Name = "buttonSaveClient";
             this.buttonSaveClient.Size = new System.Drawing.Size(75, 23);
             this.buttonSaveClient.TabIndex = 11;
@@ -355,8 +380,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.clientTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.client_fullname,
             this.client_id,
-            this.client_email,
-            this.btn});
+            this.client_email});
             this.clientTable.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
             this.clientTable.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.clientTable.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.White;
@@ -397,27 +421,23 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.clientTable.TabIndex = 12;
             this.clientTable.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Dark;
             this.clientTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientTable_CellDoubleClick);
+            this.clientTable.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.clientTable_CellMouseClick);
             this.clientTable.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.clientTable_RowHeaderMouseClick);
             // 
             // client_fullname
             // 
-            this.client_fullname.HeaderText = "Client Name";
+            this.client_fullname.HeaderText = "Client ID";
             this.client_fullname.Name = "client_fullname";
             // 
             // client_id
             // 
-            this.client_id.HeaderText = "Client ID";
+            this.client_id.HeaderText = "Client Name";
             this.client_id.Name = "client_id";
             // 
             // client_email
             // 
             this.client_email.HeaderText = "Client Email";
             this.client_email.Name = "client_email";
-            // 
-            // btn
-            // 
-            this.btn.HeaderText = "";
-            this.btn.Name = "btn";
             // 
             // panel1
             // 
@@ -454,6 +474,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxItem)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientTable)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -480,6 +501,8 @@ namespace POS_ADET.Modules.UsersManagement.Client
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuDataGridView clientTable;
+        private System.Windows.Forms.Button buttonAddNew;
+        private System.Windows.Forms.TextBox txtClientId;
         private System.Windows.Forms.DataGridViewTextBoxColumn client_fullname;
         private System.Windows.Forms.DataGridViewTextBoxColumn client_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn client_email;

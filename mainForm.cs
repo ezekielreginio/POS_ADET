@@ -77,7 +77,8 @@ namespace POS_ADET
         private void btnEmployees_Click(object sender, EventArgs e)
         {
             EmployeeManagementPanel empMgmt = new EmployeeManagementPanel();
-            //empMgmt.queryItems();
+            empMgmt.showEmployees();
+
             openPanel(empMgmt);
         }
 

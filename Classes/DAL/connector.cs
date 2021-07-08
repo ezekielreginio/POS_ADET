@@ -18,7 +18,7 @@ namespace POS_ADET.Classes.DB
             this.data = data;
             MySqlCommand mySqlCmd = createProcedure();
             mySqlCmd.ExecuteNonQuery();
-            MessageBox.Show("Query Successful");
+            //MessageBox.Show("Query Successful");
         }
 
         public MySqlDataReader readProcedure(string procedure_name, Dictionary<string, string> data=null)
