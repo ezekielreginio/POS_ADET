@@ -349,6 +349,7 @@ namespace POS_ADET
             // 
             // mainPanel
             // 
+            this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.mainPanel.Location = new System.Drawing.Point(205, 0);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(993, 720);

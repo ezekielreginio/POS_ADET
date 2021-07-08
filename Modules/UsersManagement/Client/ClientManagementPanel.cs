@@ -149,7 +149,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
         {
             id = Convert.ToInt32(clientTable.Rows[e.RowIndex].Cells[0].Value.ToString());
             //MessageBox.Show("" + id);
-            buttonClientDisable.Visible = true;
+            //buttonClientDisable.Visible = true;
             
             string client_fullname = txtClientName.Text;
             string client_username = txtClientUsername.Text;
@@ -189,7 +189,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
         {
             buttonSaveClient.Text = "Save";
             buttonAddNew.Visible = false;
-            buttonClientDisable.Visible = false;
+            //buttonClientDisable.Visible = false;
             clearFields();
         }
 

@@ -34,7 +34,6 @@ namespace POS_ADET.Modules.UsersManagement.Client
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonClientDisable = new System.Windows.Forms.Button();
             this.buttonAddNew = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.picboxItem = new System.Windows.Forms.PictureBox();
@@ -66,7 +65,6 @@ namespace POS_ADET.Modules.UsersManagement.Client
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.buttonClientDisable);
             this.panel2.Controls.Add(this.buttonAddNew);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.picboxItem);
@@ -88,15 +86,6 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // buttonClientDisable
-            // 
-            this.buttonClientDisable.Location = new System.Drawing.Point(98, 550);
-            this.buttonClientDisable.Name = "buttonClientDisable";
-            this.buttonClientDisable.Size = new System.Drawing.Size(75, 23);
-            this.buttonClientDisable.TabIndex = 17;
-            this.buttonClientDisable.Text = "Disable";
-            this.buttonClientDisable.UseVisualStyleBackColor = true;
-            this.buttonClientDisable.Visible = false;
-            this.buttonClientDisable.Click += new System.EventHandler(this.buttonClientDisable_Click);
             // 
             // buttonAddNew
             // 
