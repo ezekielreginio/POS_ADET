@@ -71,7 +71,7 @@ namespace POS_ADET.Modules.POSManagement
                 Result result = barcodeReader.Decode((Bitmap)qrScanner.Image);
                 if(result != null)
                 {
-                    playbeep();
+                    
 
                     String id = result.ToString();
                     var data = new Dictionary<string, string>()
@@ -80,8 +80,10 @@ namespace POS_ADET.Modules.POSManagement
                     };
                     MySqlDataReader reader = conn.readProcedure("item_view", data);
                     DataGridViewRow rowHolder = null;
+                    bool beepFire = false;
                     while (reader.Read())
                     {
+                        beepFire = true;
                         foreach (DataGridViewRow row in tableItems.Rows)
                         {
                             if(reader["name"].ToString() == row.Cells["itemName"].Value.ToString())
@@ -111,7 +113,11 @@ namespace POS_ADET.Modules.POSManagement
                         }
                         
                     }
-
+                    if (beepFire)
+                    {
+                        playbeep();
+                    }
+                    
                     conn.closeConn();
                     updateTransactionTotal();
                     txtCode.Text = id;
@@ -299,8 +305,6 @@ namespace POS_ADET.Modules.POSManagement
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            captureDevice.Stop();
-            timer1.Stop();
 
             captureDevice.Start();
             timer1.Start();

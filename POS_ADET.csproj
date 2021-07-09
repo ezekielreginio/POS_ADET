@@ -205,6 +205,12 @@
     <Compile Include="Controls\sample.Designer.cs">
       <DependentUpon>sample.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TextField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TextField.Designer.cs">
+      <DependentUpon>TextField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\sample.resx">
       <DependentUpon>sample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TextField.resx">
+      <DependentUpon>TextField.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -99,4 +99,4 @@ C:\Users\Zeke\source\repos\POS_ADET\bin\Debug\AForge.Video.xml
 C:\Users\Zeke\source\repos\POS_ADET\bin\Debug\AForge.Video.DirectShow.xml
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.sample.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.POSManagement.POSManagement.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.PaymentCard.resources
+C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.TextField.resources
