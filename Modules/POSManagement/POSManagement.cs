@@ -37,7 +37,7 @@ namespace POS_ADET.Modules.POSManagement
             foreach (FilterInfo filterInfo in filterInfoCollection)
                 cboDevices.Items.Add(filterInfo.Name);
             cboDevices.SelectedIndex = 0;
-            captureDevice = new VideoCaptureDevice(filterInfoCollection[2].MonikerString);
+            captureDevice = new VideoCaptureDevice(filterInfoCollection[0].MonikerString);
             captureDevice.NewFrame += CaptureDevice_NewFrame;
 
             
