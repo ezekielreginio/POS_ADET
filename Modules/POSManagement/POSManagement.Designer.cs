@@ -33,17 +33,13 @@ namespace POS_ADET.Modules.POSManagement
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POSManagement));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.tableItemCatalog = new System.Windows.Forms.TableLayoutPanel();
             this.tableItems = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPay = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalAmount = new System.Windows.Forms.Label();
@@ -51,6 +47,10 @@ namespace POS_ADET.Modules.POSManagement
             this.label6 = new System.Windows.Forms.Label();
             this.lblNet = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblTax = new System.Windows.Forms.Label();
             this.qrScanner = new System.Windows.Forms.PictureBox();
             this.cboDevices = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -61,15 +61,20 @@ namespace POS_ADET.Modules.POSManagement
             this.btnRefresh = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label8 = new System.Windows.Forms.Label();
             this.txtItemCode = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblTax = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.pos_adetDataSet1 = new POS_ADET.pos_adetDataSet1();
+            this.itemcatalogBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.item_catalogTableAdapter1 = new POS_ADET.pos_adetDataSet1TableAdapters.item_catalogTableAdapter();
+            this.itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableItems)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qrScanner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pos_adetDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemcatalogBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pos_adetDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemcatalogBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -168,35 +173,6 @@ namespace POS_ADET.Modules.POSManagement
             this.tableItems.TabIndex = 10;
             this.tableItems.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.tableItems.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableItems_CellEndEdit);
-            // 
-            // itemName
-            // 
-            this.itemName.FillWeight = 181.2614F;
-            this.itemName.HeaderText = "Item Name";
-            this.itemName.Name = "itemName";
-            this.itemName.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.FillWeight = 58.60786F;
-            this.price.HeaderText = "Price";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // qty
-            // 
-            this.qty.FillWeight = 58.60786F;
-            this.qty.HeaderText = "Qty";
-            this.qty.Name = "qty";
-            // 
-            // total
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.total.DefaultCellStyle = dataGridViewCellStyle3;
-            this.total.FillWeight = 101.5228F;
-            this.total.HeaderText = "         Total";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
             // 
             // btnPay
             // 
@@ -359,6 +335,50 @@ namespace POS_ADET.Modules.POSManagement
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(305, 113);
             this.panel1.TabIndex = 14;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(150, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 25);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "PHP";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(150, 77);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 20);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "PHP";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(151, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "PHP";
+            // 
+            // lblTax
+            // 
+            this.lblTax.AutoSize = true;
+            this.lblTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTax.ForeColor = System.Drawing.Color.White;
+            this.lblTax.Location = new System.Drawing.Point(189, 42);
+            this.lblTax.Name = "lblTax";
+            this.lblTax.Size = new System.Drawing.Size(40, 20);
+            this.lblTax.TabIndex = 12;
+            this.lblTax.Text = "0.00";
             // 
             // qrScanner
             // 
@@ -531,49 +551,48 @@ namespace POS_ADET.Modules.POSManagement
             this.txtItemCode.Size = new System.Drawing.Size(324, 26);
             this.txtItemCode.TabIndex = 17;
             // 
-            // label9
+            // pos_adetDataSet1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(150, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 25);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "PHP";
+            this.pos_adetDataSet1.DataSetName = "pos_adetDataSet1";
+            this.pos_adetDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label5
+            // itemcatalogBindingSource1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(151, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 20);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "PHP";
+            this.itemcatalogBindingSource1.DataMember = "item_catalog";
+            this.itemcatalogBindingSource1.DataSource = this.pos_adetDataSet1;
             // 
-            // lblTax
+            // item_catalogTableAdapter1
             // 
-            this.lblTax.AutoSize = true;
-            this.lblTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTax.ForeColor = System.Drawing.Color.White;
-            this.lblTax.Location = new System.Drawing.Point(189, 42);
-            this.lblTax.Name = "lblTax";
-            this.lblTax.Size = new System.Drawing.Size(40, 20);
-            this.lblTax.TabIndex = 12;
-            this.lblTax.Text = "0.00";
+            this.item_catalogTableAdapter1.ClearBeforeFill = true;
             // 
-            // label11
+            // itemName
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(150, 77);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 20);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "PHP";
+            this.itemName.FillWeight = 181.2614F;
+            this.itemName.HeaderText = "Item Name";
+            this.itemName.Name = "itemName";
+            this.itemName.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.FillWeight = 58.60786F;
+            this.price.HeaderText = "Price";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // qty
+            // 
+            this.qty.FillWeight = 58.60786F;
+            this.qty.HeaderText = "Qty";
+            this.qty.Name = "qty";
+            // 
+            // total
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.total.DefaultCellStyle = dataGridViewCellStyle3;
+            this.total.FillWeight = 101.5228F;
+            this.total.HeaderText = "         Total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
             // 
             // POSManagement
             // 
@@ -602,6 +621,8 @@ namespace POS_ADET.Modules.POSManagement
             ((System.ComponentModel.ISupportInitialize)(this.qrScanner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pos_adetDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemcatalogBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pos_adetDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemcatalogBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -629,13 +650,16 @@ namespace POS_ADET.Modules.POSManagement
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRefresh;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2TextBox txtItemCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblTax;
+        private pos_adetDataSet1 pos_adetDataSet1;
+        private System.Windows.Forms.BindingSource itemcatalogBindingSource1;
+        private pos_adetDataSet1TableAdapters.item_catalogTableAdapter item_catalogTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
     }
 }

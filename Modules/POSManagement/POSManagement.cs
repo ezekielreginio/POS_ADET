@@ -298,6 +298,8 @@ namespace POS_ADET.Modules.POSManagement
 
         private void POSManagement_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pos_adetDataSet1.item_catalog' table. You can move, or remove it, as needed.
+            this.item_catalogTableAdapter1.Fill(this.pos_adetDataSet1.item_catalog);
             // TODO: This line of code loads data into the 'pos_adetDataSet.item_catalog' table. You can move, or remove it, as needed.
             this.item_catalogTableAdapter.Fill(this.pos_adetDataSet.item_catalog);
 

@@ -33,12 +33,10 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtItemCode = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblFilePath = new System.Windows.Forms.Label();
             this.buttonAddItem = new System.Windows.Forms.Button();
             this.buttonSaveItem = new System.Windows.Forms.Button();
-            this.picboxItem = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtQty = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,6 +48,8 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label3 = new System.Windows.Forms.Label();
             this.tableItemCatalog = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuDatePicker1 = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.picboxItem = new System.Windows.Forms.PictureBox();
+            this.textFieldItemCode = new POS_ADET.Controls.TextField();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxItem)).BeginInit();
@@ -88,31 +88,6 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label1.Text = "Add an Item";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtItemCode
-            // 
-            this.txtItemCode.BorderRadius = 3;
-            this.txtItemCode.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtItemCode.DefaultText = "";
-            this.txtItemCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtItemCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtItemCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtItemCode.DisabledState.Parent = this.txtItemCode;
-            this.txtItemCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtItemCode.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtItemCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtItemCode.FocusedState.Parent = this.txtItemCode;
-            this.txtItemCode.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtItemCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtItemCode.HoverState.Parent = this.txtItemCode;
-            this.txtItemCode.Location = new System.Drawing.Point(0, 28);
-            this.txtItemCode.Name = "txtItemCode";
-            this.txtItemCode.PasswordChar = '\0';
-            this.txtItemCode.PlaceholderText = "";
-            this.txtItemCode.SelectedText = "";
-            this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
-            this.txtItemCode.Size = new System.Drawing.Size(288, 36);
-            this.txtItemCode.TabIndex = 7;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lblFilePath);
@@ -127,7 +102,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txtItemName);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txtItemCode);
+            this.panel2.Controls.Add(this.textFieldItemCode);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(705, 96);
             this.panel2.Name = "panel2";
@@ -164,17 +139,6 @@ namespace POS_ADET.Modules.ItemsManagement
             this.buttonSaveItem.UseVisualStyleBackColor = true;
             this.buttonSaveItem.Click += new System.EventHandler(this.buttonSaveItem_Click);
             // 
-            // picboxItem
-            // 
-            this.picboxItem.BackColor = System.Drawing.Color.LightGray;
-            this.picboxItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picboxItem.Location = new System.Drawing.Point(63, 365);
-            this.picboxItem.Name = "picboxItem";
-            this.picboxItem.Size = new System.Drawing.Size(160, 140);
-            this.picboxItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picboxItem.TabIndex = 10;
-            this.picboxItem.TabStop = false;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(150, 300);
@@ -191,7 +155,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(0, 286);
+            this.label8.Location = new System.Drawing.Point(0, 292);
             this.label8.Name = "label8";
             this.label8.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.label8.Size = new System.Drawing.Size(143, 38);
@@ -215,7 +179,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.txtQty.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtQty.HoverState.Parent = this.txtQty;
-            this.txtQty.Location = new System.Drawing.Point(0, 250);
+            this.txtQty.Location = new System.Drawing.Point(0, 256);
             this.txtQty.Name = "txtQty";
             this.txtQty.PasswordChar = '\0';
             this.txtQty.PlaceholderText = "";
@@ -231,7 +195,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(0, 212);
+            this.label7.Location = new System.Drawing.Point(0, 218);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.label7.Size = new System.Drawing.Size(95, 38);
@@ -255,7 +219,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.txtItemPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtItemPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemPrice.HoverState.Parent = this.txtItemPrice;
-            this.txtItemPrice.Location = new System.Drawing.Point(0, 176);
+            this.txtItemPrice.Location = new System.Drawing.Point(0, 182);
             this.txtItemPrice.Name = "txtItemPrice";
             this.txtItemPrice.PasswordChar = '\0';
             this.txtItemPrice.PlaceholderText = "";
@@ -270,7 +234,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(0, 138);
+            this.label6.Location = new System.Drawing.Point(0, 144);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.label6.Size = new System.Drawing.Size(108, 38);
@@ -294,7 +258,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.txtItemName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtItemName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemName.HoverState.Parent = this.txtItemName;
-            this.txtItemName.Location = new System.Drawing.Point(0, 102);
+            this.txtItemName.Location = new System.Drawing.Point(0, 108);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.txtItemName.PasswordChar = '\0';
@@ -310,10 +274,9 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(0, 64);
+            this.label5.Location = new System.Drawing.Point(0, 80);
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.label5.Size = new System.Drawing.Size(117, 38);
+            this.label5.Size = new System.Drawing.Size(117, 28);
             this.label5.TabIndex = 3;
             this.label5.Text = "Item Name";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -373,6 +336,26 @@ namespace POS_ADET.Modules.ItemsManagement
             this.bunifuDatePicker1.Size = new System.Drawing.Size(220, 32);
             this.bunifuDatePicker1.TabIndex = 9;
             // 
+            // picboxItem
+            // 
+            this.picboxItem.BackColor = System.Drawing.Color.LightGray;
+            this.picboxItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picboxItem.Location = new System.Drawing.Point(63, 365);
+            this.picboxItem.Name = "picboxItem";
+            this.picboxItem.Size = new System.Drawing.Size(160, 140);
+            this.picboxItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picboxItem.TabIndex = 10;
+            this.picboxItem.TabStop = false;
+            // 
+            // textFieldItemCode
+            // 
+            this.textFieldItemCode.BackColor = System.Drawing.Color.Transparent;
+            this.textFieldItemCode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textFieldItemCode.Location = new System.Drawing.Point(0, 28);
+            this.textFieldItemCode.Name = "textFieldItemCode";
+            this.textFieldItemCode.Size = new System.Drawing.Size(288, 52);
+            this.textFieldItemCode.TabIndex = 13;
+            // 
             // ItemManagementPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,7 +386,6 @@ namespace POS_ADET.Modules.ItemsManagement
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox txtItemCode;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
@@ -420,5 +402,6 @@ namespace POS_ADET.Modules.ItemsManagement
         private System.Windows.Forms.Label lblFilePath;
         private System.Windows.Forms.Button buttonAddItem;
         private Bunifu.UI.WinForms.BunifuDatePicker bunifuDatePicker1;
+        private Controls.TextField textFieldItemCode;
     }
 }

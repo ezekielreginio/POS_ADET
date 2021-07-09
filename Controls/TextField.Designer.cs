@@ -31,7 +31,7 @@ namespace POS_ADET.Controls
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextField));
             this.txtItemCode = new Guna.UI2.WinForms.Guna2TextBox();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblErrNotif = new Bunifu.UI.WinForms.BunifuLabel();
             this.SuspendLayout();
             // 
             // txtItemCode
@@ -59,32 +59,35 @@ namespace POS_ADET.Controls
             this.txtItemCode.Size = new System.Drawing.Size(288, 36);
             this.txtItemCode.TabIndex = 8;
             // 
-            // bunifuLabel1
+            // lblErrNotif
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel1.ForeColor = System.Drawing.Color.Red;
-            this.bunifuLabel1.Location = new System.Drawing.Point(0, 42);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(156, 15);
-            this.bunifuLabel1.TabIndex = 9;
-            this.bunifuLabel1.Text = "Invalid Input. Please try Again";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel1.Click += new System.EventHandler(this.bunifuLabel1_Click);
+            this.lblErrNotif.AllowParentOverrides = false;
+            this.lblErrNotif.AutoEllipsis = false;
+            this.lblErrNotif.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblErrNotif.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblErrNotif.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblErrNotif.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblErrNotif.ForeColor = System.Drawing.Color.Red;
+            this.lblErrNotif.Location = new System.Drawing.Point(0, 36);
+            this.lblErrNotif.Name = "lblErrNotif";
+            this.lblErrNotif.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblErrNotif.Size = new System.Drawing.Size(288, 15);
+            this.lblErrNotif.TabIndex = 9;
+            this.lblErrNotif.Text = "Invalid Input. Please try Again";
+            this.lblErrNotif.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblErrNotif.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblErrNotif.Visible = false;
+            this.lblErrNotif.Click += new System.EventHandler(this.bunifuLabel1_Click);
             // 
             // TextField
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.bunifuLabel1);
+            this.Controls.Add(this.lblErrNotif);
             this.Controls.Add(this.txtItemCode);
             this.Name = "TextField";
-            this.Size = new System.Drawing.Size(288, 61);
+            this.Size = new System.Drawing.Size(288, 52);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,6 +96,6 @@ namespace POS_ADET.Controls
         #endregion
 
         private Guna.UI2.WinForms.Guna2TextBox txtItemCode;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel lblErrNotif;
     }
 }

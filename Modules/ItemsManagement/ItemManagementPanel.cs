@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using POS_ADET.Classes;
 using POS_ADET.Classes.DB;
 using POS_ADET.Classes.Dropbox;
 using POS_ADET.Controls;
@@ -20,9 +21,13 @@ namespace POS_ADET.Modules.ItemsManagement
 {
     public partial class ItemManagementPanel : Form
     {
+
+        //Private Instances:
         private connector conn = new connector();
-        ItemCard currentItem;
-        OpenFileDialog choofdlog = new OpenFileDialog();
+        private ItemCard currentItem;
+        private OpenFileDialog choofdlog = new OpenFileDialog();
+        private Validation validate = new Validation();
+
         public ItemManagementPanel()
         {
             InitializeComponent();
@@ -58,37 +63,51 @@ namespace POS_ADET.Modules.ItemsManagement
 
         private void buttonSaveItem_Click(object sender, EventArgs e)
         {
-            string itemCode = txtItemCode.Text;
+            string itemCode = textFieldItemCode.getValue();
             string itemName = txtItemName.Text;
             string itemPrice = txtItemPrice.Text;
             string qty = txtQty.Text;
             string itemPicture = lblFilePath.Text;
 
-            //DropBox dbx = new DropBox();
-            //var url = "";
-            //if (itemPicture != string.Empty)
-            //{
-            //    url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
-            //}
-            string fpath = @"\Items\" + itemName+@".png";
-            string appPath = Path.GetDirectoryName(Application.ExecutablePath) + fpath;
-            try
-            {
-                File.Copy(itemPicture, appPath);
-                //picProduct.Image = new Bitmap(itemPicture);
-            }
-            catch (Exception exp)
-            {
-                MessageBox.Show("Unable to open file " + exp.Message);
-            }
+            var inputs = new List<TextField>();
+            inputs.Add(textFieldItemCode);
+            
+            Validation validateInst = new Validation();
+            validateInst.validate(inputs);
 
-            //var url = "";
-            //if (itemPicture != string.Empty)
-            //{
-            //    //url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
-            //}
+            bool inputs_are_valid = true;
 
-            var data = new Dictionary<string, string>()
+            inputs_are_valid = validate.validate_int(textFieldItemCode);
+
+
+            if (inputs_are_valid)
+            {
+                
+                //DropBox dbx = new DropBox();
+                //var url = "";
+                //if (itemPicture != string.Empty)
+                //{
+                //    url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
+                //}
+                string fpath = @"\Items\" + itemName + @".png";
+                string appPath = Path.GetDirectoryName(Application.ExecutablePath) + fpath;
+                try
+                {
+                    File.Copy(itemPicture, appPath);
+                    //picProduct.Image = new Bitmap(itemPicture);
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show("Unable to open file " + exp.Message);
+                }
+
+                //var url = "";
+                //if (itemPicture != string.Empty)
+                //{
+                //    //url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
+                //}
+
+                var data = new Dictionary<string, string>()
                 {
                     { "code", itemCode },
                     { "name", itemName },
@@ -97,25 +116,26 @@ namespace POS_ADET.Modules.ItemsManagement
                     { "photo", fpath }
                 };
 
-            if (buttonSaveItem.Text == "Save")
-                conn.writeProcedure("item_add", data);
-               
-            else if(buttonSaveItem.Text == "Update")
-                conn.writeProcedure("item_edit", data);
-            
+                if (buttonSaveItem.Text == "Save")
+                    conn.writeProcedure("item_add", data);
 
-            conn.closeConn();
+                else if (buttonSaveItem.Text == "Update")
+                    conn.writeProcedure("item_edit", data);
 
-            generateQR(itemCode, itemName);
-            queryItems();
 
-            resetFields();
+                conn.closeConn();
+
+                generateQR(itemCode, itemName);
+                queryItems();
+
+                resetFields();
+            }
         }
 
 
         private void txtItemCode_Leave(object sender, EventArgs e)
         {
-            string qrString = txtItemCode.Text;
+            string qrString = textFieldItemCode.getValue();
             string fileName = txtItemName.Text;
             string filePath = @"C:\qr\"+ fileName+".png";
 
@@ -171,7 +191,7 @@ namespace POS_ADET.Modules.ItemsManagement
                 MySqlDataReader reader = conn.readProcedure("item_view", data);
                 while (reader.Read())
                 {
-                    txtItemCode.Text = reader["code"].ToString();
+                    textFieldItemCode.setValue(reader["code"].ToString());
                     txtItemName.Text = reader["name"].ToString();
                     txtItemPrice.Text = reader["price"].ToString();
                     txtQty.Text = reader["qty"].ToString();
@@ -203,7 +223,9 @@ namespace POS_ADET.Modules.ItemsManagement
 
         private void resetFields()
         {
-            txtItemCode.ResetText();
+            textFieldItemCode.setValue("");
+            textFieldItemCode.resetInvalid();
+
             txtItemName.ResetText();
             txtItemPrice.ResetText();
             txtQty.ResetText();
