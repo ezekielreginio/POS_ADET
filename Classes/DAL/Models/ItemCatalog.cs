@@ -13,5 +13,6 @@ namespace POS_ADET.DAL.Models
         public float price { get; set; }
         public int qty { get; set; }
         public string photo { get; set; }
+
     }
 }

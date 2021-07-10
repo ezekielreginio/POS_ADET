@@ -228,6 +228,7 @@ namespace POS_ADET.Modules.ItemsManagement
             textFieldItemPrice.resetField();
             textFieldQty.resetField();
             picboxItem.Image= null;
+            lblFilePath.Text = String.Empty;
         }
 
         private void button1_Click(object sender, EventArgs e)

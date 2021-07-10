@@ -32,6 +32,7 @@ namespace POS_ADET.Classes.DB
         }
 
 
+
     }
 
     class ParentConnector
@@ -51,7 +52,6 @@ namespace POS_ADET.Classes.DB
                     foreach (var item in data)
                     {
                         mySqlCmd.Parameters.AddWithValue(item.Key, item.Value);
-                        
                     }
                 }
                 return mySqlCmd;
