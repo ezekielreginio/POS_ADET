@@ -64,9 +64,9 @@ namespace POS_ADET.Modules.ItemsManagement
         private void buttonSaveItem_Click(object sender, EventArgs e)
         {
             string itemCode = textFieldItemCode.getValue();
-            string itemName = txtItemName.Text;
-            string itemPrice = txtItemPrice.Text;
-            string qty = txtQty.Text;
+            string itemName = textFieldItemName.getValue();
+            string itemPrice = textFieldItemPrice.getValue();
+            string qty = textFieldQty.getValue();
             string itemPicture = lblFilePath.Text;
 
             var inputs = new List<TextField>();
@@ -136,7 +136,7 @@ namespace POS_ADET.Modules.ItemsManagement
         private void txtItemCode_Leave(object sender, EventArgs e)
         {
             string qrString = textFieldItemCode.getValue();
-            string fileName = txtItemName.Text;
+            string fileName = textFieldItemName.getValue();
             string filePath = @"C:\qr\"+ fileName+".png";
 
             BarcodeWriter barcodeW = new BarcodeWriter();
@@ -192,9 +192,9 @@ namespace POS_ADET.Modules.ItemsManagement
                 while (reader.Read())
                 {
                     textFieldItemCode.setValue(reader["code"].ToString());
-                    txtItemName.Text = reader["name"].ToString();
-                    txtItemPrice.Text = reader["price"].ToString();
-                    txtQty.Text = reader["qty"].ToString();
+                    textFieldItemName.setValue(reader["name"].ToString());
+                    textFieldItemPrice.setValue(reader["price"].ToString());
+                    textFieldQty.setValue(reader["qty"].ToString());
                     //picboxItem.Load(reader["photo"].ToString()+"&raw=1");
                     buttonAddItem.Visible = true;
                     buttonSaveItem.Text = "Update";
@@ -223,12 +223,10 @@ namespace POS_ADET.Modules.ItemsManagement
 
         private void resetFields()
         {
-            textFieldItemCode.setValue("");
-            textFieldItemCode.resetInvalid();
-
-            txtItemName.ResetText();
-            txtItemPrice.ResetText();
-            txtQty.ResetText();
+            textFieldItemCode.resetField();
+            textFieldItemName.resetField();
+            textFieldItemPrice.resetField();
+            textFieldQty.resetField();
             picboxItem.Image= null;
         }
 

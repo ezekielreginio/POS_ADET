@@ -37,7 +37,6 @@ namespace POS_ADET.Classes
 
         public bool validate_field(string input, string regex)
         {
-            Match match = Regex.Match(input, regex, RegexOptions.IgnoreCase);
             var r = new Regex(regex);
             if (r.IsMatch(input))
             {

@@ -19,7 +19,8 @@ namespace POS_ADET.Controls
         public enum FieldTypes
         {
             String,
-            Integer
+            Integer, 
+            Currency
         }
         private FieldTypes fieldType = FieldTypes.String;
 
@@ -73,6 +74,12 @@ namespace POS_ADET.Controls
             lblErrNotif.Visible = false;
         }
 
+        public void resetField()
+        {
+            resetInvalid();
+            txtItemCode.Text = String.Empty;
+        }
+
         private void txtItemCode_Validating(object sender, CancelEventArgs e)
         {
             switch (this.fieldType)
@@ -81,7 +88,10 @@ namespace POS_ADET.Controls
                     e.Cancel = validate.validate_field(this.getValue(), @"^[0-9]+$");
                     break;
                 case FieldTypes.String:
-                    e.Cancel = validate.validate_field(this.getValue(), @"^[a-Z0-9 (),.-]+$");
+                    e.Cancel = validate.validate_field(this.getValue(), @"^[A-Za-z0-9()' ]+$");
+                    break;
+                case FieldTypes.Currency:
+                    e.Cancel = validate.validate_field(this.getValue(), @"^[0-9.]+$");
                     break;
             }
 
