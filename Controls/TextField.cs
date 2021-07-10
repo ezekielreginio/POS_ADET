@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POS_ADET.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,15 @@ namespace POS_ADET.Controls
 {
     public partial class TextField : UserControl
     {
+        //private instances
+        private Validation validate = new Validation();
         //private properties
-        private string fieldType = "string";
+        public enum FieldTypes
+        {
+            String,
+            Integer
+        }
+        private FieldTypes fieldType = FieldTypes.String;
 
         public TextField()
         {
@@ -22,19 +30,17 @@ namespace POS_ADET.Controls
 
         //Custom Properties
         [
-           Category("Field"),
-           Description("The ending color of the bar.")
+           Category("TextField")
         ]
-
-        public string FieldType
+        public FieldTypes FieldType
         {
             get
             {
-                return FieldType;
+                return fieldType;
             }
             set
             {
-                FieldType = value;
+                fieldType = value;
             }
         }  
 
@@ -58,7 +64,7 @@ namespace POS_ADET.Controls
             this.ActiveControl = lblErrNotif;
             lblErrNotif.Visible = true;
             //txtItemCode.Invalidate();
-            txtItemCode.BorderColor = Color.Red;
+            //txtItemCode.BorderColor = Color.Red;
             //txtItemCode.Border.Thickness = 3;
         }
 
@@ -67,9 +73,26 @@ namespace POS_ADET.Controls
             lblErrNotif.Visible = false;
         }
 
-        private void bunifuLabel1_Click(object sender, EventArgs e)
+        private void txtItemCode_Validating(object sender, CancelEventArgs e)
         {
+            switch (this.fieldType)
+            {
+                case FieldTypes.Integer:
+                    e.Cancel = validate.validate_field(this.getValue(), @"^[0-9]+$");
+                    break;
+                case FieldTypes.String:
+                    e.Cancel = validate.validate_field(this.getValue(), @"^[a-Z0-9 (),.-]+$");
+                    break;
+            }
 
+            if (e.Cancel)
+            {
+                setInvalid();
+            }
+            else
+            {
+                resetInvalid();
+            }
         }
     }
 }

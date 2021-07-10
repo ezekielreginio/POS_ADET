@@ -37,6 +37,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.lblFilePath = new System.Windows.Forms.Label();
             this.buttonAddItem = new System.Windows.Forms.Button();
             this.buttonSaveItem = new System.Windows.Forms.Button();
+            this.picboxItem = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtQty = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,7 +49,6 @@ namespace POS_ADET.Modules.ItemsManagement
             this.label3 = new System.Windows.Forms.Label();
             this.tableItemCatalog = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuDatePicker1 = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.picboxItem = new System.Windows.Forms.PictureBox();
             this.textFieldItemCode = new POS_ADET.Controls.TextField();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -138,6 +138,17 @@ namespace POS_ADET.Modules.ItemsManagement
             this.buttonSaveItem.Text = "Save";
             this.buttonSaveItem.UseVisualStyleBackColor = true;
             this.buttonSaveItem.Click += new System.EventHandler(this.buttonSaveItem_Click);
+            // 
+            // picboxItem
+            // 
+            this.picboxItem.BackColor = System.Drawing.Color.LightGray;
+            this.picboxItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picboxItem.Location = new System.Drawing.Point(63, 365);
+            this.picboxItem.Name = "picboxItem";
+            this.picboxItem.Size = new System.Drawing.Size(160, 140);
+            this.picboxItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picboxItem.TabIndex = 10;
+            this.picboxItem.TabStop = false;
             // 
             // button1
             // 
@@ -309,7 +320,7 @@ namespace POS_ADET.Modules.ItemsManagement
             this.tableItemCatalog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableItemCatalog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableItemCatalog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tableItemCatalog.Size = new System.Drawing.Size(645, 612);
+            this.tableItemCatalog.Size = new System.Drawing.Size(645, 292);
             this.tableItemCatalog.TabIndex = 8;
             // 
             // bunifuDatePicker1
@@ -336,21 +347,11 @@ namespace POS_ADET.Modules.ItemsManagement
             this.bunifuDatePicker1.Size = new System.Drawing.Size(220, 32);
             this.bunifuDatePicker1.TabIndex = 9;
             // 
-            // picboxItem
-            // 
-            this.picboxItem.BackColor = System.Drawing.Color.LightGray;
-            this.picboxItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picboxItem.Location = new System.Drawing.Point(63, 365);
-            this.picboxItem.Name = "picboxItem";
-            this.picboxItem.Size = new System.Drawing.Size(160, 140);
-            this.picboxItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picboxItem.TabIndex = 10;
-            this.picboxItem.TabStop = false;
-            // 
             // textFieldItemCode
             // 
             this.textFieldItemCode.BackColor = System.Drawing.Color.Transparent;
             this.textFieldItemCode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textFieldItemCode.FieldType = POS_ADET.Controls.TextField.FieldTypes.Integer;
             this.textFieldItemCode.Location = new System.Drawing.Point(0, 28);
             this.textFieldItemCode.Name = "textFieldItemCode";
             this.textFieldItemCode.Size = new System.Drawing.Size(288, 52);

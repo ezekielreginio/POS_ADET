@@ -58,6 +58,7 @@ namespace POS_ADET.Controls
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
             this.txtItemCode.Size = new System.Drawing.Size(288, 36);
             this.txtItemCode.TabIndex = 8;
+            this.txtItemCode.Validating += new System.ComponentModel.CancelEventHandler(this.txtItemCode_Validating);
             // 
             // lblErrNotif
             // 
@@ -77,7 +78,6 @@ namespace POS_ADET.Controls
             this.lblErrNotif.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblErrNotif.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             this.lblErrNotif.Visible = false;
-            this.lblErrNotif.Click += new System.EventHandler(this.bunifuLabel1_Click);
             // 
             // TextField
             // 

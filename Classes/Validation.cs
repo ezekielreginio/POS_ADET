@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace POS_ADET.Classes
@@ -32,6 +33,18 @@ namespace POS_ADET.Classes
                 return false;
             }
                 
+        }
+
+        public bool validate_field(string input, string regex)
+        {
+            Match match = Regex.Match(input, regex, RegexOptions.IgnoreCase);
+            var r = new Regex(regex);
+            if (r.IsMatch(input))
+            {
+                return false;
+            }
+            else
+                return true;
         }
 
     }
