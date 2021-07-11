@@ -236,6 +236,12 @@
     <Compile Include="Modules\ItemsManagement\ItemManagementPanel.Designer.cs">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\POSManagement\modalPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\POSManagement\modalPay.Designer.cs">
+      <DependentUpon>modalPay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\POSManagement\POSManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ItemsManagement\ItemManagementPanel.resx">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\POSManagement\modalPay.resx">
+      <DependentUpon>modalPay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\POSManagement\POSManagement.resx">
       <DependentUpon>POSManagement.cs</DependentUpon>

@@ -68,7 +68,7 @@ namespace POS_ADET.Modules.ItemsManagement
             string itemPrice = textFieldItemPrice.getValue();
             string qty = textFieldQty.getValue();
             string itemPicture = lblFilePath.Text;
-
+            string fpath  = String.Empty;
             var inputs = new List<TextField>();
             inputs.Add(textFieldItemCode);
             
@@ -82,30 +82,57 @@ namespace POS_ADET.Modules.ItemsManagement
 
             if (inputs_are_valid)
             {
-                
+                //Dropbox API for Image Uploading:
                 //DropBox dbx = new DropBox();
                 //var url = "";
                 //if (itemPicture != string.Empty)
                 //{
                 //    url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
                 //}
-                string fpath = @"\Items\" + itemName + @".png";
-                string appPath = Path.GetDirectoryName(Application.ExecutablePath) + fpath;
-                try
-                {
-                    File.Copy(itemPicture, appPath);
-                    //picProduct.Image = new Bitmap(itemPicture);
-                }
-                catch (Exception exp)
-                {
-                    MessageBox.Show("Unable to open file " + exp.Message);
-                }
-
                 //var url = "";
                 //if (itemPicture != string.Empty)
                 //{
                 //    //url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
                 //}
+
+
+                //File Upload on Resources:
+                //string fpath = @"\Items\" + itemName + @".png";
+                //string appPath = Path.GetDirectoryName(Application.ExecutablePath) + fpath;
+                //try
+                //{
+                //    File.Copy(itemPicture, appPath);
+                //    //picProduct.Image = new Bitmap(itemPicture);
+                //}
+                //catch (Exception exp)
+                //{
+                //    MessageBox.Show("Unable to open file " + exp.Message);
+                //}
+                try
+                {
+                    byte[] imageArray = null;
+                    if (itemPicture == String.Empty)
+                    {
+                        if (buttonSaveItem.Text == "Save")
+                            MessageBox.Show("Please Upload an Item Picture");
+                        else if (buttonSaveItem.Text == "Update")
+                        {
+                            ImageConverter converter = new ImageConverter();
+                            imageArray = (byte[])converter.ConvertTo(picboxItem.Image, typeof(byte[]));
+                        }
+                    }
+                    else if(itemPicture != String.Empty)
+                        imageArray = System.IO.File.ReadAllBytes(itemPicture);
+                        
+                    fpath = Convert.ToBase64String(imageArray);
+
+                }
+
+                catch(Exception ex)
+                {
+
+                }
+                
 
                 var data = new Dictionary<string, string>()
                 {
@@ -120,7 +147,11 @@ namespace POS_ADET.Modules.ItemsManagement
                     conn.writeProcedure("item_add", data);
 
                 else if (buttonSaveItem.Text == "Update")
+                {
+                    buttonAddItem_Click(null, null);
                     conn.writeProcedure("item_edit", data);
+                }
+                    
 
 
                 conn.closeConn();
@@ -191,11 +222,16 @@ namespace POS_ADET.Modules.ItemsManagement
                 MySqlDataReader reader = conn.readProcedure("item_view", data);
                 while (reader.Read())
                 {
+                    Byte[] bytes = Convert.FromBase64String(reader["photo"].ToString());
+                    MemoryStream stream = new MemoryStream(bytes);
+                    Bitmap Image = new Bitmap(stream);
+
+
                     textFieldItemCode.setValue(reader["code"].ToString());
                     textFieldItemName.setValue(reader["name"].ToString());
                     textFieldItemPrice.setValue(reader["price"].ToString());
                     textFieldQty.setValue(reader["qty"].ToString());
-                    //picboxItem.Load(reader["photo"].ToString()+"&raw=1");
+                    picboxItem.Image = Image;
                     buttonAddItem.Visible = true;
                     buttonSaveItem.Text = "Update";
                 }
@@ -255,5 +291,6 @@ namespace POS_ADET.Modules.ItemsManagement
             buttonSaveItem.Text = "Save";
             resetFields();
         }
+
     }
 }

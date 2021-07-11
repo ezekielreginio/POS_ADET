@@ -34,22 +34,22 @@ namespace POS_ADET.Modules.ItemsManagement
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textFieldQty = new POS_ADET.Controls.TextField();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textFieldItemPrice = new POS_ADET.Controls.TextField();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textFieldItemName = new POS_ADET.Controls.TextField();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblFilePath = new System.Windows.Forms.Label();
             this.buttonAddItem = new System.Windows.Forms.Button();
             this.buttonSaveItem = new System.Windows.Forms.Button();
             this.picboxItem = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.textFieldItemCode = new POS_ADET.Controls.TextField();
             this.label3 = new System.Windows.Forms.Label();
             this.tableItemCatalog = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuDatePicker1 = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.textFieldQty = new POS_ADET.Controls.TextField();
-            this.textFieldItemPrice = new POS_ADET.Controls.TextField();
-            this.textFieldItemName = new POS_ADET.Controls.TextField();
-            this.textFieldItemCode = new POS_ADET.Controls.TextField();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxItem)).BeginInit();
@@ -109,6 +109,88 @@ namespace POS_ADET.Modules.ItemsManagement
             this.panel2.Size = new System.Drawing.Size(288, 612);
             this.panel2.TabIndex = 7;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(0, 320);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(143, 28);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Upload Image";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textFieldQty
+            // 
+            this.textFieldQty.BackColor = System.Drawing.Color.Transparent;
+            this.textFieldQty.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textFieldQty.FieldType = POS_ADET.Controls.TextField.FieldTypes.Currency;
+            this.textFieldQty.Location = new System.Drawing.Point(0, 268);
+            this.textFieldQty.Name = "textFieldQty";
+            this.textFieldQty.Size = new System.Drawing.Size(288, 52);
+            this.textFieldQty.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(0, 240);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(95, 28);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Quantity";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textFieldItemPrice
+            // 
+            this.textFieldItemPrice.BackColor = System.Drawing.Color.Transparent;
+            this.textFieldItemPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textFieldItemPrice.FieldType = POS_ADET.Controls.TextField.FieldTypes.Currency;
+            this.textFieldItemPrice.Location = new System.Drawing.Point(0, 188);
+            this.textFieldItemPrice.Name = "textFieldItemPrice";
+            this.textFieldItemPrice.Size = new System.Drawing.Size(288, 52);
+            this.textFieldItemPrice.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(0, 160);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 28);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Item Price";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textFieldItemName
+            // 
+            this.textFieldItemName.BackColor = System.Drawing.Color.Transparent;
+            this.textFieldItemName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textFieldItemName.FieldType = POS_ADET.Controls.TextField.FieldTypes.String;
+            this.textFieldItemName.Location = new System.Drawing.Point(0, 108);
+            this.textFieldItemName.Name = "textFieldItemName";
+            this.textFieldItemName.Size = new System.Drawing.Size(288, 52);
+            this.textFieldItemName.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(0, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 28);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Item Name";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // lblFilePath
             // 
             this.lblFilePath.AutoSize = true;
@@ -160,57 +242,15 @@ namespace POS_ADET.Modules.ItemsManagement
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label8
+            // textFieldItemCode
             // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(0, 320);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 28);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Upload Image";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(0, 240);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 28);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Quantity";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(0, 160);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 28);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Item Price";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(0, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 28);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Item Name";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.textFieldItemCode.BackColor = System.Drawing.Color.Transparent;
+            this.textFieldItemCode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textFieldItemCode.FieldType = POS_ADET.Controls.TextField.FieldTypes.Integer;
+            this.textFieldItemCode.Location = new System.Drawing.Point(0, 28);
+            this.textFieldItemCode.Name = "textFieldItemCode";
+            this.textFieldItemCode.Size = new System.Drawing.Size(288, 52);
+            this.textFieldItemCode.TabIndex = 13;
             // 
             // label3
             // 
@@ -266,46 +306,6 @@ namespace POS_ADET.Modules.ItemsManagement
             this.bunifuDatePicker1.Name = "bunifuDatePicker1";
             this.bunifuDatePicker1.Size = new System.Drawing.Size(220, 32);
             this.bunifuDatePicker1.TabIndex = 9;
-            // 
-            // textFieldQty
-            // 
-            this.textFieldQty.BackColor = System.Drawing.Color.Transparent;
-            this.textFieldQty.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textFieldQty.FieldType = POS_ADET.Controls.TextField.FieldTypes.Currency;
-            this.textFieldQty.Location = new System.Drawing.Point(0, 268);
-            this.textFieldQty.Name = "textFieldQty";
-            this.textFieldQty.Size = new System.Drawing.Size(288, 52);
-            this.textFieldQty.TabIndex = 16;
-            // 
-            // textFieldItemPrice
-            // 
-            this.textFieldItemPrice.BackColor = System.Drawing.Color.Transparent;
-            this.textFieldItemPrice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textFieldItemPrice.FieldType = POS_ADET.Controls.TextField.FieldTypes.Currency;
-            this.textFieldItemPrice.Location = new System.Drawing.Point(0, 188);
-            this.textFieldItemPrice.Name = "textFieldItemPrice";
-            this.textFieldItemPrice.Size = new System.Drawing.Size(288, 52);
-            this.textFieldItemPrice.TabIndex = 15;
-            // 
-            // textFieldItemName
-            // 
-            this.textFieldItemName.BackColor = System.Drawing.Color.Transparent;
-            this.textFieldItemName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textFieldItemName.FieldType = POS_ADET.Controls.TextField.FieldTypes.String;
-            this.textFieldItemName.Location = new System.Drawing.Point(0, 108);
-            this.textFieldItemName.Name = "textFieldItemName";
-            this.textFieldItemName.Size = new System.Drawing.Size(288, 52);
-            this.textFieldItemName.TabIndex = 14;
-            // 
-            // textFieldItemCode
-            // 
-            this.textFieldItemCode.BackColor = System.Drawing.Color.Transparent;
-            this.textFieldItemCode.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textFieldItemCode.FieldType = POS_ADET.Controls.TextField.FieldTypes.Integer;
-            this.textFieldItemCode.Location = new System.Drawing.Point(0, 28);
-            this.textFieldItemCode.Name = "textFieldItemCode";
-            this.textFieldItemCode.Size = new System.Drawing.Size(288, 52);
-            this.textFieldItemCode.TabIndex = 13;
             // 
             // ItemManagementPanel
             // 

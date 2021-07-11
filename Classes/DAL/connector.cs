@@ -30,9 +30,6 @@ namespace POS_ADET.Classes.DB
             MySqlDataReader reader  = mySqlCmd.ExecuteReader();
             return reader;
         }
-
-
-
     }
 
     class ParentConnector
@@ -51,6 +48,7 @@ namespace POS_ADET.Classes.DB
                 {
                     foreach (var item in data)
                     {
+                        Console.WriteLine(item.Value);
                         mySqlCmd.Parameters.AddWithValue(item.Key, item.Value);
                     }
                 }
