@@ -81,67 +81,8 @@ namespace POS_ADET.Modules.ReturnRefundManagement
                         }
                     );
                     }
-                        
-                    
-                    
-
                     conn.closeConn();
-                    //    DataGridViewRow rowHolder = null;
                 }
-                //{
-
-
-                //    String id = result.ToString();
-                //    var data = new Dictionary<string, string>()
-                //    {
-                //        { "code", id }
-                //    };
-                //    MySqlDataReader reader = conn.readProcedure("item_view", data);
-                //    DataGridViewRow rowHolder = null;
-                //    bool beepFire = false;
-                //    while (reader.Read())
-                //    {
-                //        beepFire = true;
-                //        foreach (DataGridViewRow row in tableItems.Rows)
-                //        {
-                //            if (reader["name"].ToString() == row.Cells["itemName"].Value.ToString())
-                //            {
-                //                rowHolder = row;
-                //            }
-                //        }
-                //        if (rowHolder != null)
-                //        {
-                //            rowHolder.Cells["qty"].Value = Convert.ToInt32(rowHolder.Cells["qty"].Value) + 1;
-                //            rowHolder.Cells["total"].Value = Convert.ToInt32(rowHolder.Cells["qty"].Value) * Convert.ToDouble(rowHolder.Cells["price"].Value);
-                //        }
-
-                //        else
-                //        {
-                //            tableItems.Rows.Add(
-                //            new object[]
-                //                {
-                //                    reader["code"].ToString(),
-                //                    reader["name"].ToString(),
-                //                    reader["price"].ToString(),
-                //                    1,
-                //                    "PHP "+reader["price"].ToString()
-
-                //                }
-                //            );
-
-                //        }
-
-                //    }
-                //    if (beepFire)
-                //    {
-                //        playbeep();
-                //    }
-
-                //    conn.closeConn();
-                //    updateTransactionTotal();
-                //    txtCode.Text = id;
-
-                //}
             }
         }
 
@@ -164,27 +105,7 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             );
         }
 
-        private void bunifuLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuLabel4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuLabel2_Click(object sender, EventArgs e)
+        private void txtORNo_TextChanged(object sender, EventArgs e)
         {
 
         }

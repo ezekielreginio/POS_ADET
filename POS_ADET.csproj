@@ -262,12 +262,6 @@
     <Compile Include="Modules\POSManagement\POSManagement.Designer.cs">
       <DependentUpon>POSManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ReturnRefundManagement\modalReturnRefund.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modules\ReturnRefundManagement\modalReturnRefund.Designer.cs">
-      <DependentUpon>modalReturnRefund.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modules\ReturnRefundManagement\ReturnRefundManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,9 +324,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\POSManagement\POSManagement.resx">
       <DependentUpon>POSManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ReturnRefundManagement\modalReturnRefund.resx">
-      <DependentUpon>modalReturnRefund.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ReturnRefundManagement\ReturnRefundManagement.resx">
       <DependentUpon>ReturnRefundManagement.cs</DependentUpon>
