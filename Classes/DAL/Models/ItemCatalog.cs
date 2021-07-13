@@ -10,7 +10,7 @@ namespace POS_ADET.DAL.Models
     {
         public int code { get; set; }
         public string name { get; set; }
-        public float price { get; set; }
+        public double price { get; set; }
         public int qty { get; set; }
         public string photo { get; set; }
 

@@ -2,6 +2,7 @@
 using POS_ADET.Modules.Dashboard;
 using POS_ADET.Modules.ItemsManagement;
 using POS_ADET.Modules.POSManagement;
+using POS_ADET.Modules.ReturnRefundManagement;
 using POS_ADET.Modules.UsersManagement;
 using POS_ADET.Modules.UsersManagement.Client;
 using System;
@@ -42,7 +43,7 @@ namespace POS_ADET
 
         //User Defined Functions:
         private Form activeForm = null;
-        private void openPanel(Form childForm)
+        public void openPanel(Form childForm)
         {
             if (activeForm != null)
             {
@@ -91,7 +92,7 @@ namespace POS_ADET
 
         }
 
-        private void btnPOS_Click(object sender, EventArgs e)
+        public void btnPOS_Click(object sender, EventArgs e)
         {
             POSManagement posMgmt = new POSManagement();
             posMgmt.queryItems();
@@ -100,7 +101,8 @@ namespace POS_ADET
 
         private void btnRefund_Click(object sender, EventArgs e)
         {
-
+            ReturnRefundManagement retrefMgmt = new ReturnRefundManagement();
+            openPanel(retrefMgmt);
         }
     }
 }

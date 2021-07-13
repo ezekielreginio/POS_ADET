@@ -27,7 +27,6 @@ namespace POS_ADET.Modules.ItemsManagement
         private ItemCard currentItem;
         private OpenFileDialog choofdlog = new OpenFileDialog();
         private Validation validate = new Validation();
-
         public ItemManagementPanel()
         {
             InitializeComponent();
@@ -156,7 +155,7 @@ namespace POS_ADET.Modules.ItemsManagement
 
                 conn.closeConn();
 
-                generateQR(itemCode, itemName);
+                QRCode.generateQR(itemCode, itemName);
                 queryItems();
 
                 resetFields();
@@ -182,17 +181,7 @@ namespace POS_ADET.Modules.ItemsManagement
 
         // User-Defined Functions:
 
-        private void generateQR(String qrString, String fileName)
-        {
-            
-            string filePath = @"C:\qr\" + fileName + ".png";
-
-            BarcodeWriter barcodeW = new BarcodeWriter();
-
-            barcodeW.Format = BarcodeFormat.QR_CODE;
-
-            barcodeW.Write(qrString).Save(filePath);
-        }
+        
 
         private void generateItem(int code, String itemName, String itemPrice, String imageUrl)
         {

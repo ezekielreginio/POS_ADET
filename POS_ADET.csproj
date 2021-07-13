@@ -190,8 +190,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DAL\connector.cs" />
-    <Compile Include="Classes\DAL\Models\TotalTransaction.cs" />
+    <Compile Include="Classes\DAL\Models\TransactionData.cs" />
+    <Compile Include="Classes\DAL\Models\TransactionItem.cs" />
     <Compile Include="Classes\Dropbox\DropBox.cs" />
+    <Compile Include="Classes\QRCode.cs" />
     <Compile Include="Classes\Validation.cs" />
     <Compile Include="Controls\ItemCard.cs">
       <SubType>UserControl</SubType>
@@ -200,6 +202,18 @@
       <DependentUpon>ItemCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\DAL\Models\ItemCatalog.cs" />
+    <Compile Include="Controls\ReceiptClass\Receipts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ReceiptClass\Receipts.Designer.cs">
+      <DependentUpon>Receipts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReceiptClass\ReceiptItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ReceiptClass\ReceiptItem.Designer.cs">
+      <DependentUpon>ReceiptItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\sample.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -248,6 +262,18 @@
     <Compile Include="Modules\POSManagement\POSManagement.Designer.cs">
       <DependentUpon>POSManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\ReturnRefundManagement\modalReturnRefund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ReturnRefundManagement\modalReturnRefund.Designer.cs">
+      <DependentUpon>modalReturnRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ReturnRefundManagement\ReturnRefundManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ReturnRefundManagement\ReturnRefundManagement.Designer.cs">
+      <DependentUpon>ReturnRefundManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\UsersManagement\Client\ClientManagementPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +301,12 @@
     <EmbeddedResource Include="Controls\ItemCard.resx">
       <DependentUpon>ItemCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReceiptClass\Receipts.resx">
+      <DependentUpon>Receipts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReceiptClass\ReceiptItem.resx">
+      <DependentUpon>ReceiptItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\sample.resx">
       <DependentUpon>sample.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +330,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\POSManagement\POSManagement.resx">
       <DependentUpon>POSManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ReturnRefundManagement\modalReturnRefund.resx">
+      <DependentUpon>modalReturnRefund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ReturnRefundManagement\ReturnRefundManagement.resx">
+      <DependentUpon>ReturnRefundManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\UsersManagement\Client\ClientManagementPanel.resx">
       <DependentUpon>ClientManagementPanel.cs</DependentUpon>
