@@ -97,6 +97,16 @@ namespace POS_ADET
             posMgmt.queryItems();
             openPanel(posMgmt);
         }
+
+        private void mainPanel_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

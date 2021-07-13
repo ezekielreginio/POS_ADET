@@ -234,5 +234,20 @@ namespace POS_ADET.Modules.ItemsManagement
             buttonSaveItem.Text = "Save";
             resetFields();
         }
+
+        private void tableItemCatalog_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -64,8 +64,9 @@ namespace WinFormsApp1
             this.sidePanel.Controls.Add(this.sidepanelMenu);
             this.sidePanel.Controls.Add(this.sidePanelHeader);
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
+            this.sidePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(171, 624);
+            this.sidePanel.Size = new System.Drawing.Size(256, 960);
             this.sidePanel.TabIndex = 0;
             // 
             // sidepanelMenu
@@ -79,9 +80,10 @@ namespace WinFormsApp1
             this.sidepanelMenu.Controls.Add(this.btnLogout);
             this.sidepanelMenu.Controls.Add(this.btnSalesManagement);
             this.sidepanelMenu.Controls.Add(this.btnDashboard);
-            this.sidepanelMenu.Location = new System.Drawing.Point(0, 148);
+            this.sidepanelMenu.Location = new System.Drawing.Point(0, 228);
+            this.sidepanelMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sidepanelMenu.Name = "sidepanelMenu";
-            this.sidepanelMenu.Size = new System.Drawing.Size(171, 476);
+            this.sidepanelMenu.Size = new System.Drawing.Size(256, 732);
             this.sidepanelMenu.TabIndex = 1;
             // 
             // btnSalesAnalytics
@@ -93,9 +95,10 @@ namespace WinFormsApp1
             this.btnSalesAnalytics.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSalesAnalytics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnSalesAnalytics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalesAnalytics.Location = new System.Drawing.Point(0, 258);
+            this.btnSalesAnalytics.Location = new System.Drawing.Point(0, 398);
+            this.btnSalesAnalytics.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalesAnalytics.Name = "btnSalesAnalytics";
-            this.btnSalesAnalytics.Size = new System.Drawing.Size(171, 31);
+            this.btnSalesAnalytics.Size = new System.Drawing.Size(256, 48);
             this.btnSalesAnalytics.TabIndex = 0;
             this.btnSalesAnalytics.Text = "Sales Analytics";
             this.btnSalesAnalytics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -110,9 +113,10 @@ namespace WinFormsApp1
             this.btnItemsManagement.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnItemsManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnItemsManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnItemsManagement.Location = new System.Drawing.Point(0, 227);
+            this.btnItemsManagement.Location = new System.Drawing.Point(0, 350);
+            this.btnItemsManagement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnItemsManagement.Name = "btnItemsManagement";
-            this.btnItemsManagement.Size = new System.Drawing.Size(171, 31);
+            this.btnItemsManagement.Size = new System.Drawing.Size(256, 48);
             this.btnItemsManagement.TabIndex = 0;
             this.btnItemsManagement.Text = "Items Management";
             this.btnItemsManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -125,9 +129,10 @@ namespace WinFormsApp1
             this.panelUsersManagement.Controls.Add(this.btnClients);
             this.panelUsersManagement.Controls.Add(this.btnEmployees);
             this.panelUsersManagement.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelUsersManagement.Location = new System.Drawing.Point(0, 160);
+            this.panelUsersManagement.Location = new System.Drawing.Point(0, 247);
+            this.panelUsersManagement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelUsersManagement.Name = "panelUsersManagement";
-            this.panelUsersManagement.Size = new System.Drawing.Size(171, 67);
+            this.panelUsersManagement.Size = new System.Drawing.Size(256, 103);
             this.panelUsersManagement.TabIndex = 1;
             this.panelUsersManagement.Visible = false;
             // 
@@ -139,11 +144,11 @@ namespace WinFormsApp1
             this.btnClients.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnClients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnClients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClients.Location = new System.Drawing.Point(0, 31);
+            this.btnClients.Location = new System.Drawing.Point(0, 48);
             this.btnClients.Margin = new System.Windows.Forms.Padding(0);
             this.btnClients.Name = "btnClients";
-            this.btnClients.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.btnClients.Size = new System.Drawing.Size(169, 31);
+            this.btnClients.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
+            this.btnClients.Size = new System.Drawing.Size(254, 48);
             this.btnClients.TabIndex = 0;
             this.btnClients.Text = "Clients";
             this.btnClients.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -161,8 +166,8 @@ namespace WinFormsApp1
             this.btnEmployees.Location = new System.Drawing.Point(0, 0);
             this.btnEmployees.Margin = new System.Windows.Forms.Padding(0);
             this.btnEmployees.Name = "btnEmployees";
-            this.btnEmployees.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.btnEmployees.Size = new System.Drawing.Size(169, 31);
+            this.btnEmployees.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
+            this.btnEmployees.Size = new System.Drawing.Size(254, 48);
             this.btnEmployees.TabIndex = 0;
             this.btnEmployees.Text = "Employees";
             this.btnEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -178,9 +183,10 @@ namespace WinFormsApp1
             this.btnUsersManagement.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnUsersManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnUsersManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsersManagement.Location = new System.Drawing.Point(0, 129);
+            this.btnUsersManagement.Location = new System.Drawing.Point(0, 199);
+            this.btnUsersManagement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUsersManagement.Name = "btnUsersManagement";
-            this.btnUsersManagement.Size = new System.Drawing.Size(171, 31);
+            this.btnUsersManagement.Size = new System.Drawing.Size(256, 48);
             this.btnUsersManagement.TabIndex = 0;
             this.btnUsersManagement.Text = "Users Management";
             this.btnUsersManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -193,9 +199,10 @@ namespace WinFormsApp1
             this.panelSalesManagementSubmenu.Controls.Add(this.btnRefund);
             this.panelSalesManagementSubmenu.Controls.Add(this.btnPOS);
             this.panelSalesManagementSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSalesManagementSubmenu.Location = new System.Drawing.Point(0, 62);
+            this.panelSalesManagementSubmenu.Location = new System.Drawing.Point(0, 96);
+            this.panelSalesManagementSubmenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelSalesManagementSubmenu.Name = "panelSalesManagementSubmenu";
-            this.panelSalesManagementSubmenu.Size = new System.Drawing.Size(171, 67);
+            this.panelSalesManagementSubmenu.Size = new System.Drawing.Size(256, 103);
             this.panelSalesManagementSubmenu.TabIndex = 1;
             this.panelSalesManagementSubmenu.Visible = false;
             // 
@@ -208,11 +215,11 @@ namespace WinFormsApp1
             this.btnRefund.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnRefund.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnRefund.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefund.Location = new System.Drawing.Point(0, 31);
+            this.btnRefund.Location = new System.Drawing.Point(0, 48);
             this.btnRefund.Margin = new System.Windows.Forms.Padding(0);
             this.btnRefund.Name = "btnRefund";
-            this.btnRefund.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.btnRefund.Size = new System.Drawing.Size(171, 31);
+            this.btnRefund.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
+            this.btnRefund.Size = new System.Drawing.Size(256, 48);
             this.btnRefund.TabIndex = 0;
             this.btnRefund.Text = "Return/Refund";
             this.btnRefund.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -231,8 +238,8 @@ namespace WinFormsApp1
             this.btnPOS.Location = new System.Drawing.Point(0, 0);
             this.btnPOS.Margin = new System.Windows.Forms.Padding(0);
             this.btnPOS.Name = "btnPOS";
-            this.btnPOS.Padding = new System.Windows.Forms.Padding(22, 0, 0, 0);
-            this.btnPOS.Size = new System.Drawing.Size(171, 31);
+            this.btnPOS.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
+            this.btnPOS.Size = new System.Drawing.Size(256, 48);
             this.btnPOS.TabIndex = 0;
             this.btnPOS.Text = "POS System";
             this.btnPOS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -248,9 +255,10 @@ namespace WinFormsApp1
             this.btnLogout.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 434);
+            this.btnLogout.Location = new System.Drawing.Point(0, 668);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(171, 31);
+            this.btnLogout.Size = new System.Drawing.Size(256, 48);
             this.btnLogout.TabIndex = 0;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -265,9 +273,10 @@ namespace WinFormsApp1
             this.btnSalesManagement.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSalesManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnSalesManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalesManagement.Location = new System.Drawing.Point(0, 31);
+            this.btnSalesManagement.Location = new System.Drawing.Point(0, 48);
+            this.btnSalesManagement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSalesManagement.Name = "btnSalesManagement";
-            this.btnSalesManagement.Size = new System.Drawing.Size(171, 31);
+            this.btnSalesManagement.Size = new System.Drawing.Size(256, 48);
             this.btnSalesManagement.TabIndex = 0;
             this.btnSalesManagement.Text = "Sales Management";
             this.btnSalesManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -284,8 +293,9 @@ namespace WinFormsApp1
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.Location = new System.Drawing.Point(0, 0);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(171, 31);
+            this.btnDashboard.Size = new System.Drawing.Size(256, 48);
             this.btnDashboard.TabIndex = 0;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -297,9 +307,10 @@ namespace WinFormsApp1
             this.sidePanelHeader.Controls.Add(this.label2);
             this.sidePanelHeader.Controls.Add(this.pictureBox1);
             this.sidePanelHeader.Controls.Add(this.label1);
-            this.sidePanelHeader.Location = new System.Drawing.Point(0, 12);
+            this.sidePanelHeader.Location = new System.Drawing.Point(0, 18);
+            this.sidePanelHeader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sidePanelHeader.Name = "sidePanelHeader";
-            this.sidePanelHeader.Size = new System.Drawing.Size(171, 138);
+            this.sidePanelHeader.Size = new System.Drawing.Size(256, 212);
             this.sidePanelHeader.TabIndex = 0;
             // 
             // label2
@@ -307,17 +318,19 @@ namespace WinFormsApp1
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label2.Location = new System.Drawing.Point(30, 112);
+            this.label2.Location = new System.Drawing.Point(45, 172);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 21);
+            this.label2.Size = new System.Drawing.Size(185, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "Welcome, User";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(40, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(60, 71);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 63);
+            this.pictureBox1.Size = new System.Drawing.Size(129, 97);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -327,9 +340,10 @@ namespace WinFormsApp1
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(10, 8);
+            this.label1.Location = new System.Drawing.Point(15, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 30);
+            this.label1.Size = new System.Drawing.Size(264, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Prime Industries";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -337,9 +351,10 @@ namespace WinFormsApp1
             // mainPanel
             // 
             this.mainPanel.Controls.Add(this.label3);
-            this.mainPanel.Location = new System.Drawing.Point(171, 20);
+            this.mainPanel.Location = new System.Drawing.Point(256, 31);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(855, 604);
+            this.mainPanel.Size = new System.Drawing.Size(1282, 929);
             this.mainPanel.TabIndex = 0;
             // 
             // label3
@@ -347,21 +362,23 @@ namespace WinFormsApp1
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.label3.Location = new System.Drawing.Point(8, 20);
+            this.label3.Location = new System.Drawing.Point(31, 9);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 21);
+            this.label3.Size = new System.Drawing.Size(185, 32);
             this.label3.TabIndex = 1;
             this.label3.Text = "Welcome, User";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1029, 624);
+            this.ClientSize = new System.Drawing.Size(1544, 960);
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
