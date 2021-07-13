@@ -24,12 +24,11 @@ namespace POS_ADET.Modules.POSManagement
         private connector conn = new connector();
 
         FilterInfoCollection filterInfoCollection;
-        VideoCaptureDevice captureDevice;
+        private VideoCaptureDevice captureDevice;
 
-        
-        
+        private TransactionData transactionData = new TransactionData();
+        public VideoCaptureDevice CaptureDevice { get => captureDevice; set => captureDevice = value; }
 
-        private TotalTransaction totalTransaction = new TotalTransaction();
         public POSManagement()
         {
             InitializeComponent();
@@ -37,8 +36,8 @@ namespace POS_ADET.Modules.POSManagement
             foreach (FilterInfo filterInfo in filterInfoCollection)
                 cboDevices.Items.Add(filterInfo.Name);
             cboDevices.SelectedIndex = 0;
-            captureDevice = new VideoCaptureDevice(filterInfoCollection[0].MonikerString);
-            captureDevice.NewFrame += CaptureDevice_NewFrame;
+            CaptureDevice = new VideoCaptureDevice(filterInfoCollection[2].MonikerString);
+            CaptureDevice.NewFrame += CaptureDevice_NewFrame;
 
             
         }
@@ -102,6 +101,7 @@ namespace POS_ADET.Modules.POSManagement
                             tableItems.Rows.Add(
                             new object[]
                                 {
+                                    reader["code"].ToString(),
                                     reader["name"].ToString(),
                                     reader["price"].ToString(),
                                     1,
@@ -133,8 +133,8 @@ namespace POS_ADET.Modules.POSManagement
         //User Defined Methods:
         public void queryItems()
         {
-            //tableItemCatalog.Controls.Clear();
-            MySqlDataReader reader = conn.readProcedure("item_view_all", null);
+            tableItemCatalog.Controls.Clear();
+            MySqlDataReader reader = conn.readProcedure("item_pos_view_all", null);
             while (reader.Read())
             {
                 int itemCode = (int)reader.GetValue(0);
@@ -197,6 +197,7 @@ namespace POS_ADET.Modules.POSManagement
                             tableItems.Rows.Add(
                             new object[]
                                 {
+                                    code,
                                     itemName,
                                     itemPrice,
                                     qty,
@@ -287,8 +288,11 @@ namespace POS_ADET.Modules.POSManagement
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            captureDevice.Start();
-            timer1.Start();
+            modalPay modPay = new modalPay();
+            modPay.TransactionData = transactionData;
+            modPay.TotalTransactionAmount = Convert.ToDouble(lblTotalAmount.Text);
+            modPay.PosPanel = this;
+            modPay.Show();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -298,15 +302,16 @@ namespace POS_ADET.Modules.POSManagement
 
         private void POSManagement_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pos_adetDataSet1.item_catalog' table. You can move, or remove it, as needed.
+            //this.item_catalogTableAdapter1.Fill(this.pos_adetDataSet1.item_catalog);
             // TODO: This line of code loads data into the 'pos_adetDataSet.item_catalog' table. You can move, or remove it, as needed.
-            this.item_catalogTableAdapter.Fill(this.pos_adetDataSet.item_catalog);
+            //this.item_catalogTableAdapter.Fill(this.pos_adetDataSet.item_catalog);
 
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-
-            captureDevice.Start();
+            CaptureDevice.Start();
             timer1.Start();
         }
 
@@ -322,15 +327,37 @@ namespace POS_ADET.Modules.POSManagement
 
         private void updateTransactionTotal()
         {
-            totalTransaction.TotalAmount = 0;
+            transactionData.TotalAmount = 0;
+            transactionData.Items.Clear();
             foreach (DataGridViewRow row in tableItems.Rows)
             {
-                totalTransaction.TotalAmount += Convert.ToDouble(row.Cells["price"].Value) * Convert.ToInt32(row.Cells["qty"].Value);
+                transactionData.Items.Add
+                    (
+                        new TransactionItem 
+                        { 
+                            Code = Convert.ToInt32(row.Cells["id"].Value),
+                            ItemName = row.Cells["itemName"].Value.ToString(),
+                            Price = Convert.ToDouble(row.Cells["price"].Value),
+                            Qty = Convert.ToInt32(row.Cells["qty"].Value)
+                        }
+                    );
+                transactionData.TotalAmount += Convert.ToDouble(row.Cells["price"].Value) * Convert.ToInt32(row.Cells["qty"].Value);
             }
 
-            lblTotalAmount.Text = totalTransaction.TotalAmount.ToString("F");
-            lblTax.Text = totalTransaction.Tax.ToString("F");
-            lblNet.Text = totalTransaction.Net.ToString("F");
+            lblTotalAmount.Text = transactionData.TotalAmount.ToString("F");
+            lblTax.Text = transactionData.Tax.ToString("F");
+            lblNet.Text = transactionData.Net.ToString("F");
+        }
+
+        public void resetFields()
+        {
+            queryItems();
+            tableItems.Rows.Clear();
+            tableItems.Refresh();
+
+            lblTotalAmount.Text = "0.00";
+            lblTax.Text = "0.00";
+            lblNet.Text = "0.00";
         }
 
         private void playbeep()

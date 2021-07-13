@@ -61,9 +61,14 @@ namespace POS_ADET.Controls
             labelPrice.Text = "PHP "+itemPrice;
         }
 
-        public void setItemImage(string imagePath)
-        { 
-            pictureItem.Load(Path.GetDirectoryName(Application.ExecutablePath)+imagePath);
+        public void setItemImage(string image)
+        {
+            //pictureItem.Load(Path.GetDirectoryName(Application.ExecutablePath)+imagePath);
+            Byte[] bytes = Convert.FromBase64String(image);
+            MemoryStream stream = new MemoryStream(bytes);
+            Bitmap Image = new Bitmap(stream);
+
+            pictureItem.Image = Image;
         }
 
         public bool getSelectedStatus()

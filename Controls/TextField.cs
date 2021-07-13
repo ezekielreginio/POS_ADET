@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POS_ADET.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,96 @@ namespace POS_ADET.Controls
 {
     public partial class TextField : UserControl
     {
+        //private instances
+        private Validation validate = new Validation();
+        //private properties
+        public enum FieldTypes
+        {
+            String,
+            Integer, 
+            Currency
+        }
+        private FieldTypes fieldType = FieldTypes.String;
+
         public TextField()
         {
             InitializeComponent();
         }
 
-        private void bunifuLabel1_Click(object sender, EventArgs e)
+        //Custom Properties
+        [
+           Category("TextField")
+        ]
+        public FieldTypes FieldType
         {
+            get
+            {
+                return fieldType;
+            }
+            set
+            {
+                fieldType = value;
+            }
+        }  
 
+
+        //Getter-Setter Methods:
+        public string getValue()
+        {
+            return txtItemCode.Text;
+        }
+
+        public void setValue(string value)
+        {
+            txtItemCode.Text = value;
+        }
+
+        //User Defined Methods
+        
+
+        public void setInvalid()
+        {
+            this.ActiveControl = lblErrNotif;
+            lblErrNotif.Visible = true;
+            //txtItemCode.Invalidate();
+            //txtItemCode.BorderColor = Color.Red;
+            //txtItemCode.Border.Thickness = 3;
+        }
+
+        public void resetInvalid()
+        {
+            lblErrNotif.Visible = false;
+        }
+
+        public void resetField()
+        {
+            resetInvalid();
+            txtItemCode.Text = String.Empty;
+        }
+
+        private void txtItemCode_Validating(object sender, CancelEventArgs e)
+        {
+            switch (this.fieldType)
+            {
+                case FieldTypes.Integer:
+                    e.Cancel = validate.validate_field(this.getValue(), @"^[0-9]+$");
+                    break;
+                case FieldTypes.String:
+                    e.Cancel = validate.validate_field(this.getValue(), @"^[A-Za-z0-9()' ]+$");
+                    break;
+                case FieldTypes.Currency:
+                    e.Cancel = validate.validate_field(this.getValue(), @"^[0-9.]+$");
+                    break;
+            }
+
+            if (e.Cancel)
+            {
+                setInvalid();
+            }
+            else
+            {
+                resetInvalid();
+            }
         }
     }
 }

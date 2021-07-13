@@ -31,7 +31,21 @@ namespace POS_ADET.Classes.DB
             return reader;
         }
 
+        public string getLastID(string procedure_name)
+        {
+            this.procedure_name = procedure_name;
+            this.data = null;
 
+            string id = String.Empty;
+
+            MySqlCommand mySqlCmd = createProcedure();
+            MySqlDataReader reader = mySqlCmd.ExecuteReader();
+            while (reader.Read())
+            {
+                id = reader["last_inserted_id"].ToString();
+            }
+            return id;
+        }
     }
 
     class ParentConnector
@@ -51,7 +65,6 @@ namespace POS_ADET.Classes.DB
                     foreach (var item in data)
                     {
                         mySqlCmd.Parameters.AddWithValue(item.Key, item.Value);
-                        
                     }
                 }
                 return mySqlCmd;

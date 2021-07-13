@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using POS_ADET.Classes;
 using POS_ADET.Classes.DB;
 using POS_ADET.Classes.Dropbox;
 using POS_ADET.Controls;
@@ -20,9 +21,12 @@ namespace POS_ADET.Modules.ItemsManagement
 {
     public partial class ItemManagementPanel : Form
     {
+
+        //Private Instances:
         private connector conn = new connector();
-        ItemCard currentItem;
-        OpenFileDialog choofdlog = new OpenFileDialog();
+        private ItemCard currentItem;
+        private OpenFileDialog choofdlog = new OpenFileDialog();
+        private Validation validate = new Validation();
         public ItemManagementPanel()
         {
             InitializeComponent();
@@ -58,37 +62,78 @@ namespace POS_ADET.Modules.ItemsManagement
 
         private void buttonSaveItem_Click(object sender, EventArgs e)
         {
-            string itemCode = txtItemCode.Text;
-            string itemName = txtItemName.Text;
-            string itemPrice = txtItemPrice.Text;
-            string qty = txtQty.Text;
+            string itemCode = textFieldItemCode.getValue();
+            string itemName = textFieldItemName.getValue();
+            string itemPrice = textFieldItemPrice.getValue();
+            string qty = textFieldQty.getValue();
             string itemPicture = lblFilePath.Text;
+            string fpath  = String.Empty;
+            var inputs = new List<TextField>();
+            inputs.Add(textFieldItemCode);
+            
+            Validation validateInst = new Validation();
+            validateInst.validate(inputs);
 
-            //DropBox dbx = new DropBox();
-            //var url = "";
-            //if (itemPicture != string.Empty)
-            //{
-            //    url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
-            //}
-            string fpath = @"\Items\" + itemName+@".png";
-            string appPath = Path.GetDirectoryName(Application.ExecutablePath) + fpath;
-            try
+            bool inputs_are_valid = true;
+
+            inputs_are_valid = validate.validate_int(textFieldItemCode);
+
+
+            if (inputs_are_valid)
             {
-                File.Copy(itemPicture, appPath);
-                //picProduct.Image = new Bitmap(itemPicture);
-            }
-            catch (Exception exp)
-            {
-                MessageBox.Show("Unable to open file " + exp.Message);
-            }
+                //Dropbox API for Image Uploading:
+                //DropBox dbx = new DropBox();
+                //var url = "";
+                //if (itemPicture != string.Empty)
+                //{
+                //    url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
+                //}
+                //var url = "";
+                //if (itemPicture != string.Empty)
+                //{
+                //    //url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
+                //}
 
-            //var url = "";
-            //if (itemPicture != string.Empty)
-            //{
-            //    //url = dbx.Upload(itemPicture, "/items", itemName + ".png").Result;
-            //}
 
-            var data = new Dictionary<string, string>()
+                //File Upload on Resources:
+                //string fpath = @"\Items\" + itemName + @".png";
+                //string appPath = Path.GetDirectoryName(Application.ExecutablePath) + fpath;
+                //try
+                //{
+                //    File.Copy(itemPicture, appPath);
+                //    //picProduct.Image = new Bitmap(itemPicture);
+                //}
+                //catch (Exception exp)
+                //{
+                //    MessageBox.Show("Unable to open file " + exp.Message);
+                //}
+                try
+                {
+                    byte[] imageArray = null;
+                    if (itemPicture == String.Empty)
+                    {
+                        if (buttonSaveItem.Text == "Save")
+                            MessageBox.Show("Please Upload an Item Picture");
+                        else if (buttonSaveItem.Text == "Update")
+                        {
+                            ImageConverter converter = new ImageConverter();
+                            imageArray = (byte[])converter.ConvertTo(picboxItem.Image, typeof(byte[]));
+                        }
+                    }
+                    else if(itemPicture != String.Empty)
+                        imageArray = System.IO.File.ReadAllBytes(itemPicture);
+                        
+                    fpath = Convert.ToBase64String(imageArray);
+
+                }
+
+                catch(Exception ex)
+                {
+
+                }
+                
+
+                var data = new Dictionary<string, string>()
                 {
                     { "code", itemCode },
                     { "name", itemName },
@@ -97,26 +142,31 @@ namespace POS_ADET.Modules.ItemsManagement
                     { "photo", fpath }
                 };
 
-            if (buttonSaveItem.Text == "Save")
-                conn.writeProcedure("item_add", data);
-               
-            else if(buttonSaveItem.Text == "Update")
-                conn.writeProcedure("item_edit", data);
-            
+                if (buttonSaveItem.Text == "Save")
+                    conn.writeProcedure("item_add", data);
 
-            conn.closeConn();
+                else if (buttonSaveItem.Text == "Update")
+                {
+                    buttonAddItem_Click(null, null);
+                    conn.writeProcedure("item_edit", data);
+                }
+                    
 
-            generateQR(itemCode, itemName);
-            queryItems();
 
-            resetFields();
+                conn.closeConn();
+
+                QRCode.generateQR(itemCode, itemName);
+                queryItems();
+
+                resetFields();
+            }
         }
 
 
         private void txtItemCode_Leave(object sender, EventArgs e)
         {
-            string qrString = txtItemCode.Text;
-            string fileName = txtItemName.Text;
+            string qrString = textFieldItemCode.getValue();
+            string fileName = textFieldItemName.getValue();
             string filePath = @"C:\qr\"+ fileName+".png";
 
             BarcodeWriter barcodeW = new BarcodeWriter();
@@ -131,17 +181,7 @@ namespace POS_ADET.Modules.ItemsManagement
 
         // User-Defined Functions:
 
-        private void generateQR(String qrString, String fileName)
-        {
-            
-            string filePath = @"C:\qr\" + fileName + ".png";
-
-            BarcodeWriter barcodeW = new BarcodeWriter();
-
-            barcodeW.Format = BarcodeFormat.QR_CODE;
-
-            barcodeW.Write(qrString).Save(filePath);
-        }
+        
 
         private void generateItem(int code, String itemName, String itemPrice, String imageUrl)
         {
@@ -171,11 +211,16 @@ namespace POS_ADET.Modules.ItemsManagement
                 MySqlDataReader reader = conn.readProcedure("item_view", data);
                 while (reader.Read())
                 {
-                    txtItemCode.Text = reader["code"].ToString();
-                    txtItemName.Text = reader["name"].ToString();
-                    txtItemPrice.Text = reader["price"].ToString();
-                    txtQty.Text = reader["qty"].ToString();
-                    //picboxItem.Load(reader["photo"].ToString()+"&raw=1");
+                    Byte[] bytes = Convert.FromBase64String(reader["photo"].ToString());
+                    MemoryStream stream = new MemoryStream(bytes);
+                    Bitmap Image = new Bitmap(stream);
+
+
+                    textFieldItemCode.setValue(reader["code"].ToString());
+                    textFieldItemName.setValue(reader["name"].ToString());
+                    textFieldItemPrice.setValue(reader["price"].ToString());
+                    textFieldQty.setValue(reader["qty"].ToString());
+                    picboxItem.Image = Image;
                     buttonAddItem.Visible = true;
                     buttonSaveItem.Text = "Update";
                 }
@@ -203,11 +248,12 @@ namespace POS_ADET.Modules.ItemsManagement
 
         private void resetFields()
         {
-            txtItemCode.ResetText();
-            txtItemName.ResetText();
-            txtItemPrice.ResetText();
-            txtQty.ResetText();
+            textFieldItemCode.resetField();
+            textFieldItemName.resetField();
+            textFieldItemPrice.resetField();
+            textFieldQty.resetField();
             picboxItem.Image= null;
+            lblFilePath.Text = String.Empty;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -234,5 +280,6 @@ namespace POS_ADET.Modules.ItemsManagement
             buttonSaveItem.Text = "Save";
             resetFields();
         }
+
     }
 }
