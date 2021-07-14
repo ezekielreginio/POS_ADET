@@ -31,6 +31,22 @@ namespace POS_ADET.Classes.DB
             return reader;
         }
 
+        public DataTable getDataTable(string procedure_name, Dictionary<string, string> data = null)
+        {
+            this.procedure_name = procedure_name;
+            this.data = data;
+            MySqlCommand mySqlCmd = createProcedure();
+
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            DataTable dt = new DataTable();
+
+            da.SelectCommand = mySqlCmd;
+            da.Fill(dt);
+
+            closeConn();
+            return dt;
+        }
+
         public string getLastID(string procedure_name)
         {
             this.procedure_name = procedure_name;

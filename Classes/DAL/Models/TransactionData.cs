@@ -15,6 +15,8 @@ namespace POS_ADET.Classes.DAL.Models
         private double net = 0;
         private List<TransactionItem> items = new List<TransactionItem>();
         private double cash = 0;
+        private DateTime transactionDate;
+
         public double TotalAmount
         {
             get => totalAmount;
@@ -30,6 +32,7 @@ namespace POS_ADET.Classes.DAL.Models
         public double Net { get => net; set => net = value; }
         public double Cash { get => cash; set => cash = value; }
         public int Transaction_id { get => transaction_id; set => transaction_id = value; }
+        public DateTime TransactionDate { get => transactionDate; set => transactionDate = value; }
         internal List<TransactionItem> Items { get => items; set => items = value; }
     }
 

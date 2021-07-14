@@ -35,6 +35,7 @@ namespace POS_ADET.Controls
             this.pictureItem = new System.Windows.Forms.PictureBox();
             this.panelBorder = new Bunifu.UI.WinForms.BunifuPanel();
             this.pictureChecked = new System.Windows.Forms.PictureBox();
+            this.item_catalogTableAdapter1 = new POS_ADET.pos_adetDataSet1TableAdapters.item_catalogTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureChecked)).BeginInit();
             this.SuspendLayout();
@@ -101,6 +102,10 @@ namespace POS_ADET.Controls
             this.pictureChecked.TabStop = false;
             this.pictureChecked.Visible = false;
             // 
+            // item_catalogTableAdapter1
+            // 
+            this.item_catalogTableAdapter1.ClearBeforeFill = true;
+            // 
             // ItemCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,5 +133,6 @@ namespace POS_ADET.Controls
         private System.Windows.Forms.PictureBox pictureItem;
         private Bunifu.UI.WinForms.BunifuPanel panelBorder;
         private System.Windows.Forms.PictureBox pictureChecked;
+        private pos_adetDataSet1TableAdapters.item_catalogTableAdapter item_catalogTableAdapter1;
     }
 }

@@ -83,13 +83,17 @@ C:\Users\Zeke\source\repos\POS_ADET\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Zeke\source\repos\POS_ADET\bin\Debug\zxing.xml
 C:\Users\Zeke\source\repos\POS_ADET\bin\Debug\zxing.presentation.xml
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.ItemCard.resources
+C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.Receipts.resources
+C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.Receipt.ReceiptItem.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.sample.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.TextField.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\WinFormsApp1.Form1.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.mainForm.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.Dashboard.dashboardPanel.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.ItemsManagement.ItemManagementPanel.resources
+C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.POSManagement.modalPay.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.POSManagement.POSManagement.resources
+C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.ReturnRefundManagement.ReturnRefundManagement.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.UsersManagement.Client.ClientManagementPanel.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.UsersManagement.EmployeeManagementPanel.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Properties.Resources.resources
@@ -99,12 +103,4 @@ C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.csproj.CoreCompileInputs.
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.csproj.CopyComplete
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.exe
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.pdb
-<<<<<<< HEAD
-=======
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.POSManagement.modalPay.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.Receipts.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.csproj.AssemblyReference.cache
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.Receipt.ReceiptItem.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.ReturnRefundManagement.ReturnRefundManagement.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.ReturnRefundManagement.modalReturnRefund.resources
->>>>>>> origin/Validation

@@ -193,6 +193,7 @@
     <Compile Include="Classes\DAL\Models\TransactionData.cs" />
     <Compile Include="Classes\DAL\Models\TransactionItem.cs" />
     <Compile Include="Classes\Dropbox\DropBox.cs" />
+    <Compile Include="Classes\DuplicateChecker.cs" />
     <Compile Include="Classes\QRCode.cs" />
     <Compile Include="Classes\Validation.cs" />
     <Compile Include="Controls\ItemCard.cs">
@@ -262,12 +263,6 @@
     <Compile Include="Modules\POSManagement\POSManagement.Designer.cs">
       <DependentUpon>POSManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\ReturnRefundManagement\modalReturnRefund.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modules\ReturnRefundManagement\modalReturnRefund.Designer.cs">
-      <DependentUpon>modalReturnRefund.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modules\ReturnRefundManagement\ReturnRefundManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +290,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>pos_adetDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pos_adetDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pos_adetDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -330,9 +330,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\POSManagement\POSManagement.resx">
       <DependentUpon>POSManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\ReturnRefundManagement\modalReturnRefund.resx">
-      <DependentUpon>modalReturnRefund.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ReturnRefundManagement\ReturnRefundManagement.resx">
       <DependentUpon>ReturnRefundManagement.cs</DependentUpon>
@@ -376,6 +373,17 @@
     </None>
     <None Include="pos_adetDataSet1.xss">
       <DependentUpon>pos_adetDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="pos_adetDataSet2.xsc">
+      <DependentUpon>pos_adetDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="pos_adetDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pos_adetDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pos_adetDataSet2.xss">
+      <DependentUpon>pos_adetDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
