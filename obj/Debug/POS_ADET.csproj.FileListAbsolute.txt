@@ -93,7 +93,6 @@ C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.Dashboard.dashboa
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.ItemsManagement.ItemManagementPanel.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.POSManagement.modalPay.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.POSManagement.POSManagement.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.ReturnRefundManagement.modalReturnRefund.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.ReturnRefundManagement.ReturnRefundManagement.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.UsersManagement.Client.ClientManagementPanel.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.UsersManagement.EmployeeManagementPanel.resources
@@ -104,3 +103,4 @@ C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.csproj.CoreCompileInputs.
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.csproj.CopyComplete
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.exe
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.pdb
+C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.csproj.AssemblyReference.cache

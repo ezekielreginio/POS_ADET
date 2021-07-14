@@ -56,15 +56,7 @@ namespace POS_ADET.Modules.POSManagement
                     TryInverted = true,
                     Options = new DecodingOptions
                     {
-                        TryHarder = true,
-                        //PureBarcode = true,
-                        /*PossibleFormats = new List<BarcodeFormat>
-                        {
-                            BarcodeFormat.CODE_128
-                            //BarcodeFormat.EAN_8,
-                            //BarcodeFormat.CODE_39,
-                            //BarcodeFormat.UPC_A
-                        }*/
+                        TryHarder = true
                     }
                 }; 
                 Result result = barcodeReader.Decode((Bitmap)qrScanner.Image);
@@ -158,8 +150,8 @@ namespace POS_ADET.Modules.POSManagement
             tableItemCatalog.Controls.Add(itemInst);
 
             itemInst.GetPictureBox().MouseClick += (sender, e) => multiSelect(sender, e);
-            itemInst.GetItemName().MouseClick += (sender, e) => multiSelect(sender, e);
-            itemInst.GetItemPrice().MouseClick += (sender, e) => multiSelect(sender, e);
+            //itemInst.GetItemName().MouseClick += (sender, e) => multiSelect(sender, e);
+            //itemInst.GetItemPrice().MouseClick += (sender, e) => multiSelect(sender, e);
 
             void multiSelect(object sender, EventArgs e)
             {
