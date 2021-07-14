@@ -265,7 +265,7 @@ namespace POS_ADET.Modules.ReturnRefundManagement
                     cboReason.Text = tableReturnRefund.SelectedRows[0].Cells["reason"].Value.ToString();
 
             }
-            catch (NullReferenceException ex)
+            catch (NullReferenceException)
             {
             }
             
