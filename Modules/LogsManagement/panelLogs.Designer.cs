@@ -39,7 +39,7 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.dgvLog = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSubheader = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panelLogData = new System.Windows.Forms.Panel();
@@ -53,6 +53,8 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
             this.dgvLog.AllowCustomTheming = false;
             this.dgvLog.AllowUserToAddRows = false;
             this.dgvLog.AllowUserToDeleteRows = false;
+            this.dgvLog.AllowUserToResizeColumns = false;
+            this.dgvLog.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgvLog.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -105,13 +107,14 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
             this.dgvLog.Name = "dgvLog";
             this.dgvLog.ReadOnly = true;
             this.dgvLog.RowHeadersVisible = false;
-            this.dgvLog.RowHeadersWidth = 51;
+            this.dgvLog.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dgvLog.RowTemplate.Height = 40;
             this.dgvLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLog.Size = new System.Drawing.Size(895, 630);
             this.dgvLog.TabIndex = 18;
             this.dgvLog.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            this.dgvLog.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLog_CellContentClick);
+            this.dgvLog.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLog_CellContentClick);
+            this.dgvLog.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLog_CellContentClick_1);
             // 
             // label2
             // 
@@ -126,24 +129,24 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
             this.label2.Text = "Logs Management";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label1
+            // lblSubheader
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(15, 71);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 35);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Sub header";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblSubheader.AutoSize = true;
+            this.lblSubheader.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.lblSubheader.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblSubheader.Location = new System.Drawing.Point(15, 71);
+            this.lblSubheader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSubheader.Name = "lblSubheader";
+            this.lblSubheader.Size = new System.Drawing.Size(144, 35);
+            this.lblSubheader.TabIndex = 20;
+            this.lblSubheader.Text = "Sub header";
+            this.lblSubheader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(919, 40);
+            this.panel1.Location = new System.Drawing.Point(919, 90);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 66);
@@ -151,15 +154,16 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(75, 14);
+            this.label3.Location = new System.Drawing.Point(119, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(209, 46);
+            this.label3.Size = new System.Drawing.Size(158, 46);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Add an Item";
+            this.label3.Text = "Log Data";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panelLogData
@@ -196,7 +200,7 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
             this.txtSearch.IconRight = null;
             this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(564, 60);
+            this.txtSearch.Location = new System.Drawing.Point(564, 99);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
@@ -254,7 +258,7 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
             this.ClientSize = new System.Drawing.Size(1303, 838);
             this.Controls.Add(this.panelLogData);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSubheader);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dgvLog);
@@ -275,7 +279,7 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
         private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
         private Bunifu.UI.WinForms.BunifuDataGridView dgvLog;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSubheader;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panelLogData;

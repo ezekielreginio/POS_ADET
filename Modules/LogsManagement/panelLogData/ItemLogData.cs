@@ -21,7 +21,22 @@ namespace POS_ADET.Modules.LogsManagement
         {
             txtLogId.Text = value;
         }
-
+        public void setItemCode(string value)
+        {
+            txtItemCode.Text = value;
+        }
+        public void setLogType(string value)
+        {
+            txtLogType.Text = value;
+        }
+        public void setTime(string value)
+        {
+            txtTime.Text = value;
+        }
+        public void setLogDesc(string value)
+        {
+            txtLogDesc.Text = value;
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

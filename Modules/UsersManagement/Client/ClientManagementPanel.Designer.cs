@@ -80,7 +80,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.panel2.Controls.Add(this.txtClientName);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(940, 118);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(384, 753);
             this.panel2.TabIndex = 10;
@@ -89,7 +89,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             // buttonAddNew
             // 
             this.buttonAddNew.Location = new System.Drawing.Point(23, 677);
-            this.buttonAddNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddNew.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddNew.Name = "buttonAddNew";
             this.buttonAddNew.Size = new System.Drawing.Size(100, 28);
             this.buttonAddNew.TabIndex = 16;
@@ -118,7 +118,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.picboxItem.BackColor = System.Drawing.Color.LightGray;
             this.picboxItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picboxItem.Location = new System.Drawing.Point(87, 492);
-            this.picboxItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picboxItem.Margin = new System.Windows.Forms.Padding(4);
             this.picboxItem.Name = "picboxItem";
             this.picboxItem.Size = new System.Drawing.Size(213, 172);
             this.picboxItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -128,7 +128,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(248, 457);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 12;
@@ -149,7 +149,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             // buttonSaveClient
             // 
             this.buttonSaveClient.Location = new System.Drawing.Point(239, 677);
-            this.buttonSaveClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSaveClient.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSaveClient.Name = "buttonSaveClient";
             this.buttonSaveClient.Size = new System.Drawing.Size(100, 28);
             this.buttonSaveClient.TabIndex = 11;
@@ -174,7 +174,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.txtClientEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtClientEmail.HoverState.Parent = this.txtClientEmail;
             this.txtClientEmail.Location = new System.Drawing.Point(0, 308);
-            this.txtClientEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClientEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientEmail.Name = "txtClientEmail";
             this.txtClientEmail.PasswordChar = '\0';
             this.txtClientEmail.PlaceholderText = "";
@@ -215,7 +215,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.txtClientPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtClientPassword.HoverState.Parent = this.txtClientPassword;
             this.txtClientPassword.Location = new System.Drawing.Point(0, 217);
-            this.txtClientPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClientPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientPassword.Name = "txtClientPassword";
             this.txtClientPassword.PasswordChar = '\0';
             this.txtClientPassword.PlaceholderText = "";
@@ -256,7 +256,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.txtClientUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtClientUsername.HoverState.Parent = this.txtClientUsername;
             this.txtClientUsername.Location = new System.Drawing.Point(0, 126);
-            this.txtClientUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClientUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientUsername.Name = "txtClientUsername";
             this.txtClientUsername.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
             this.txtClientUsername.PasswordChar = '\0';
@@ -298,7 +298,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.txtClientName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtClientName.HoverState.Parent = this.txtClientName;
             this.txtClientName.Location = new System.Drawing.Point(0, 35);
-            this.txtClientName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClientName.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientName.Name = "txtClientName";
             this.txtClientName.PasswordChar = '\0';
             this.txtClientName.PlaceholderText = "";
@@ -329,7 +329,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1303, 838);
             this.panel3.TabIndex = 12;
@@ -353,7 +353,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.bunifuDatePicker1.LeftTextMargin = 5;
             this.bunifuDatePicker1.Location = new System.Drawing.Point(608, 74);
-            this.bunifuDatePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuDatePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(4, 32);
             this.bunifuDatePicker1.Name = "bunifuDatePicker1";
             this.bunifuDatePicker1.Size = new System.Drawing.Size(292, 32);
@@ -417,7 +417,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.clientTable.HeaderBgColor = System.Drawing.Color.Empty;
             this.clientTable.HeaderForeColor = System.Drawing.Color.White;
             this.clientTable.Location = new System.Drawing.Point(16, 153);
-            this.clientTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clientTable.Margin = new System.Windows.Forms.Padding(4);
             this.clientTable.Name = "clientTable";
             this.clientTable.RowHeadersVisible = false;
             this.clientTable.RowHeadersWidth = 51;
@@ -453,7 +453,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(940, 33);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 66);
             this.panel1.TabIndex = 11;
@@ -479,7 +479,7 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.ClientSize = new System.Drawing.Size(1303, 838);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClientManagementPanel";
             this.Text = "ClientManagementPanel";
             this.panel2.ResumeLayout(false);

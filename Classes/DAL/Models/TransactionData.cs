@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace POS_ADET.Classes.DAL.Models
         private List<TransactionItem> items = new List<TransactionItem>();
         private double cash = 0;
         private DateTime transactionDate;
-
+        
         public double TotalAmount
         {
             get => totalAmount;
@@ -34,6 +35,20 @@ namespace POS_ADET.Classes.DAL.Models
         public int Transaction_id { get => transaction_id; set => transaction_id = value; }
         public DateTime TransactionDate { get => transactionDate; set => transactionDate = value; }
         internal List<TransactionItem> Items { get => items; set => items = value; }
+
+        public void setItemsFromDataTable(DataTable datatable)
+        {
+            for (int i = 0; i < datatable.Rows.Count; i++)
+            {
+                items.Add(new TransactionItem { 
+                    ItemName = datatable.Rows[i]["Item Name"].ToString(),
+                    Price = Convert.ToDouble(datatable.Rows[i]["Price"]),
+                    Qty = Convert.ToInt32(datatable.Rows[i]["Qty"])
+                });
+            }
+        }
+
     }
+    
 
 }

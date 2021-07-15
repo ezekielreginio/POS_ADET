@@ -8,6 +8,7 @@ using POS_ADET.Modules.LogsManagement.ItemLogs;
 using System;
 using System.Windows.Forms;
 using POS_ADET.Modules.LogsManagement;
+using POS_ADET.Modules.LogsManagement.panelLogData;
 
 namespace POS_ADET
 {
@@ -108,6 +109,7 @@ namespace POS_ADET
         {
             panelLogs plm = new panelLogs();
             ItemLogData itemLogData = new ItemLogData();
+            plm.Logtype = "itemlog";
             plm.setDataLogPanel(itemLogData);
             openPanel(plm);
             
@@ -115,12 +117,17 @@ namespace POS_ADET
 
         private void btnSalesLogs_Click(object sender, EventArgs e)
         {
-            
+            panelLogs plm = new panelLogs();
+            SalesLogData salesLogData = new SalesLogData();
+            plm.Logtype = "saleslog";
+            plm.setDataLogPanel(salesLogData);
+            openPanel(plm);
         }
 
         private void btnReturnRefundLogs_Click(object sender, EventArgs e)
         {
-            
+            panelLogs plm = new panelLogs();
+
         }
     }
 }
