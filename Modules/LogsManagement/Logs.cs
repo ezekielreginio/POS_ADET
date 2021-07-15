@@ -9,22 +9,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace POS_ADET.Modules.LogsManagement.ReturnRefundLogs
+namespace POS_ADET.Modules.LogsManagement.ItemLogs
 {
-    public partial class ReturnRefund : Form
+    public partial class panelLogs : Form
     {
         private DataTable dto;
         private connector conn = new connector();
-        public ReturnRefund()
+        private ItemLogData itemLogData;
+        public panelLogs()
         {
             InitializeComponent();
         }
-
-        private void ReturnRefund_Load(object sender, EventArgs e)
+        //Getter stter methods
+        public void setDataLogPanel(ItemLogData panel)
         {
-            dgvLog.DataSource = conn.getDataTable("");
+            itemLogData = panel;
+            panelLogData.Controls.Add(panel);
+        }
 
-            dto = GetDataTableFromDGV(dgvLog);
+        private void PanelLogsManagement_Load(object sender, EventArgs e)
+        {
+            string[] columnheaders = new string[] { 
+            "Log ID",
+            "Log Type",
+            "Time"
+            };
+            dto = conn.getDataTable("item_log_view_all");
+            for (int i = 0; i  < dto.Columns.Count; i++)
+            {
+                dto.Columns[i].ColumnName = columnheaders[i];
+            }
+            dgvLog.DataSource = dto;
+
+            
         }
         public static void SearchDataGrid(DataGridView dataGridView, DataTable dtOrig, string search)
         {
@@ -45,35 +62,20 @@ namespace POS_ADET.Modules.LogsManagement.ReturnRefundLogs
             dataGridView.DataSource = dtFiltered;
         }
 
-        private DataTable GetDataTableFromDGV(DataGridView dgv)
-        {
-            var dt = new DataTable();
-            foreach (DataGridViewColumn column in dgv.Columns)
-            {
-                if (column.Visible)
-                {
-                    // You could potentially name the column based on the DGV column name (beware of dupes)
-                    // or assign a type based on the data type of the data bound to this DGV column.
-                    dt.Columns.Add();
-                }
-            }
-
-            object[] cellValues = new object[dgv.Columns.Count];
-            foreach (DataGridViewRow row in dgv.Rows)
-            {
-                for (int i = 0; i < row.Cells.Count; i++)
-                {
-                    cellValues[i] = row.Cells[i].Value;
-                }
-                dt.Rows.Add(cellValues);
-            }
-
-            return dt;
-        }
-
         private void txtSearch_TextChange(object sender, EventArgs e)
         {
             SearchDataGrid(dgvLog, dto, txtSearch.Text);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvLog_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string id = dgvLog.SelectedRows[0].Cells["Log ID"].Value.ToString();
+            itemLogData.setLogId(id);
         }
     }
 }

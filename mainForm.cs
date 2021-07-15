@@ -5,10 +5,9 @@ using POS_ADET.Modules.ReturnRefundManagement;
 using POS_ADET.Modules.UsersManagement;
 using POS_ADET.Modules.UsersManagement.Client;
 using POS_ADET.Modules.LogsManagement.ItemLogs;
-using POS_ADET.Modules.LogsManagement.ReturnRefundLogs;
-using POS_ADET.Modules.LogsManagement.SalesLogs;
 using System;
 using System.Windows.Forms;
+using POS_ADET.Modules.LogsManagement;
 
 namespace POS_ADET
 {
@@ -107,20 +106,21 @@ namespace POS_ADET
 
         private void btnItemLogs_Click(object sender, EventArgs e)
         {
-            Item plm = new Item();
+            panelLogs plm = new panelLogs();
+            ItemLogData itemLogData = new ItemLogData();
+            plm.setDataLogPanel(itemLogData);
             openPanel(plm);
+            
         }
 
         private void btnSalesLogs_Click(object sender, EventArgs e)
         {
-            Sales sales = new Sales();
-            openPanel(sales);
+            
         }
 
         private void btnReturnRefundLogs_Click(object sender, EventArgs e)
         {
-            ReturnRefund rr = new ReturnRefund();
-            openPanel(rr);
+            
         }
     }
 }
