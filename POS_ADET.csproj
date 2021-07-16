@@ -255,6 +255,18 @@
     <Compile Include="Modules\ItemsManagement\ItemManagementPanel.Designer.cs">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Login\LoadingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Login\LoadingPage.Designer.cs">
+      <DependentUpon>LoadingPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Login\LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Login\LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\LogsManagement\panelLogData\ReturnRefundLogData.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -352,6 +364,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ItemsManagement\ItemManagementPanel.resx">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Login\LoadingPage.resx">
+      <DependentUpon>LoadingPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Login\LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\LogsManagement\panelLogData\ReturnRefundLogData.resx">
       <DependentUpon>ReturnRefundLogData.cs</DependentUpon>
@@ -465,7 +483,14 @@
   <ItemGroup>
     <Content Include="Bunifu.Licensing.dll" />
     <Content Include="Resources\check.png" />
+<<<<<<< HEAD
     <None Include="Resources\render_prime_loop.gif" />
+=======
+    <Content Include="Resources\New_log_in.gif" />
+    <None Include="Resources\render_prime_loop1.gif" />
+    <None Include="Resources\New_log_in1.gif" />
+    <Content Include="Resources\render_prime_loop.gif" />
+>>>>>>> LoginSystem
     <None Include="Resources\check1.png" />
   </ItemGroup>
   <ItemGroup>

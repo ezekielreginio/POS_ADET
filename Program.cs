@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using POS_ADET.Modules.Login;
 
 namespace POS_ADET
 {
@@ -16,7 +17,7 @@ namespace POS_ADET
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainForm());
+            Application.Run(new LoginPage());
         }
     }
 }

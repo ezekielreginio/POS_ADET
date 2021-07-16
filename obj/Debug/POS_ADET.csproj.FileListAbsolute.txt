@@ -214,8 +214,13 @@ C:\Users\Acer\Documents\GitHub\POS_ADET\ezekielreginio\POS_ADET\obj\Debug\POS_AD
 <<<<<<< HEAD
 =======
 C:\Users\Acer\Documents\GitHub\POS_ADET\ezekielreginio\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.panelLogData.ReturnRefundLogData.resources
+<<<<<<< HEAD
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.panelLogData.ReturnRefundLogData.resources
 >>>>>>> LogsManagement
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.panelLogData.SalesLogData.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.ItemLogs.panelLogs.resources
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.ItemLogData.resources
+=======
+C:\Users\Acer\Documents\GitHub\POS_ADET\ezekielreginio\POS_ADET\obj\Debug\POS_ADET.Modules.Login.LoginPage.resources
+C:\Users\Acer\Documents\GitHub\POS_ADET\ezekielreginio\POS_ADET\obj\Debug\POS_ADET.Modules.Login.LoadingPage.resources
+>>>>>>> LoginSystem
