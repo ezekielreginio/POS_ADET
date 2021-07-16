@@ -21,6 +21,7 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
         private ItemLogData itemLogData;
         private SalesLogData salesLogData;
         private ReturnRefundLogData returnrefundLogData;
+        private DefectiveItems defItems;
         private TransactionData transactionData = new TransactionData();
         private ReturnList returnlist = new ReturnList();
         private string logtype;
@@ -48,6 +49,13 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
         {
             returnrefundLogData = panel;
             lblSubheader.Text = "Return Logs";
+            panelLogData.Controls.Add(panel);
+        }
+
+        public void setDataLogPanel(DefectiveItems panel)
+        {
+            defItems = panel;
+            lblSubheader.Text = "Defective Items";
             panelLogData.Controls.Add(panel);
         }
 
@@ -84,6 +92,19 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
                     
                 };
                 dto = conn.getDataTable("returnrefund_view_all");
+            }
+
+            else if (logtype == "returnedItems")
+            {
+                columnheaders = new string[]
+                {
+                    "Transaction ID",
+                    "Item Name",
+                    "Qty",
+                    "Status"
+
+                };
+                dto = conn.getDataTable("defective_items_view_all");
             }
             for (int i = 0; i < dto.Columns.Count; i++)
             {
@@ -191,14 +212,39 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
                 returnrefundLogData.setdgvReturnItems(dataTable);
 
             }
+
+            else if (logtype == "returnedItems")
+            {
+                var operations = new Dictionary<string, int>(){
+                    {"Stored in Inventory", 0},
+                    {"Ship to Supplier", 1},
+                    {"Item Restocked From Supplier", 2}
+                };
+                dropdownOperation.SelectedIndex = operations[dgvLog.SelectedRows[0].Cells[3].Value.ToString()];
+            }
             conn.closeConn();
         }
 
 
         private void dgvLog_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
+
+        private void dropdownOperation_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            var data = new Dictionary<string, string>()
+                    {
+                        { "id", dgvLog.SelectedRows[0].Cells[0].Value.ToString() },
+                        { "status", dropdownOperation.SelectedItem.ToString() }
+                    };
+            conn.writeProcedure("defective_items_update_status", data);
+            conn.closeConn();
+
+            PanelLogsManagement_Load(null, null);
+        }
+
+
     }
 }
 //Mag The Forest nalang tayo sir

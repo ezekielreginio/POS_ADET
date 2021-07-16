@@ -365,12 +365,6 @@
     <EmbeddedResource Include="Modules\ItemsManagement\ItemManagementPanel.resx">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Login\LoadingPage.resx">
-      <DependentUpon>LoadingPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Login\LoginPage.resx">
-      <DependentUpon>LoginPage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modules\LogsManagement\panelLogData\ReturnRefundLogData.resx">
       <DependentUpon>ReturnRefundLogData.cs</DependentUpon>
     </EmbeddedResource>
