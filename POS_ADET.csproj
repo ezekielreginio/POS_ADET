@@ -395,9 +395,14 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <None Include="packages.config" />
     <None Include="pos_adetDataSet.xsc">
       <DependentUpon>pos_adetDataSet.xsd</DependentUpon>
@@ -436,11 +441,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -477,10 +477,14 @@
   <ItemGroup>
     <Content Include="Bunifu.Licensing.dll" />
     <Content Include="Resources\check.png" />
+<<<<<<< HEAD
+    <None Include="Resources\render_prime_loop.gif" />
+=======
     <Content Include="Resources\New_log_in.gif" />
     <None Include="Resources\render_prime_loop1.gif" />
     <None Include="Resources\New_log_in1.gif" />
     <Content Include="Resources\render_prime_loop.gif" />
+>>>>>>> LoginSystem
     <None Include="Resources\check1.png" />
   </ItemGroup>
   <ItemGroup>
