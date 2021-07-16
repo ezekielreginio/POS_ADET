@@ -1,19 +1,14 @@
-﻿using POS_ADET.Classes.Dropbox;
-using POS_ADET.Modules.Dashboard;
+﻿using POS_ADET.Modules.Dashboard;
 using POS_ADET.Modules.ItemsManagement;
 using POS_ADET.Modules.POSManagement;
 using POS_ADET.Modules.ReturnRefundManagement;
 using POS_ADET.Modules.UsersManagement;
 using POS_ADET.Modules.UsersManagement.Client;
+using POS_ADET.Modules.LogsManagement.ItemLogs;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using POS_ADET.Modules.LogsManagement;
+using POS_ADET.Modules.LogsManagement.panelLogData;
 
 namespace POS_ADET
 {
@@ -103,6 +98,36 @@ namespace POS_ADET
         {
             ReturnRefundManagement retrefMgmt = new ReturnRefundManagement();
             openPanel(retrefMgmt);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelLogs.Visible = true;
+        }
+
+        private void btnItemLogs_Click(object sender, EventArgs e)
+        {
+            panelLogs plm = new panelLogs();
+            ItemLogData itemLogData = new ItemLogData();
+            plm.Logtype = "itemlog";
+            plm.setDataLogPanel(itemLogData);
+            openPanel(plm);
+            
+        }
+
+        private void btnSalesLogs_Click(object sender, EventArgs e)
+        {
+            panelLogs plm = new panelLogs();
+            SalesLogData salesLogData = new SalesLogData();
+            plm.Logtype = "saleslog";
+            plm.setDataLogPanel(salesLogData);
+            openPanel(plm);
+        }
+
+        private void btnReturnRefundLogs_Click(object sender, EventArgs e)
+        {
+            panelLogs plm = new panelLogs();
+
         }
     }
 }

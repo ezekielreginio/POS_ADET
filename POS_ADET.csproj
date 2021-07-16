@@ -251,6 +251,24 @@
     <Compile Include="Modules\ItemsManagement\ItemManagementPanel.Designer.cs">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\SalesLogData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\SalesLogData.Designer.cs">
+      <DependentUpon>SalesLogData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogs.Designer.cs">
+      <DependentUpon>panelLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\ItemLogData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\ItemLogData.Designer.cs">
+      <DependentUpon>ItemLogData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\POSManagement\modalPay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +342,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ItemsManagement\ItemManagementPanel.resx">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\LogsManagement\panelLogData\SalesLogData.resx">
+      <DependentUpon>SalesLogData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\LogsManagement\panelLogs.resx">
+      <DependentUpon>panelLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\LogsManagement\panelLogData\ItemLogData.resx">
+      <DependentUpon>ItemLogData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\POSManagement\modalPay.resx">
       <DependentUpon>modalPay.cs</DependentUpon>
