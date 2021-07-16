@@ -62,6 +62,12 @@ namespace POS_ADET.Modules.ReturnRefundManagement
                 }
             }
         }
+        public void stopScanner()
+        {
+
+            captureDevice.Stop();
+            timer1.Stop();
+        }
 
         private void queryTransactionItems(string id)
         {
@@ -193,13 +199,15 @@ namespace POS_ADET.Modules.ReturnRefundManagement
                     new object[]
                     {
                         row.Cells["id"].Value,
-                        row.Cells["itemName"].Value
+                        row.Cells["itemName"].Value,
+                        
                     }
                 );
 
                 formItemName.Text = row.Cells["itemName"].Value.ToString();
 
                 tableReturnRefund.Rows[position].Selected = true;
+                tableReturnRefund.Rows[position].Cells["ogQty"].Value = row.Cells["qty"].Value;
                 resetRefundForm();
             }
             
@@ -222,13 +230,17 @@ namespace POS_ADET.Modules.ReturnRefundManagement
 
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (Convert.ToInt32(tableReturnRefund.SelectedRows[0].Cells["ogQty"].Value) > Convert.ToInt32(txtQty.Text))
+                e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+            else
+                e.Handled = false;
         }
 
         private void txtQty_TextChanged(object sender, EventArgs e)
         {
             try
             {
+                
                 tableReturnRefund.SelectedRows[0].Cells["returnQty"].Value = txtQty.Text;
             }
             catch (Exception)

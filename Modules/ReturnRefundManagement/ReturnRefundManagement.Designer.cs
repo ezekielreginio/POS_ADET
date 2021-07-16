@@ -55,11 +55,6 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableReturnRefund = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.returnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.returnItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.returnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.option = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.cboDevices = new System.Windows.Forms.ComboBox();
             this.qrScanner = new System.Windows.Forms.PictureBox();
@@ -78,6 +73,12 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnFinish = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnRemove = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.returnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.returnItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.returnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.option = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ogQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableReturnRefund)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qrScanner)).BeginInit();
@@ -260,7 +261,8 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.returnItemName,
             this.returnQty,
             this.option,
-            this.reason});
+            this.reason,
+            this.ogQty});
             this.tableReturnRefund.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.tableReturnRefund.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.tableReturnRefund.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -302,37 +304,6 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.tableReturnRefund.TabIndex = 20;
             this.tableReturnRefund.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.tableReturnRefund.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableReturnRefund_CellClick);
-            // 
-            // returnID
-            // 
-            this.returnID.HeaderText = "ID";
-            this.returnID.Name = "returnID";
-            this.returnID.Visible = false;
-            // 
-            // returnItemName
-            // 
-            this.returnItemName.FillWeight = 181.2614F;
-            this.returnItemName.HeaderText = "Item Name";
-            this.returnItemName.Name = "returnItemName";
-            this.returnItemName.ReadOnly = true;
-            // 
-            // returnQty
-            // 
-            this.returnQty.HeaderText = "Qty";
-            this.returnQty.Name = "returnQty";
-            // 
-            // option
-            // 
-            this.option.HeaderText = "Type";
-            this.option.Name = "option";
-            this.option.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.option.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // reason
-            // 
-            this.reason.HeaderText = "Reason";
-            this.reason.Name = "reason";
-            this.reason.Visible = false;
             // 
             // label1
             // 
@@ -864,6 +835,43 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.btnRemove.UseDefaultRadiusAndThickness = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // returnID
+            // 
+            this.returnID.HeaderText = "ID";
+            this.returnID.Name = "returnID";
+            this.returnID.Visible = false;
+            // 
+            // returnItemName
+            // 
+            this.returnItemName.FillWeight = 181.2614F;
+            this.returnItemName.HeaderText = "Item Name";
+            this.returnItemName.Name = "returnItemName";
+            this.returnItemName.ReadOnly = true;
+            // 
+            // returnQty
+            // 
+            this.returnQty.HeaderText = "Qty";
+            this.returnQty.Name = "returnQty";
+            // 
+            // option
+            // 
+            this.option.HeaderText = "Type";
+            this.option.Name = "option";
+            this.option.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.option.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // reason
+            // 
+            this.reason.HeaderText = "Reason";
+            this.reason.Name = "reason";
+            this.reason.Visible = false;
+            // 
+            // ogQty
+            // 
+            this.ogQty.HeaderText = "ogQty";
+            this.ogQty.Name = "ogQty";
+            this.ogQty.Visible = false;
+            // 
             // ReturnRefundManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -930,5 +938,6 @@ namespace POS_ADET.Modules.ReturnRefundManagement
         private System.Windows.Forms.DataGridViewTextBoxColumn returnQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn option;
         private System.Windows.Forms.DataGridViewTextBoxColumn reason;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ogQty;
     }
 }

@@ -10,7 +10,7 @@ namespace POS_ADET.Classes
 {
     public static class QRCode
     {
-        public static Bitmap generateQR(String qrString, String fileName)
+        public static Bitmap generateQR(String qrString, String fileName, bool save = true)
         {
 
             string filePath = @"C:\qr\" + fileName + ".png";
@@ -19,7 +19,8 @@ namespace POS_ADET.Classes
 
             barcodeW.Format = BarcodeFormat.QR_CODE;
 
-            barcodeW.Write(qrString).Save(filePath);
+            if(save)
+                barcodeW.Write(qrString).Save(filePath);
 
             Bitmap qr = new Bitmap(filePath);
 

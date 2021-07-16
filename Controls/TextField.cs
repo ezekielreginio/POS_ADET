@@ -15,6 +15,10 @@ namespace POS_ADET.Controls
     {
         //private instances
         private Validation validate = new Validation();
+        
+        private bool isValid = false;
+        public bool IsValid { get => isValid; set => isValid = value; }
+
         //private properties
         public enum FieldTypes
         {
@@ -43,7 +47,10 @@ namespace POS_ADET.Controls
             {
                 fieldType = value;
             }
-        }  
+        }
+
+
+
 
 
         //Getter-Setter Methods:
@@ -62,6 +69,7 @@ namespace POS_ADET.Controls
 
         public void setInvalid()
         {
+            isValid = false;
             this.ActiveControl = lblErrNotif;
             lblErrNotif.Visible = true;
             //txtItemCode.Invalidate();
@@ -69,9 +77,15 @@ namespace POS_ADET.Controls
             //txtItemCode.Border.Thickness = 3;
         }
 
+        public void setEnabled(bool value)
+        {
+            txtItemCode.Enabled = value;
+        }
+
         public void resetInvalid()
         {
             lblErrNotif.Visible = false;
+            isValid = true;
         }
 
         public void resetField()

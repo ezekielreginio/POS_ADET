@@ -16,6 +16,7 @@ using ZXing;
 using ZXing.Common;
 using POS_ADET.Classes.DAL.Models;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace POS_ADET.Modules.POSManagement
 {
@@ -39,7 +40,7 @@ namespace POS_ADET.Modules.POSManagement
             CaptureDevice = new VideoCaptureDevice(filterInfoCollection[2].MonikerString);
             CaptureDevice.NewFrame += CaptureDevice_NewFrame;
 
-            
+
         }
 
         private void CaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -52,17 +53,17 @@ namespace POS_ADET.Modules.POSManagement
             {
                 var barcodeReader = new BarcodeReader(null, null, ls => new GlobalHistogramBinarizer(ls))
                 {
-                        AutoRotate = true,
+                    AutoRotate = true,
                     TryInverted = true,
                     Options = new DecodingOptions
                     {
                         TryHarder = true
                     }
-                }; 
+                };
                 Result result = barcodeReader.Decode((Bitmap)qrScanner.Image);
-                if(result != null)
+                if (result != null)
                 {
-                    
+
 
                     String id = result.ToString();
                     var data = new Dictionary<string, string>()
@@ -77,12 +78,12 @@ namespace POS_ADET.Modules.POSManagement
                         beepFire = true;
                         foreach (DataGridViewRow row in tableItems.Rows)
                         {
-                            if(reader["name"].ToString() == row.Cells["itemName"].Value.ToString())
+                            if (reader["code"].ToString() == row.Cells["ID"].Value.ToString())
                             {
                                 rowHolder = row;
                             }
                         }
-                        if(rowHolder != null)
+                        if (rowHolder != null)
                         {
                             rowHolder.Cells["qty"].Value = Convert.ToInt32(rowHolder.Cells["qty"].Value) + 1;
                             rowHolder.Cells["total"].Value = Convert.ToInt32(rowHolder.Cells["qty"].Value) * Convert.ToDouble(rowHolder.Cells["price"].Value);
@@ -101,19 +102,19 @@ namespace POS_ADET.Modules.POSManagement
 
                                 }
                             );
-                            
+
                         }
-                        
+
                     }
                     if (beepFire)
                     {
                         playbeep();
                     }
-                    
+
                     conn.closeConn();
                     updateTransactionTotal();
                     txtCode.Text = id;
-                    
+
                 }
             }
         }
@@ -136,12 +137,24 @@ namespace POS_ADET.Modules.POSManagement
                 generateItem(itemCode, itemName, itemPrice, imageURL);
             }
             conn.closeConn();
+
+            tableItemCatalog.AutoScroll = false;
+            tableItemCatalog.HorizontalScroll.Enabled = false;
+            tableItemCatalog.HorizontalScroll.Visible = false;
+            tableItemCatalog.AutoScroll = true;
+
+        }
+
+        public void stopScanner()
+        {
+            CaptureDevice.Stop();
+            timer1.Stop();
         }
 
         private void generateItem(int code, String itemName, String itemPrice, String imageUrl)
         {
             ItemCard itemInst = new ItemCard();
-            
+
             itemInst.itemID = code;
             itemInst.setItemName(itemName);
             itemInst.setItemPrice(itemPrice);
@@ -163,16 +176,16 @@ namespace POS_ADET.Modules.POSManagement
 
                 try
                 {
-                    if(txtItemCode.Text != string.Empty)
+                    if (txtItemCode.Text != string.Empty)
                     {
                         qty = Convert.ToInt32(txtItemCode.Text);
                     }
-                    
+
                     if (itemInst.getSelectedStatus()) //returns true if item is selected
                     {
                         foreach (DataGridViewRow r in tableItems.Rows)
                         {
-                            if (itemName == r.Cells["itemName"].Value.ToString())
+                            if (code.ToString() == r.Cells["ID"].Value.ToString())
                             {
                                 rowHolder = r;
                             }
@@ -183,7 +196,7 @@ namespace POS_ADET.Modules.POSManagement
                             rowHolder.Cells["qty"].Value = Convert.ToInt32(rowHolder.Cells["qty"].Value) + 1;
                             rowHolder.Cells["total"].Value = Convert.ToInt32(rowHolder.Cells["qty"].Value) * Convert.ToDouble(rowHolder.Cells["price"].Value);
                         }
-                    
+
                         else
                         {
                             tableItems.Rows.Add(
@@ -197,7 +210,7 @@ namespace POS_ADET.Modules.POSManagement
                                 }
                             );
                         }
-                        
+
                         DataGridViewRow row = tableItems.Rows[tableItems.Rows.Count - 1];
                         itemInst.RowPosition = row;
                         updateTransactionTotal();
@@ -215,11 +228,13 @@ namespace POS_ADET.Modules.POSManagement
                     txtItemCode.Text = null;
 
                 }
-                catch(System.FormatException ex) { if(!String.IsNullOrEmpty(txtItemCode.Text)) MessageBox.Show(txtItemCode.Text +" is not a valid input");  }
+                catch (System.FormatException ex) { if (!String.IsNullOrEmpty(txtItemCode.Text)) MessageBox.Show(txtItemCode.Text + " is not a valid input"); }
                 catch (Exception ex) { }
-                
+
 
             }
+
+            
 
             //itemInst.MouseClick += (sender, e) => multiSelect(sender, e);
 
@@ -312,7 +327,7 @@ namespace POS_ADET.Modules.POSManagement
             int qty = Convert.ToInt32(tableItems.CurrentRow.Cells["qty"].Value);
             double price = Convert.ToDouble(tableItems.CurrentRow.Cells["price"].Value) * qty;
 
-            tableItems.CurrentRow.Cells["total"].Value = "PHP "+price.ToString();
+            tableItems.CurrentRow.Cells["total"].Value = "PHP " + price.ToString();
 
             updateTransactionTotal();
         }
@@ -325,8 +340,8 @@ namespace POS_ADET.Modules.POSManagement
             {
                 transactionData.Items.Add
                     (
-                        new TransactionItem 
-                        { 
+                        new TransactionItem
+                        {
                             Code = Convert.ToInt32(row.Cells["id"].Value),
                             ItemName = row.Cells["itemName"].Value.ToString(),
                             Price = Convert.ToDouble(row.Cells["price"].Value),
@@ -355,8 +370,14 @@ namespace POS_ADET.Modules.POSManagement
         private void playbeep()
         {
             System.Media.SoundPlayer myPlayer = new System.Media.SoundPlayer();
-            myPlayer.SoundLocation = Path.GetDirectoryName(Application.ExecutablePath)+@"\sounds\beep.wav";
+            myPlayer.SoundLocation = Path.GetDirectoryName(Application.ExecutablePath) + @"\sounds\beep.wav";
             myPlayer.Play();
         }
+
+        private void txtItemCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+        }
+
     }
 }

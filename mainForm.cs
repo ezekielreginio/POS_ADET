@@ -14,6 +14,10 @@ namespace POS_ADET
 {
     public partial class mainForm : Form
     {
+        //Private Instances
+        POSManagement posMgmt = new POSManagement();
+        ReturnRefundManagement retrefMgmt = new ReturnRefundManagement();
+
         public mainForm()
         {
             InitializeComponent();
@@ -89,14 +93,18 @@ namespace POS_ADET
 
         public void btnPOS_Click(object sender, EventArgs e)
         {
-            POSManagement posMgmt = new POSManagement();
+            retrefMgmt.stopScanner();
+            posMgmt.stopScanner();
+            posMgmt = new POSManagement();
             posMgmt.queryItems();
             openPanel(posMgmt);
         }
 
         private void btnRefund_Click(object sender, EventArgs e)
         {
-            ReturnRefundManagement retrefMgmt = new ReturnRefundManagement();
+            retrefMgmt.stopScanner();
+            posMgmt.stopScanner();
+            retrefMgmt = new ReturnRefundManagement();
             openPanel(retrefMgmt);
         }
 

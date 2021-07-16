@@ -97,15 +97,16 @@ namespace POS_ADET.Modules.POSManagement
             this.tableItemCatalog.ColumnCount = 3;
             this.tableItemCatalog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableItemCatalog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tableItemCatalog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
-            this.tableItemCatalog.Location = new System.Drawing.Point(19, 96);
+            this.tableItemCatalog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 179F));
+            this.tableItemCatalog.Location = new System.Drawing.Point(19, 98);
             this.tableItemCatalog.Name = "tableItemCatalog";
+            this.tableItemCatalog.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableItemCatalog.RowCount = 4;
             this.tableItemCatalog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableItemCatalog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableItemCatalog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableItemCatalog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tableItemCatalog.Size = new System.Drawing.Size(493, 612);
+            this.tableItemCatalog.Size = new System.Drawing.Size(499, 639);
             this.tableItemCatalog.TabIndex = 9;
             // 
             // tableItems
@@ -587,6 +588,7 @@ namespace POS_ADET.Modules.POSManagement
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
             this.txtItemCode.Size = new System.Drawing.Size(324, 26);
             this.txtItemCode.TabIndex = 17;
+            this.txtItemCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemCode_KeyPress);
             // 
             // pos_adetDataSet1
             // 

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Linq;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -53,12 +54,6 @@ namespace POS_ADET.Modules.ItemsManagement
 
         }
 
-       
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            tableItemCatalog.HorizontalScroll.Enabled = false;
-        }
 
         private void buttonSaveItem_Click(object sender, EventArgs e)
         {
@@ -67,16 +62,11 @@ namespace POS_ADET.Modules.ItemsManagement
             string itemPrice = textFieldItemPrice.getValue();
             string qty = textFieldQty.getValue();
             string itemPicture = lblFilePath.Text;
-            string fpath  = String.Empty;
-            var inputs = new List<TextField>();
-            inputs.Add(textFieldItemCode);
-            
-            Validation validateInst = new Validation();
-            validateInst.validate(inputs);
+            string fpath = String.Empty;
 
-            bool inputs_are_valid = true;
+            bool[] input_validations = new bool[] { textFieldItemCode.IsValid, textFieldItemName.IsValid, textFieldItemPrice.IsValid, textFieldQty.IsValid };
+            bool inputs_are_valid = !input_validations.Contains(false);
 
-            inputs_are_valid = validate.validate_int(textFieldItemCode);
 
 
             if (inputs_are_valid)
@@ -113,7 +103,10 @@ namespace POS_ADET.Modules.ItemsManagement
                     if (itemPicture == String.Empty)
                     {
                         if (buttonSaveItem.Text == "Save")
-                            MessageBox.Show("Please Upload an Item Picture");
+                        {
+                            throw new FileNotFoundException();
+                        }
+                            
                         else if (buttonSaveItem.Text == "Update")
                         {
                             ImageConverter converter = new ImageConverter();
@@ -125,40 +118,55 @@ namespace POS_ADET.Modules.ItemsManagement
                         
                     fpath = Convert.ToBase64String(imageArray);
 
-                }
+                    var data = new Dictionary<string, string>()
+                    {
+                        { "code", itemCode },
+                        { "name", itemName },
+                        { "price", itemPrice },
+                        { "qty", qty },
+                        { "photo", fpath }
+                    };
 
-                catch(Exception ex)
+                    if (buttonSaveItem.Text == "Save")
+                        conn.writeProcedure("item_add", data);
+
+                    else if (buttonSaveItem.Text == "Update")
+                    {
+                        buttonAddItem_Click(null, null);
+                        conn.writeProcedure("item_edit", data);
+                    }
+
+                    conn.closeConn();
+                    queryItems();
+                    QRCode.generateQR(itemCode, itemName);
+                    resetFields();
+
+                }
+                catch (FileNotFoundException ex)
+                {
+                    MessageBox.Show("Please Upload an Item Picture");
+                }
+                catch (DuplicateKeyException ex)
+                {
+                    MessageBox.Show("Item with ID already exist");
+                }
+                catch (Exception ex)
                 {
 
+                    if(ex.Message.Contains("Duplicate entry"))
+                        MessageBox.Show("Item with ID:"+ itemCode + " already exist");;
+                }
+                finally
+                {
+                    conn.closeConn();
                 }
                 
 
-                var data = new Dictionary<string, string>()
-                {
-                    { "code", itemCode },
-                    { "name", itemName },
-                    { "price", itemPrice },
-                    { "qty", qty },
-                    { "photo", fpath }
-                };
-
-                if (buttonSaveItem.Text == "Save")
-                    conn.writeProcedure("item_add", data);
-
-                else if (buttonSaveItem.Text == "Update")
-                {
-                    buttonAddItem_Click(null, null);
-                    conn.writeProcedure("item_edit", data);
-                }
-                    
-
-
-                conn.closeConn();
-
-                QRCode.generateQR(itemCode, itemName);
-                queryItems();
-
-                resetFields();
+                
+            }
+            else
+            {
+                MessageBox.Show("Invalid Submission: Kindly Check Your Inputs");
             }
         }
 
@@ -199,6 +207,11 @@ namespace POS_ADET.Modules.ItemsManagement
 
             void singleSelect(object sender, EventArgs e)
             {
+                textFieldItemCode.setEnabled(false);
+                buttonAddItem.Text = "Add New Item";
+                btnChangeImgBox.Visible = true;
+                btnChangeImgBox.Text = "See QR";
+
                 if (currentItem != null)
                     currentItem.deselect();
                 currentItem = itemInst;
@@ -244,6 +257,13 @@ namespace POS_ADET.Modules.ItemsManagement
                 generateItem(itemCode, itemName, itemPrice, imageURL);
             }
             conn.closeConn();
+
+            tableItemCatalog.AutoScroll = false;
+            tableItemCatalog.HorizontalScroll.Enabled = false;
+            tableItemCatalog.HorizontalScroll.Visible = false;
+            tableItemCatalog.AutoScroll = true;
+
+
         }
 
         private void resetFields()
@@ -254,6 +274,7 @@ namespace POS_ADET.Modules.ItemsManagement
             textFieldQty.resetField();
             picboxItem.Image= null;
             lblFilePath.Text = String.Empty;
+            textFieldItemCode.setEnabled(true);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -262,24 +283,65 @@ namespace POS_ADET.Modules.ItemsManagement
             choofdlog.FilterIndex = 1;
             choofdlog.Multiselect = true;
 
-            if (choofdlog.ShowDialog() == DialogResult.OK)
+            string[] valid_ext = { ".jpg", ".jpeg", ".png", ".porn", ".xvid", ".nhen", ".xnxx", ".gif"};
+
+            try
             {
-                string sFileName = choofdlog.FileName;
-                lblFilePath.Text = sFileName;
-                picboxItem.Image = Image.FromFile(sFileName);
-                string[] arrAllFiles = choofdlog.FileNames; //used when Multiselect = true           
+                if (choofdlog.ShowDialog() == DialogResult.OK)
+                {
+                    string sFileName = choofdlog.FileName;
+                    FileInfo fileInfo = new FileInfo(sFileName);
+
+                    if (!valid_ext.Contains(fileInfo.Extension))
+                        throw new IOException();
+
+                    lblFilePath.Text = sFileName;
+                    picboxItem.Image = Image.FromFile(sFileName);
+                    string[] arrAllFiles = choofdlog.FileNames; //used when Multiselect = true           
+                }
             }
-                
-            
+            catch (IOException ex)
+            {
+                MessageBox.Show("Invalid File Type. Please Upload another File. (Valid File Types: JPG, JPEG, PNG, GIF)");
+            }
         }
 
         private void buttonAddItem_Click(object sender, EventArgs e)
         {
-            currentItem.deselect();
-            buttonAddItem.Visible = false;
-            buttonSaveItem.Text = "Save";
+            if(buttonAddItem.Text == "Add New Item")
+            {
+                buttonAddItem.Text = "Clear";
+                currentItem.deselect();
+                buttonSaveItem.Text = "Save";
+            }
             resetFields();
+            
+            
         }
 
+        private void tableItemCatalog_Paint(object sender, PaintEventArgs e)
+        {
+            //tableItemCatalog.HorizontalScroll.Enabled = false;
+            //tableItemCatalog.AutoScroll = false;
+            //tableItemCatalog.VerticalScroll.Visible = false;
+            //tableItemCatalog.AutoScroll = true;
+            
+        }
+
+        private void btnChangeImgBox_Click(object sender, EventArgs e)
+        {
+            if(btnChangeImgBox.Text == "See QR")
+            {
+                btnChangeImgBox.Text = "View Item Image";
+                Bitmap qr = QRCode.generateQR(textFieldItemCode.getValue(), textFieldItemName.getValue(), false);
+                picboxItem.Image = qr;
+
+            }
+            else
+            {
+                btnChangeImgBox.Text = "See QR";
+                picboxItem.Image = currentItem.getItemImage();
+            }
+        }
     }
 }

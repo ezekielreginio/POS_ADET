@@ -118,10 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKAAAACkCAYAAAAQXiU7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHuSURBVHhe7dUxagRBEATB+/977n8SMk4gZG9nGREwRo+d
+        UC+Y8H6/vz7P7X7y/vz9+vcBD/vTnAC5JkBSmmOHGrlmgkkJkJTm2KFGrplgUgIkpTl2qJFrJpiUAElp
+        jh1q5JoJJiVAUppjhxq5ZoJJCZCU5tihRq6ZYFICJKU5dqiRayaYlABJaY4dauSaCSYlQFKaY4cauWaC
+        SQmQlObYoUaumWBSAiSlOXaokWsmmJQASWmOHWrkmgkmJUBSmmOHGrlmgkkJkJTm2KFGrplgUgIkpTl2
+        qJFrJpiUAElpjh1q5JoJJiVAUppjhxq5ZoJJCZCU5tihRq6ZYFICJKU5dqiRayaYlABJaY4dauSaCSYl
+        QFKaY4cauWaCSQmQlObYoUaumWBSAiSlOXaokWsmmJQASWmOHWrkmgkmJUBSmmOHGrlmgkkJkJTm2KFG
+        rplgUgIkpTl2qJFrJpiUAElpjh1q5JoJJiVAUppjhxq5ZoJJCZCU5tihRq6ZYFICJKU5dqiRayaYlABJ
+        aY4dauSaCSYlQFKaY4cauWaCSQmQlObYoUaumWBSAiSlOXaokWsmmJQASWmOHWrkmgkmJUBSmmOHGrlm
+        gkkJkJTm2KFGrplgUgIkpTl2qJFrJpiUAEkJkD0/IX6e2/30DbHX6xuIicaAR2Z/VAAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
   <data name="bunifuDatePicker1.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF/SURBVFhH7ZZdTsMwEISDuEEbIXGBPvLIMwfgMNyAnADR
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF/SURBVFhH7ZZdTsMwEISDuEEbIXGBPvLIMwfgMNyAnADR
         5hYcCIlUPUvIWDtms7ZTJ06QkPiklbLjWe+2dn8qS9M0PULS2ZTW/w/w+wO8310edFHsOTdS9eiBPApN
         iNPu6zH2nBtT9dIuRJsQKFzSnJGql3Yh1rhVSLuQmHmLkHYhMfMWIe1CrhoK+XsDMC/VSUr3WAPzUp2k
         dI81MC/Vs7GFerMSPZvFhQna+nI47s/DluPBoGFNbD/QIOli+qq/Odbdi24aC3jglbJwAG3O0QE2tOtt

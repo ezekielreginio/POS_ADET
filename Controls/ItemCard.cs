@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -80,6 +81,11 @@ namespace POS_ADET.Controls
             }
         }
 
+        public Image getItemImage()
+        {
+            return pictureItem.Image;
+        }
+
         public bool getSelectedStatus()
         {
             if ((Color)panelBorder.BackgroundColor == Color.Transparent)
@@ -124,7 +130,6 @@ namespace POS_ADET.Controls
             labelItemName.Parent = pictureItem;
             
         }
-
     }
     
 }
