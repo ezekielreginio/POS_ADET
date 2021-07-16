@@ -79,19 +79,19 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtClientName);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(705, 96);
+            this.panel2.Location = new System.Drawing.Point(940, 118);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(288, 612);
+            this.panel2.Size = new System.Drawing.Size(384, 753);
             this.panel2.TabIndex = 10;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // buttonClientDisable
-            // 
             // buttonAddNew
             // 
-            this.buttonAddNew.Location = new System.Drawing.Point(17, 550);
+            this.buttonAddNew.Location = new System.Drawing.Point(23, 677);
+            this.buttonAddNew.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddNew.Name = "buttonAddNew";
-            this.buttonAddNew.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddNew.Size = new System.Drawing.Size(100, 28);
             this.buttonAddNew.TabIndex = 16;
             this.buttonAddNew.Text = "Add New Client";
             this.buttonAddNew.UseVisualStyleBackColor = true;
@@ -104,10 +104,11 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.label9.Dock = System.Windows.Forms.DockStyle.Top;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(0, 286);
+            this.label9.Location = new System.Drawing.Point(0, 352);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.label9.Size = new System.Drawing.Size(173, 38);
+            this.label9.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
+            this.label9.Size = new System.Drawing.Size(217, 47);
             this.label9.TabIndex = 15;
             this.label9.Text = "Employee Image:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -116,18 +117,20 @@ namespace POS_ADET.Modules.UsersManagement.Client
             // 
             this.picboxItem.BackColor = System.Drawing.Color.LightGray;
             this.picboxItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picboxItem.Location = new System.Drawing.Point(65, 400);
+            this.picboxItem.Location = new System.Drawing.Point(87, 492);
+            this.picboxItem.Margin = new System.Windows.Forms.Padding(4);
             this.picboxItem.Name = "picboxItem";
-            this.picboxItem.Size = new System.Drawing.Size(160, 140);
+            this.picboxItem.Size = new System.Drawing.Size(213, 172);
             this.picboxItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picboxItem.TabIndex = 13;
             this.picboxItem.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(186, 371);
+            this.button1.Location = new System.Drawing.Point(248, 457);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 12;
             this.button1.Text = "Upload";
             this.button1.UseVisualStyleBackColor = true;
@@ -136,17 +139,19 @@ namespace POS_ADET.Modules.UsersManagement.Client
             // 
             this.lblFilePath.AutoSize = true;
             this.lblFilePath.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFilePath.Location = new System.Drawing.Point(5, 337);
+            this.lblFilePath.Location = new System.Drawing.Point(7, 415);
+            this.lblFilePath.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFilePath.Name = "lblFilePath";
-            this.lblFilePath.Size = new System.Drawing.Size(52, 13);
+            this.lblFilePath.Size = new System.Drawing.Size(68, 17);
             this.lblFilePath.TabIndex = 12;
             this.lblFilePath.Text = "               ";
             // 
             // buttonSaveClient
             // 
-            this.buttonSaveClient.Location = new System.Drawing.Point(179, 550);
+            this.buttonSaveClient.Location = new System.Drawing.Point(239, 677);
+            this.buttonSaveClient.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSaveClient.Name = "buttonSaveClient";
-            this.buttonSaveClient.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaveClient.Size = new System.Drawing.Size(100, 28);
             this.buttonSaveClient.TabIndex = 11;
             this.buttonSaveClient.Text = "Save";
             this.buttonSaveClient.UseVisualStyleBackColor = true;
@@ -168,13 +173,14 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.txtClientEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtClientEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtClientEmail.HoverState.Parent = this.txtClientEmail;
-            this.txtClientEmail.Location = new System.Drawing.Point(0, 250);
+            this.txtClientEmail.Location = new System.Drawing.Point(0, 308);
+            this.txtClientEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientEmail.Name = "txtClientEmail";
             this.txtClientEmail.PasswordChar = '\0';
             this.txtClientEmail.PlaceholderText = "";
             this.txtClientEmail.SelectedText = "";
             this.txtClientEmail.ShadowDecoration.Parent = this.txtClientEmail;
-            this.txtClientEmail.Size = new System.Drawing.Size(288, 36);
+            this.txtClientEmail.Size = new System.Drawing.Size(384, 44);
             this.txtClientEmail.TabIndex = 8;
             // 
             // label7
@@ -183,10 +189,11 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(0, 212);
+            this.label7.Location = new System.Drawing.Point(0, 261);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.label7.Size = new System.Drawing.Size(150, 38);
+            this.label7.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
+            this.label7.Size = new System.Drawing.Size(186, 47);
             this.label7.TabIndex = 3;
             this.label7.Text = "Email Address:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -207,13 +214,14 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.txtClientPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtClientPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtClientPassword.HoverState.Parent = this.txtClientPassword;
-            this.txtClientPassword.Location = new System.Drawing.Point(0, 176);
+            this.txtClientPassword.Location = new System.Drawing.Point(0, 217);
+            this.txtClientPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientPassword.Name = "txtClientPassword";
             this.txtClientPassword.PasswordChar = '\0';
             this.txtClientPassword.PlaceholderText = "";
             this.txtClientPassword.SelectedText = "";
             this.txtClientPassword.ShadowDecoration.Parent = this.txtClientPassword;
-            this.txtClientPassword.Size = new System.Drawing.Size(288, 36);
+            this.txtClientPassword.Size = new System.Drawing.Size(384, 44);
             this.txtClientPassword.TabIndex = 8;
             // 
             // label6
@@ -222,10 +230,11 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(0, 138);
+            this.label6.Location = new System.Drawing.Point(0, 170);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.label6.Size = new System.Drawing.Size(106, 38);
+            this.label6.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
+            this.label6.Size = new System.Drawing.Size(131, 47);
             this.label6.TabIndex = 3;
             this.label6.Text = "Password:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -246,14 +255,15 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.txtClientUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtClientUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtClientUsername.HoverState.Parent = this.txtClientUsername;
-            this.txtClientUsername.Location = new System.Drawing.Point(0, 102);
+            this.txtClientUsername.Location = new System.Drawing.Point(0, 126);
+            this.txtClientUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientUsername.Name = "txtClientUsername";
-            this.txtClientUsername.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.txtClientUsername.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
             this.txtClientUsername.PasswordChar = '\0';
             this.txtClientUsername.PlaceholderText = "";
             this.txtClientUsername.SelectedText = "";
             this.txtClientUsername.ShadowDecoration.Parent = this.txtClientUsername;
-            this.txtClientUsername.Size = new System.Drawing.Size(288, 36);
+            this.txtClientUsername.Size = new System.Drawing.Size(384, 44);
             this.txtClientUsername.TabIndex = 8;
             // 
             // label5
@@ -262,10 +272,11 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(0, 64);
+            this.label5.Location = new System.Drawing.Point(0, 79);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.label5.Size = new System.Drawing.Size(111, 38);
+            this.label5.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
+            this.label5.Size = new System.Drawing.Size(140, 47);
             this.label5.TabIndex = 3;
             this.label5.Text = "Username:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -286,13 +297,14 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.txtClientName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtClientName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtClientName.HoverState.Parent = this.txtClientName;
-            this.txtClientName.Location = new System.Drawing.Point(0, 28);
+            this.txtClientName.Location = new System.Drawing.Point(0, 35);
+            this.txtClientName.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientName.Name = "txtClientName";
             this.txtClientName.PasswordChar = '\0';
             this.txtClientName.PlaceholderText = "";
             this.txtClientName.SelectedText = "";
             this.txtClientName.ShadowDecoration.Parent = this.txtClientName;
-            this.txtClientName.Size = new System.Drawing.Size(288, 36);
+            this.txtClientName.Size = new System.Drawing.Size(384, 44);
             this.txtClientName.TabIndex = 7;
             // 
             // label3
@@ -302,8 +314,9 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 28);
+            this.label3.Size = new System.Drawing.Size(141, 35);
             this.label3.TabIndex = 2;
             this.label3.Text = "Full Name:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -316,8 +329,9 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(977, 681);
+            this.panel3.Size = new System.Drawing.Size(1303, 838);
             this.panel3.TabIndex = 12;
             // 
             // bunifuDatePicker1
@@ -338,10 +352,11 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.bunifuDatePicker1.IconColor = System.Drawing.Color.Gray;
             this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.bunifuDatePicker1.LeftTextMargin = 5;
-            this.bunifuDatePicker1.Location = new System.Drawing.Point(456, 60);
+            this.bunifuDatePicker1.Location = new System.Drawing.Point(608, 74);
+            this.bunifuDatePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(4, 32);
             this.bunifuDatePicker1.Name = "bunifuDatePicker1";
-            this.bunifuDatePicker1.Size = new System.Drawing.Size(220, 32);
+            this.bunifuDatePicker1.Size = new System.Drawing.Size(292, 32);
             this.bunifuDatePicker1.TabIndex = 13;
             // 
             // clientTable
@@ -401,12 +416,14 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.clientTable.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             this.clientTable.HeaderBgColor = System.Drawing.Color.Empty;
             this.clientTable.HeaderForeColor = System.Drawing.Color.White;
-            this.clientTable.Location = new System.Drawing.Point(12, 124);
+            this.clientTable.Location = new System.Drawing.Point(16, 153);
+            this.clientTable.Margin = new System.Windows.Forms.Padding(4);
             this.clientTable.Name = "clientTable";
             this.clientTable.RowHeadersVisible = false;
+            this.clientTable.RowHeadersWidth = 51;
             this.clientTable.RowTemplate.Height = 40;
             this.clientTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clientTable.Size = new System.Drawing.Size(687, 512);
+            this.clientTable.Size = new System.Drawing.Size(916, 630);
             this.clientTable.TabIndex = 12;
             this.clientTable.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Dark;
             this.clientTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientTable_CellDoubleClick);
@@ -416,25 +433,29 @@ namespace POS_ADET.Modules.UsersManagement.Client
             // client_fullname
             // 
             this.client_fullname.HeaderText = "Client ID";
+            this.client_fullname.MinimumWidth = 6;
             this.client_fullname.Name = "client_fullname";
             // 
             // client_id
             // 
             this.client_id.HeaderText = "Client Name";
+            this.client_id.MinimumWidth = 6;
             this.client_id.Name = "client_id";
             // 
             // client_email
             // 
             this.client_email.HeaderText = "Client Email";
+            this.client_email.MinimumWidth = 6;
             this.client_email.Name = "client_email";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(705, 27);
+            this.panel1.Location = new System.Drawing.Point(940, 33);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(288, 54);
+            this.panel1.Size = new System.Drawing.Size(384, 66);
             this.panel1.TabIndex = 11;
             // 
             // label1
@@ -442,28 +463,29 @@ namespace POS_ADET.Modules.UsersManagement.Client
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(78, 17);
+            this.label1.Location = new System.Drawing.Point(104, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 37);
+            this.label1.Size = new System.Drawing.Size(185, 46);
             this.label1.TabIndex = 2;
             this.label1.Text = "Add a user";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ClientManagementPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(977, 681);
+            this.ClientSize = new System.Drawing.Size(1303, 838);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClientManagementPanel";
             this.Text = "ClientManagementPanel";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxItem)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientTable)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
