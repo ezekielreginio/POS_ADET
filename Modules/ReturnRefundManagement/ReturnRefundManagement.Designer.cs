@@ -55,6 +55,11 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableReturnRefund = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.returnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.returnItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.returnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.option = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.cboDevices = new System.Windows.Forms.ComboBox();
             this.qrScanner = new System.Windows.Forms.PictureBox();
@@ -69,15 +74,10 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnFinish = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnRemove = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.returnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.returnItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.returnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.option = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableReturnRefund)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qrScanner)).BeginInit();
@@ -302,6 +302,37 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.tableReturnRefund.TabIndex = 20;
             this.tableReturnRefund.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.tableReturnRefund.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableReturnRefund_CellClick);
+            // 
+            // returnID
+            // 
+            this.returnID.HeaderText = "ID";
+            this.returnID.Name = "returnID";
+            this.returnID.Visible = false;
+            // 
+            // returnItemName
+            // 
+            this.returnItemName.FillWeight = 181.2614F;
+            this.returnItemName.HeaderText = "Item Name";
+            this.returnItemName.Name = "returnItemName";
+            this.returnItemName.ReadOnly = true;
+            // 
+            // returnQty
+            // 
+            this.returnQty.HeaderText = "Qty";
+            this.returnQty.Name = "returnQty";
+            // 
+            // option
+            // 
+            this.option.HeaderText = "Type";
+            this.option.Name = "option";
+            this.option.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.option.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // reason
+            // 
+            this.reason.HeaderText = "Reason";
+            this.reason.Name = "reason";
+            this.reason.Visible = false;
             // 
             // label1
             // 
@@ -621,22 +652,6 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel2
-            // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.bunifuLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.bunifuLabel2.Location = new System.Drawing.Point(6, 48);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(90, 23);
-            this.bunifuLabel2.TabIndex = 0;
-            this.bunifuLabel2.Text = "Item Name:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // bunifuLabel1
             // 
             this.bunifuLabel1.AllowParentOverrides = false;
@@ -652,6 +667,22 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.bunifuLabel1.Text = "Exchange/Refund Form";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel2
+            // 
+            this.bunifuLabel2.AllowParentOverrides = false;
+            this.bunifuLabel2.AutoEllipsis = false;
+            this.bunifuLabel2.CursorType = null;
+            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.bunifuLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bunifuLabel2.Location = new System.Drawing.Point(6, 48);
+            this.bunifuLabel2.Name = "bunifuLabel2";
+            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel2.Size = new System.Drawing.Size(90, 23);
+            this.bunifuLabel2.TabIndex = 0;
+            this.bunifuLabel2.Text = "Item Name:";
+            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // btnFinish
             // 
@@ -741,6 +772,7 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.btnFinish.TextMarginLeft = 0;
             this.btnFinish.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnFinish.UseDefaultRadiusAndThickness = true;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // btnRemove
             // 
@@ -831,37 +863,6 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.btnRemove.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnRemove.UseDefaultRadiusAndThickness = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // returnID
-            // 
-            this.returnID.HeaderText = "ID";
-            this.returnID.Name = "returnID";
-            this.returnID.Visible = false;
-            // 
-            // returnItemName
-            // 
-            this.returnItemName.FillWeight = 181.2614F;
-            this.returnItemName.HeaderText = "Item Name";
-            this.returnItemName.Name = "returnItemName";
-            this.returnItemName.ReadOnly = true;
-            // 
-            // returnQty
-            // 
-            this.returnQty.HeaderText = "Qty";
-            this.returnQty.Name = "returnQty";
-            // 
-            // option
-            // 
-            this.option.HeaderText = "Type";
-            this.option.Name = "option";
-            this.option.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.option.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // reason
-            // 
-            this.reason.HeaderText = "Reason";
-            this.reason.Name = "reason";
-            this.reason.Visible = false;
             // 
             // ReturnRefundManagement
             // 

@@ -64,11 +64,20 @@ namespace POS_ADET.Controls
         public void setItemImage(string image)
         {
             //pictureItem.Load(Path.GetDirectoryName(Application.ExecutablePath)+imagePath);
-            Byte[] bytes = Convert.FromBase64String(image);
-            MemoryStream stream = new MemoryStream(bytes);
-            Bitmap Image = new Bitmap(stream);
+            try
+            {
+                Byte[] bytes = Convert.FromBase64String(image);
+                MemoryStream stream = new MemoryStream(bytes);
+                Bitmap Image = new Bitmap(stream);
 
-            pictureItem.Image = Image;
+                pictureItem.Image = Image;
+            }
+
+             catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public bool getSelectedStatus()
