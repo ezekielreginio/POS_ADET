@@ -48,12 +48,12 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvReturnItems = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.log_id = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtDate = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtTransactionId = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtReturnTransactionId = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.log_id = new Bunifu.UI.WinForms.BunifuLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnItems)).BeginInit();
             this.SuspendLayout();
@@ -71,11 +71,9 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.panel1.Controls.Add(this.log_id);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(288, 512);
+            this.panel1.Size = new System.Drawing.Size(384, 630);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dgvReturnItems
             // 
@@ -129,18 +127,16 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.dgvReturnItems.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.dgvReturnItems.HeaderBgColor = System.Drawing.Color.Empty;
             this.dgvReturnItems.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvReturnItems.Location = new System.Drawing.Point(0, 259);
-            this.dgvReturnItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvReturnItems.Location = new System.Drawing.Point(0, 323);
             this.dgvReturnItems.Name = "dgvReturnItems";
             this.dgvReturnItems.ReadOnly = true;
             this.dgvReturnItems.RowHeadersVisible = false;
             this.dgvReturnItems.RowHeadersWidth = 51;
             this.dgvReturnItems.RowTemplate.Height = 40;
             this.dgvReturnItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReturnItems.Size = new System.Drawing.Size(288, 210);
+            this.dgvReturnItems.Size = new System.Drawing.Size(384, 259);
             this.dgvReturnItems.TabIndex = 13;
             this.dgvReturnItems.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            this.dgvReturnItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReturnItems_CellContentClick);
             // 
             // bunifuLabel3
             // 
@@ -151,80 +147,15 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.bunifuLabel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.bunifuLabel3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuLabel3.Location = new System.Drawing.Point(0, 219);
-            this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bunifuLabel3.Location = new System.Drawing.Point(0, 273);
             this.bunifuLabel3.Name = "bunifuLabel3";
-            this.bunifuLabel3.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
+            this.bunifuLabel3.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(145, 40);
+            this.bunifuLabel3.Size = new System.Drawing.Size(384, 50);
             this.bunifuLabel3.TabIndex = 12;
             this.bunifuLabel3.Text = "Returned Items";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel3.Click += new System.EventHandler(this.bunifuLabel3_Click);
-            // 
-            // bunifuLabel2
-            // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuLabel2.Location = new System.Drawing.Point(0, 146);
-            this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(45, 40);
-            this.bunifuLabel2.TabIndex = 8;
-            this.bunifuLabel2.Text = "Date";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel2.Click += new System.EventHandler(this.bunifuLabel2_Click);
-            // 
-            // bunifuLabel1
-            // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuLabel1.Location = new System.Drawing.Point(0, 73);
-            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(138, 40);
-            this.bunifuLabel1.TabIndex = 6;
-            this.bunifuLabel1.Text = "Transaction ID";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel1.Click += new System.EventHandler(this.bunifuLabel1_Click);
-            // 
-            // log_id
-            // 
-            this.log_id.AllowParentOverrides = false;
-            this.log_id.AutoEllipsis = false;
-            this.log_id.Cursor = System.Windows.Forms.Cursors.Default;
-            this.log_id.CursorType = System.Windows.Forms.Cursors.Default;
-            this.log_id.Dock = System.Windows.Forms.DockStyle.Top;
-            this.log_id.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.log_id.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.log_id.Location = new System.Drawing.Point(0, 0);
-            this.log_id.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.log_id.Name = "log_id";
-            this.log_id.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.log_id.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.log_id.Size = new System.Drawing.Size(208, 40);
-            this.log_id.TabIndex = 4;
-            this.log_id.Text = "Return Transaction ID";
-            this.log_id.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.log_id.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.log_id.Click += new System.EventHandler(this.log_id_Click);
             // 
             // txtDate
             // 
@@ -254,8 +185,7 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.txtDate.IconRight = null;
             this.txtDate.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDate.Lines = new string[0];
-            this.txtDate.Location = new System.Drawing.Point(0, 186);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDate.Location = new System.Drawing.Point(0, 232);
             this.txtDate.MaxLength = 32767;
             this.txtDate.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtDate.Modified = false;
@@ -281,7 +211,7 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtDate.OnIdleState = stateProperties4;
-            this.txtDate.Padding = new System.Windows.Forms.Padding(2);
+            this.txtDate.Padding = new System.Windows.Forms.Padding(3);
             this.txtDate.PasswordChar = '\0';
             this.txtDate.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtDate.PlaceholderText = "Enter text";
@@ -291,7 +221,7 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.txtDate.SelectionLength = 0;
             this.txtDate.SelectionStart = 0;
             this.txtDate.ShortcutsEnabled = true;
-            this.txtDate.Size = new System.Drawing.Size(288, 33);
+            this.txtDate.Size = new System.Drawing.Size(384, 41);
             this.txtDate.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtDate.TabIndex = 7;
             this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -301,7 +231,25 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.txtDate.TextPlaceholder = "Enter text";
             this.txtDate.UseSystemPasswordChar = false;
             this.txtDate.WordWrap = true;
-            this.txtDate.TextChanged += new System.EventHandler(this.txtDate_TextChanged);
+            // 
+            // bunifuLabel2
+            // 
+            this.bunifuLabel2.AllowParentOverrides = false;
+            this.bunifuLabel2.AutoEllipsis = false;
+            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunifuLabel2.Location = new System.Drawing.Point(0, 182);
+            this.bunifuLabel2.Name = "bunifuLabel2";
+            this.bunifuLabel2.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel2.Size = new System.Drawing.Size(384, 50);
+            this.bunifuLabel2.TabIndex = 8;
+            this.bunifuLabel2.Text = "Date";
+            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txtTransactionId
             // 
@@ -331,8 +279,7 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.txtTransactionId.IconRight = null;
             this.txtTransactionId.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTransactionId.Lines = new string[0];
-            this.txtTransactionId.Location = new System.Drawing.Point(0, 113);
-            this.txtTransactionId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTransactionId.Location = new System.Drawing.Point(0, 141);
             this.txtTransactionId.MaxLength = 32767;
             this.txtTransactionId.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtTransactionId.Modified = false;
@@ -358,7 +305,7 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtTransactionId.OnIdleState = stateProperties8;
-            this.txtTransactionId.Padding = new System.Windows.Forms.Padding(2);
+            this.txtTransactionId.Padding = new System.Windows.Forms.Padding(3);
             this.txtTransactionId.PasswordChar = '\0';
             this.txtTransactionId.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtTransactionId.PlaceholderText = "Enter text";
@@ -368,7 +315,7 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.txtTransactionId.SelectionLength = 0;
             this.txtTransactionId.SelectionStart = 0;
             this.txtTransactionId.ShortcutsEnabled = true;
-            this.txtTransactionId.Size = new System.Drawing.Size(288, 33);
+            this.txtTransactionId.Size = new System.Drawing.Size(384, 41);
             this.txtTransactionId.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtTransactionId.TabIndex = 5;
             this.txtTransactionId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -378,7 +325,25 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.txtTransactionId.TextPlaceholder = "Enter text";
             this.txtTransactionId.UseSystemPasswordChar = false;
             this.txtTransactionId.WordWrap = true;
-            this.txtTransactionId.TextChanged += new System.EventHandler(this.txtTransactionId_TextChanged);
+            // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunifuLabel1.Location = new System.Drawing.Point(0, 91);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(384, 50);
+            this.bunifuLabel1.TabIndex = 6;
+            this.bunifuLabel1.Text = "Transaction ID";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txtReturnTransactionId
             // 
@@ -408,8 +373,7 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.txtReturnTransactionId.IconRight = null;
             this.txtReturnTransactionId.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtReturnTransactionId.Lines = new string[0];
-            this.txtReturnTransactionId.Location = new System.Drawing.Point(0, 40);
-            this.txtReturnTransactionId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtReturnTransactionId.Location = new System.Drawing.Point(0, 50);
             this.txtReturnTransactionId.MaxLength = 32767;
             this.txtReturnTransactionId.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtReturnTransactionId.Modified = false;
@@ -435,7 +399,7 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtReturnTransactionId.OnIdleState = stateProperties12;
-            this.txtReturnTransactionId.Padding = new System.Windows.Forms.Padding(2);
+            this.txtReturnTransactionId.Padding = new System.Windows.Forms.Padding(3);
             this.txtReturnTransactionId.PasswordChar = '\0';
             this.txtReturnTransactionId.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtReturnTransactionId.PlaceholderText = "Enter text";
@@ -445,7 +409,7 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.txtReturnTransactionId.SelectionLength = 0;
             this.txtReturnTransactionId.SelectionStart = 0;
             this.txtReturnTransactionId.ShortcutsEnabled = true;
-            this.txtReturnTransactionId.Size = new System.Drawing.Size(288, 33);
+            this.txtReturnTransactionId.Size = new System.Drawing.Size(384, 41);
             this.txtReturnTransactionId.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtReturnTransactionId.TabIndex = 3;
             this.txtReturnTransactionId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -455,16 +419,33 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             this.txtReturnTransactionId.TextPlaceholder = "Enter text";
             this.txtReturnTransactionId.UseSystemPasswordChar = false;
             this.txtReturnTransactionId.WordWrap = true;
-            this.txtReturnTransactionId.TextChanged += new System.EventHandler(this.txtReturnTransactionId_TextChanged);
+            // 
+            // log_id
+            // 
+            this.log_id.AllowParentOverrides = false;
+            this.log_id.AutoEllipsis = false;
+            this.log_id.Cursor = System.Windows.Forms.Cursors.Default;
+            this.log_id.CursorType = System.Windows.Forms.Cursors.Default;
+            this.log_id.Dock = System.Windows.Forms.DockStyle.Top;
+            this.log_id.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.log_id.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.log_id.Location = new System.Drawing.Point(0, 0);
+            this.log_id.Name = "log_id";
+            this.log_id.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.log_id.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.log_id.Size = new System.Drawing.Size(384, 50);
+            this.log_id.TabIndex = 4;
+            this.log_id.Text = "Return Transaction ID";
+            this.log_id.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.log_id.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // ReturnRefundLogData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ReturnRefundLogData";
-            this.Size = new System.Drawing.Size(288, 512);
+            this.Size = new System.Drawing.Size(384, 630);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnItems)).EndInit();

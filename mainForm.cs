@@ -141,6 +141,7 @@ namespace POS_ADET
             plm.setDataLogPanel(returnRefundLogData);
             openPanel(plm);
         }
+<<<<<<< HEAD
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -154,6 +155,8 @@ namespace POS_ADET
                  
             }
         }
+=======
+>>>>>>> parent of 5b69e77 (#)
     }
 }
 
