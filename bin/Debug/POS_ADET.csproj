@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{383138CF-8635-405B-B646-E1DF0ECFDE40}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>POS_ADET</RootNamespace>
+    <AssemblyName>POS_ADET</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Desktop\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRating, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShapes, Version=5.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextBox, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.0.7.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.0.7\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+    </Reference>
+    <Reference Include="Dropbox.Api, Version=4.0.0.0, Culture=neutral, PublicKeyToken=310f0e82fbb45d01, processorArchitecture=MSIL">
+      <HintPath>packages\Dropbox.Api.4.9.0\lib\net45\Dropbox.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=1.0.1.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.1.7\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MessagingToolkit.QRCode">
+      <HintPath>..\..\..\Documents\lib\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.6\lib\net45\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.6\lib\net45\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\DAL\connector.cs" />
+    <Compile Include="Classes\DAL\Models\ReturnData.cs" />
+    <Compile Include="Classes\DAL\Models\ReturnList.cs" />
+    <Compile Include="Classes\DAL\Models\TransactionData.cs" />
+    <Compile Include="Classes\DAL\Models\TransactionItem.cs" />
+    <Compile Include="Classes\DGVtoDataTable.cs" />
+    <Compile Include="Classes\Dropbox\DropBox.cs" />
+    <Compile Include="Classes\DuplicateChecker.cs" />
+    <Compile Include="Classes\QRCode.cs" />
+    <Compile Include="Classes\Validation.cs" />
+    <Compile Include="Controls\ItemCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ItemCard.Designer.cs">
+      <DependentUpon>ItemCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\DAL\Models\ItemCatalog.cs" />
+    <Compile Include="Controls\ReceiptClass\Receipts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ReceiptClass\Receipts.Designer.cs">
+      <DependentUpon>Receipts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReceiptClass\ReceiptItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ReceiptClass\ReceiptItem.Designer.cs">
+      <DependentUpon>ReceiptItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\sample.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\sample.Designer.cs">
+      <DependentUpon>sample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TextField.Designer.cs">
+      <DependentUpon>TextField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Dashboard\dashboardPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Dashboard\dashboardPanel.Designer.cs">
+      <DependentUpon>dashboardPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ItemsManagement\ItemManagementPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ItemsManagement\ItemManagementPanel.Designer.cs">
+      <DependentUpon>ItemManagementPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ItemsManagement\ReturnItemManagementPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ItemsManagement\ReturnItemManagementPanel.Designer.cs">
+      <DependentUpon>ReturnItemManagementPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\DefectiveItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\DefectiveItems.Designer.cs">
+      <DependentUpon>DefectiveItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\ReturnRefundLogData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\ReturnRefundLogData.Designer.cs">
+      <DependentUpon>ReturnRefundLogData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\SalesLogData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\SalesLogData.Designer.cs">
+      <DependentUpon>SalesLogData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogs.Designer.cs">
+      <DependentUpon>panelLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\ItemLogData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\ItemLogData.Designer.cs">
+      <DependentUpon>ItemLogData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\POSManagement\modalPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\POSManagement\modalPay.Designer.cs">
+      <DependentUpon>modalPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\POSManagement\POSManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\POSManagement\POSManagement.Designer.cs">
+      <DependentUpon>POSManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ReturnRefundManagement\ReturnRefundManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ReturnRefundManagement\ReturnRefundManagement.Designer.cs">
+      <DependentUpon>ReturnRefundManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\UsersManagement\Client\ClientManagementPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\UsersManagement\Client\ClientManagementPanel.Designer.cs">
+      <DependentUpon>ClientManagementPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\UsersManagement\Employee\EmployeeManagementPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\UsersManagement\Employee\EmployeeManagementPanel.Designer.cs">
+      <DependentUpon>EmployeeManagementPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pos_adetDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pos_adetDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pos_adetDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pos_adetDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pos_adetDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pos_adetDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\ItemCard.resx">
+      <DependentUpon>ItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReceiptClass\Receipts.resx">
+      <DependentUpon>Receipts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReceiptClass\ReceiptItem.resx">
+      <DependentUpon>ReceiptItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\sample.resx">
+      <DependentUpon>sample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TextField.resx">
+      <DependentUpon>TextField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Dashboard\dashboardPanel.resx">
+      <DependentUpon>dashboardPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ItemsManagement\ItemManagementPanel.resx">
+      <DependentUpon>ItemManagementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ItemsManagement\ReturnItemManagementPanel.resx">
+      <DependentUpon>ReturnItemManagementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\LogsManagement\panelLogData\DefectiveItems.resx">
+      <DependentUpon>DefectiveItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\LogsManagement\panelLogData\ReturnRefundLogData.resx">
+      <DependentUpon>ReturnRefundLogData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\LogsManagement\panelLogData\SalesLogData.resx">
+      <DependentUpon>SalesLogData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\LogsManagement\panelLogs.resx">
+      <DependentUpon>panelLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\LogsManagement\panelLogData\ItemLogData.resx">
+      <DependentUpon>ItemLogData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\POSManagement\modalPay.resx">
+      <DependentUpon>modalPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\POSManagement\POSManagement.resx">
+      <DependentUpon>POSManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ReturnRefundManagement\ReturnRefundManagement.resx">
+      <DependentUpon>ReturnRefundManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\UsersManagement\Client\ClientManagementPanel.resx">
+      <DependentUpon>ClientManagementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\UsersManagement\Employee\EmployeeManagementPanel.resx">
+      <DependentUpon>EmployeeManagementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="pos_adetDataSet.xsc">
+      <DependentUpon>pos_adetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pos_adetDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pos_adetDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pos_adetDataSet.xss">
+      <DependentUpon>pos_adetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pos_adetDataSet1.xsc">
+      <DependentUpon>pos_adetDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="pos_adetDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pos_adetDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pos_adetDataSet1.xss">
+      <DependentUpon>pos_adetDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="pos_adetDataSet2.xsc">
+      <DependentUpon>pos_adetDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="pos_adetDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pos_adetDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pos_adetDataSet2.xss">
+      <DependentUpon>pos_adetDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagram1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Conact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diagram2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money-bag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iphone.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bunifu.Licensing.dll" />
+    <Content Include="Resources\check.png" />
+    <None Include="Resources\render_prime_loop.gif" />
+    <None Include="Resources\check1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\DB\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
