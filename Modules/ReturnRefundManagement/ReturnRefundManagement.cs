@@ -230,21 +230,26 @@ namespace POS_ADET.Modules.ReturnRefundManagement
 
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Convert.ToInt32(tableReturnRefund.SelectedRows[0].Cells["ogQty"].Value) > Convert.ToInt32(txtQty.Text))
-                e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
-            else
-                e.Handled = false;
+              e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8);
+            
         }
 
         private void txtQty_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                
-                tableReturnRefund.SelectedRows[0].Cells["returnQty"].Value = txtQty.Text;
+                if (Convert.ToInt32(tableReturnRefund.SelectedRows[0].Cells["ogQty"].Value) >= Convert.ToInt32(txtQty.Text) || txtQty.Text == null)
+                    tableReturnRefund.SelectedRows[0].Cells["returnQty"].Value = txtQty.Text;
+                else
+                {
+                    MessageBox.Show("Invalid Qty. The Input Qty exceeds the QTY of the transaction item");
+                    txtQty.Text = "";
+                }
+                    
             }
             catch (Exception)
             {
+                tableReturnRefund.SelectedRows[0].Cells["returnQty"].Value = "";
             }
         }
 

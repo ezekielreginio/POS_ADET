@@ -37,13 +37,13 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReturnRefundManagement));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReturnRefundManagement));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.label2 = new System.Windows.Forms.Label();
             this.txtORNo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,32 +57,32 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.tableReturnRefund = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.cboDevices = new System.Windows.Forms.ComboBox();
-            this.qrScanner = new System.Windows.Forms.PictureBox();
-            this.btnRefresh = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.cboOption = new System.Windows.Forms.ComboBox();
             this.cboReason = new System.Windows.Forms.ComboBox();
             this.panelReturnForm = new System.Windows.Forms.Panel();
             this.lblFilePath = new System.Windows.Forms.Label();
-            this.txtQty = new Bunifu.UI.WinForms.BunifuTextBox();
             this.formItemName = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.btnFinish = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.btnRemove = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.returnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.returnItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.returnQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.option = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ogQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRemove = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnFinish = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.txtQty = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.btnRefresh = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.qrScanner = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tableItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableReturnRefund)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qrScanner)).BeginInit();
             this.panelReturnForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qrScanner)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -136,6 +136,8 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             // 
             this.tableItems.AllowCustomTheming = false;
             this.tableItems.AllowUserToAddRows = false;
+            this.tableItems.AllowUserToResizeColumns = false;
+            this.tableItems.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.tableItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -152,6 +154,7 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tableItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tableItems.ColumnHeadersHeight = 40;
+            this.tableItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.tableItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.itemName,
@@ -193,6 +196,7 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.tableItems.MultiSelect = false;
             this.tableItems.Name = "tableItems";
             this.tableItems.RowHeadersVisible = false;
+            this.tableItems.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.tableItems.RowTemplate.Height = 40;
             this.tableItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableItems.Size = new System.Drawing.Size(453, 535);
@@ -325,105 +329,6 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.cboDevices.Size = new System.Drawing.Size(134, 21);
             this.cboDevices.TabIndex = 21;
             // 
-            // qrScanner
-            // 
-            this.qrScanner.Location = new System.Drawing.Point(11, 127);
-            this.qrScanner.Name = "qrScanner";
-            this.qrScanner.Size = new System.Drawing.Size(134, 113);
-            this.qrScanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.qrScanner.TabIndex = 22;
-            this.qrScanner.TabStop = false;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.AllowAnimations = true;
-            this.btnRefresh.AllowMouseEffects = true;
-            this.btnRefresh.AllowToggling = false;
-            this.btnRefresh.AnimationSpeed = 200;
-            this.btnRefresh.AutoGenerateColors = false;
-            this.btnRefresh.AutoRoundBorders = false;
-            this.btnRefresh.AutoSizeLeftIcon = true;
-            this.btnRefresh.AutoSizeRightIcon = true;
-            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
-            this.btnRefresh.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRefresh.ButtonText = "Refresh Scanner";
-            this.btnRefresh.ButtonTextMarginLeft = 0;
-            this.btnRefresh.ColorContrastOnClick = 45;
-            this.btnRefresh.ColorContrastOnHover = 45;
-            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnRefresh.CustomizableEdges = borderEdges1;
-            this.btnRefresh.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnRefresh.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnRefresh.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnRefresh.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnRefresh.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnRefresh.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnRefresh.IconMarginLeft = 11;
-            this.btnRefresh.IconPadding = 10;
-            this.btnRefresh.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnRefresh.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnRefresh.IconSize = 25;
-            this.btnRefresh.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnRefresh.IdleBorderRadius = 1;
-            this.btnRefresh.IdleBorderThickness = 1;
-            this.btnRefresh.IdleFillColor = System.Drawing.Color.DodgerBlue;
-            this.btnRefresh.IdleIconLeftImage = null;
-            this.btnRefresh.IdleIconRightImage = null;
-            this.btnRefresh.IndicateFocus = false;
-            this.btnRefresh.Location = new System.Drawing.Point(13, 246);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnRefresh.OnDisabledState.BorderRadius = 1;
-            this.btnRefresh.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRefresh.OnDisabledState.BorderThickness = 1;
-            this.btnRefresh.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnRefresh.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnRefresh.OnDisabledState.IconLeftImage = null;
-            this.btnRefresh.OnDisabledState.IconRightImage = null;
-            this.btnRefresh.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnRefresh.onHoverState.BorderRadius = 1;
-            this.btnRefresh.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRefresh.onHoverState.BorderThickness = 1;
-            this.btnRefresh.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnRefresh.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.onHoverState.IconLeftImage = null;
-            this.btnRefresh.onHoverState.IconRightImage = null;
-            this.btnRefresh.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnRefresh.OnIdleState.BorderRadius = 1;
-            this.btnRefresh.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRefresh.OnIdleState.BorderThickness = 1;
-            this.btnRefresh.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnRefresh.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.OnIdleState.IconLeftImage = null;
-            this.btnRefresh.OnIdleState.IconRightImage = null;
-            this.btnRefresh.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnRefresh.OnPressedState.BorderRadius = 1;
-            this.btnRefresh.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRefresh.OnPressedState.BorderThickness = 1;
-            this.btnRefresh.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnRefresh.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.OnPressedState.IconLeftImage = null;
-            this.btnRefresh.OnPressedState.IconRightImage = null;
-            this.btnRefresh.Size = new System.Drawing.Size(132, 39);
-            this.btnRefresh.TabIndex = 23;
-            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnRefresh.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnRefresh.TextMarginLeft = 0;
-            this.btnRefresh.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnRefresh.UseDefaultRadiusAndThickness = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
@@ -482,83 +387,6 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.lblFilePath.Name = "lblFilePath";
             this.lblFilePath.Size = new System.Drawing.Size(0, 13);
             this.lblFilePath.TabIndex = 27;
-            // 
-            // txtQty
-            // 
-            this.txtQty.AcceptsReturn = false;
-            this.txtQty.AcceptsTab = false;
-            this.txtQty.AnimationSpeed = 200;
-            this.txtQty.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtQty.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtQty.BackColor = System.Drawing.Color.Transparent;
-            this.txtQty.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtQty.BackgroundImage")));
-            this.txtQty.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtQty.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtQty.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtQty.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtQty.BorderRadius = 1;
-            this.txtQty.BorderThickness = 1;
-            this.txtQty.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtQty.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtQty.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtQty.DefaultText = "";
-            this.txtQty.FillColor = System.Drawing.Color.White;
-            this.txtQty.HideSelection = true;
-            this.txtQty.IconLeft = null;
-            this.txtQty.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtQty.IconPadding = 10;
-            this.txtQty.IconRight = null;
-            this.txtQty.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtQty.Lines = new string[0];
-            this.txtQty.Location = new System.Drawing.Point(102, 77);
-            this.txtQty.MaxLength = 32767;
-            this.txtQty.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtQty.Modified = false;
-            this.txtQty.Multiline = false;
-            this.txtQty.Name = "txtQty";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtQty.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtQty.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtQty.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtQty.OnIdleState = stateProperties4;
-            this.txtQty.Padding = new System.Windows.Forms.Padding(3);
-            this.txtQty.PasswordChar = '\0';
-            this.txtQty.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtQty.PlaceholderText = "Enter text";
-            this.txtQty.ReadOnly = false;
-            this.txtQty.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtQty.SelectedText = "";
-            this.txtQty.SelectionLength = 0;
-            this.txtQty.SelectionStart = 0;
-            this.txtQty.ShortcutsEnabled = true;
-            this.txtQty.Size = new System.Drawing.Size(147, 25);
-            this.txtQty.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtQty.TabIndex = 2;
-            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtQty.TextMarginBottom = 0;
-            this.txtQty.TextMarginLeft = 3;
-            this.txtQty.TextMarginTop = 0;
-            this.txtQty.TextPlaceholder = "Enter text";
-            this.txtQty.UseSystemPasswordChar = false;
-            this.txtQty.WordWrap = true;
-            this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged);
-            this.txtQty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQty_KeyDown);
-            this.txtQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_KeyPress);
             // 
             // formItemName
             // 
@@ -655,6 +483,133 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // returnID
+            // 
+            this.returnID.HeaderText = "ID";
+            this.returnID.Name = "returnID";
+            this.returnID.Visible = false;
+            // 
+            // returnItemName
+            // 
+            this.returnItemName.FillWeight = 181.2614F;
+            this.returnItemName.HeaderText = "Item Name";
+            this.returnItemName.Name = "returnItemName";
+            this.returnItemName.ReadOnly = true;
+            // 
+            // returnQty
+            // 
+            this.returnQty.HeaderText = "Qty";
+            this.returnQty.Name = "returnQty";
+            // 
+            // option
+            // 
+            this.option.HeaderText = "Type";
+            this.option.Name = "option";
+            this.option.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.option.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // reason
+            // 
+            this.reason.HeaderText = "Reason";
+            this.reason.Name = "reason";
+            this.reason.Visible = false;
+            // 
+            // ogQty
+            // 
+            this.ogQty.HeaderText = "ogQty";
+            this.ogQty.Name = "ogQty";
+            this.ogQty.Visible = false;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.AllowAnimations = true;
+            this.btnRemove.AllowMouseEffects = true;
+            this.btnRemove.AllowToggling = false;
+            this.btnRemove.AnimationSpeed = 200;
+            this.btnRemove.AutoGenerateColors = false;
+            this.btnRemove.AutoRoundBorders = false;
+            this.btnRemove.AutoSizeLeftIcon = true;
+            this.btnRemove.AutoSizeRightIcon = true;
+            this.btnRemove.BackColor = System.Drawing.Color.Transparent;
+            this.btnRemove.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.btnRemove.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemove.BackgroundImage")));
+            this.btnRemove.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRemove.ButtonText = "Remove";
+            this.btnRemove.ButtonTextMarginLeft = 0;
+            this.btnRemove.ColorContrastOnClick = 45;
+            this.btnRemove.ColorContrastOnHover = 45;
+            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnRemove.CustomizableEdges = borderEdges1;
+            this.btnRemove.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRemove.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnRemove.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnRemove.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnRemove.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRemove.ForeColor = System.Drawing.Color.White;
+            this.btnRemove.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemove.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnRemove.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnRemove.IconMarginLeft = 11;
+            this.btnRemove.IconPadding = 10;
+            this.btnRemove.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRemove.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnRemove.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnRemove.IconSize = 25;
+            this.btnRemove.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnRemove.IdleBorderRadius = 1;
+            this.btnRemove.IdleBorderThickness = 1;
+            this.btnRemove.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.btnRemove.IdleIconLeftImage = null;
+            this.btnRemove.IdleIconRightImage = null;
+            this.btnRemove.IndicateFocus = false;
+            this.btnRemove.Location = new System.Drawing.Point(658, 622);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnRemove.OnDisabledState.BorderRadius = 1;
+            this.btnRemove.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRemove.OnDisabledState.BorderThickness = 1;
+            this.btnRemove.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnRemove.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnRemove.OnDisabledState.IconLeftImage = null;
+            this.btnRemove.OnDisabledState.IconRightImage = null;
+            this.btnRemove.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnRemove.onHoverState.BorderRadius = 1;
+            this.btnRemove.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRemove.onHoverState.BorderThickness = 1;
+            this.btnRemove.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnRemove.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnRemove.onHoverState.IconLeftImage = null;
+            this.btnRemove.onHoverState.IconRightImage = null;
+            this.btnRemove.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnRemove.OnIdleState.BorderRadius = 1;
+            this.btnRemove.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRemove.OnIdleState.BorderThickness = 1;
+            this.btnRemove.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnRemove.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnRemove.OnIdleState.IconLeftImage = null;
+            this.btnRemove.OnIdleState.IconRightImage = null;
+            this.btnRemove.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnRemove.OnPressedState.BorderRadius = 1;
+            this.btnRemove.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRemove.OnPressedState.BorderThickness = 1;
+            this.btnRemove.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnRemove.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnRemove.OnPressedState.IconLeftImage = null;
+            this.btnRemove.OnPressedState.IconRightImage = null;
+            this.btnRemove.Size = new System.Drawing.Size(150, 39);
+            this.btnRemove.TabIndex = 25;
+            this.btnRemove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRemove.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnRemove.TextMarginLeft = 0;
+            this.btnRemove.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnRemove.UseDefaultRadiusAndThickness = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // btnFinish
             // 
             this.btnFinish.AllowAnimations = true;
@@ -745,132 +700,181 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.btnFinish.UseDefaultRadiusAndThickness = true;
             this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
-            // btnRemove
+            // txtQty
             // 
-            this.btnRemove.AllowAnimations = true;
-            this.btnRemove.AllowMouseEffects = true;
-            this.btnRemove.AllowToggling = false;
-            this.btnRemove.AnimationSpeed = 200;
-            this.btnRemove.AutoGenerateColors = false;
-            this.btnRemove.AutoRoundBorders = false;
-            this.btnRemove.AutoSizeLeftIcon = true;
-            this.btnRemove.AutoSizeRightIcon = true;
-            this.btnRemove.BackColor = System.Drawing.Color.Transparent;
-            this.btnRemove.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.btnRemove.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemove.BackgroundImage")));
-            this.btnRemove.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRemove.ButtonText = "Remove";
-            this.btnRemove.ButtonTextMarginLeft = 0;
-            this.btnRemove.ColorContrastOnClick = 45;
-            this.btnRemove.ColorContrastOnHover = 45;
-            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtQty.AcceptsReturn = false;
+            this.txtQty.AcceptsTab = false;
+            this.txtQty.AnimationSpeed = 200;
+            this.txtQty.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtQty.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtQty.BackColor = System.Drawing.Color.Transparent;
+            this.txtQty.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtQty.BackgroundImage")));
+            this.txtQty.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtQty.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtQty.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtQty.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtQty.BorderRadius = 1;
+            this.txtQty.BorderThickness = 1;
+            this.txtQty.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtQty.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQty.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtQty.DefaultText = "";
+            this.txtQty.FillColor = System.Drawing.Color.White;
+            this.txtQty.HideSelection = true;
+            this.txtQty.IconLeft = null;
+            this.txtQty.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQty.IconPadding = 10;
+            this.txtQty.IconRight = null;
+            this.txtQty.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQty.Lines = new string[0];
+            this.txtQty.Location = new System.Drawing.Point(102, 77);
+            this.txtQty.MaxLength = 32767;
+            this.txtQty.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtQty.Modified = false;
+            this.txtQty.Multiline = false;
+            this.txtQty.Name = "txtQty";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtQty.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtQty.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtQty.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtQty.OnIdleState = stateProperties4;
+            this.txtQty.Padding = new System.Windows.Forms.Padding(3);
+            this.txtQty.PasswordChar = '\0';
+            this.txtQty.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtQty.PlaceholderText = "Enter text";
+            this.txtQty.ReadOnly = false;
+            this.txtQty.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtQty.SelectedText = "";
+            this.txtQty.SelectionLength = 0;
+            this.txtQty.SelectionStart = 0;
+            this.txtQty.ShortcutsEnabled = true;
+            this.txtQty.Size = new System.Drawing.Size(147, 25);
+            this.txtQty.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtQty.TabIndex = 2;
+            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtQty.TextMarginBottom = 0;
+            this.txtQty.TextMarginLeft = 3;
+            this.txtQty.TextMarginTop = 0;
+            this.txtQty.TextPlaceholder = "Enter text";
+            this.txtQty.UseSystemPasswordChar = false;
+            this.txtQty.WordWrap = true;
+            this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged);
+            this.txtQty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQty_KeyDown);
+            this.txtQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_KeyPress);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.AllowAnimations = true;
+            this.btnRefresh.AllowMouseEffects = true;
+            this.btnRefresh.AllowToggling = false;
+            this.btnRefresh.AnimationSpeed = 200;
+            this.btnRefresh.AutoGenerateColors = false;
+            this.btnRefresh.AutoRoundBorders = false;
+            this.btnRefresh.AutoSizeLeftIcon = true;
+            this.btnRefresh.AutoSizeRightIcon = true;
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
+            this.btnRefresh.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRefresh.ButtonText = "Refresh Scanner";
+            this.btnRefresh.ButtonTextMarginLeft = 0;
+            this.btnRefresh.ColorContrastOnClick = 45;
+            this.btnRefresh.ColorContrastOnHover = 45;
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Default;
             borderEdges3.BottomLeft = true;
             borderEdges3.BottomRight = true;
             borderEdges3.TopLeft = true;
             borderEdges3.TopRight = true;
-            this.btnRemove.CustomizableEdges = borderEdges3;
-            this.btnRemove.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnRemove.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnRemove.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnRemove.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnRemove.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemove.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnRemove.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnRemove.IconMarginLeft = 11;
-            this.btnRemove.IconPadding = 10;
-            this.btnRemove.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRemove.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnRemove.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnRemove.IconSize = 25;
-            this.btnRemove.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnRemove.IdleBorderRadius = 1;
-            this.btnRemove.IdleBorderThickness = 1;
-            this.btnRemove.IdleFillColor = System.Drawing.Color.DodgerBlue;
-            this.btnRemove.IdleIconLeftImage = null;
-            this.btnRemove.IdleIconRightImage = null;
-            this.btnRemove.IndicateFocus = false;
-            this.btnRemove.Location = new System.Drawing.Point(658, 622);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnRemove.OnDisabledState.BorderRadius = 1;
-            this.btnRemove.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRemove.OnDisabledState.BorderThickness = 1;
-            this.btnRemove.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnRemove.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnRemove.OnDisabledState.IconLeftImage = null;
-            this.btnRemove.OnDisabledState.IconRightImage = null;
-            this.btnRemove.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnRemove.onHoverState.BorderRadius = 1;
-            this.btnRemove.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRemove.onHoverState.BorderThickness = 1;
-            this.btnRemove.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnRemove.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.onHoverState.IconLeftImage = null;
-            this.btnRemove.onHoverState.IconRightImage = null;
-            this.btnRemove.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnRemove.OnIdleState.BorderRadius = 1;
-            this.btnRemove.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRemove.OnIdleState.BorderThickness = 1;
-            this.btnRemove.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnRemove.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.OnIdleState.IconLeftImage = null;
-            this.btnRemove.OnIdleState.IconRightImage = null;
-            this.btnRemove.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnRemove.OnPressedState.BorderRadius = 1;
-            this.btnRemove.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRemove.OnPressedState.BorderThickness = 1;
-            this.btnRemove.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnRemove.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.OnPressedState.IconLeftImage = null;
-            this.btnRemove.OnPressedState.IconRightImage = null;
-            this.btnRemove.Size = new System.Drawing.Size(150, 39);
-            this.btnRemove.TabIndex = 25;
-            this.btnRemove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnRemove.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnRemove.TextMarginLeft = 0;
-            this.btnRemove.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnRemove.UseDefaultRadiusAndThickness = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            this.btnRefresh.CustomizableEdges = borderEdges3;
+            this.btnRefresh.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRefresh.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnRefresh.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnRefresh.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnRefresh.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnRefresh.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnRefresh.IconMarginLeft = 11;
+            this.btnRefresh.IconPadding = 10;
+            this.btnRefresh.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnRefresh.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnRefresh.IconSize = 25;
+            this.btnRefresh.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnRefresh.IdleBorderRadius = 1;
+            this.btnRefresh.IdleBorderThickness = 1;
+            this.btnRefresh.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.btnRefresh.IdleIconLeftImage = null;
+            this.btnRefresh.IdleIconRightImage = null;
+            this.btnRefresh.IndicateFocus = false;
+            this.btnRefresh.Location = new System.Drawing.Point(13, 246);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnRefresh.OnDisabledState.BorderRadius = 1;
+            this.btnRefresh.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRefresh.OnDisabledState.BorderThickness = 1;
+            this.btnRefresh.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnRefresh.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnRefresh.OnDisabledState.IconLeftImage = null;
+            this.btnRefresh.OnDisabledState.IconRightImage = null;
+            this.btnRefresh.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnRefresh.onHoverState.BorderRadius = 1;
+            this.btnRefresh.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRefresh.onHoverState.BorderThickness = 1;
+            this.btnRefresh.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnRefresh.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.onHoverState.IconLeftImage = null;
+            this.btnRefresh.onHoverState.IconRightImage = null;
+            this.btnRefresh.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnRefresh.OnIdleState.BorderRadius = 1;
+            this.btnRefresh.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRefresh.OnIdleState.BorderThickness = 1;
+            this.btnRefresh.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnRefresh.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.OnIdleState.IconLeftImage = null;
+            this.btnRefresh.OnIdleState.IconRightImage = null;
+            this.btnRefresh.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnRefresh.OnPressedState.BorderRadius = 1;
+            this.btnRefresh.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnRefresh.OnPressedState.BorderThickness = 1;
+            this.btnRefresh.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnRefresh.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.OnPressedState.IconLeftImage = null;
+            this.btnRefresh.OnPressedState.IconRightImage = null;
+            this.btnRefresh.Size = new System.Drawing.Size(132, 39);
+            this.btnRefresh.TabIndex = 23;
+            this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRefresh.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnRefresh.TextMarginLeft = 0;
+            this.btnRefresh.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnRefresh.UseDefaultRadiusAndThickness = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // returnID
+            // qrScanner
             // 
-            this.returnID.HeaderText = "ID";
-            this.returnID.Name = "returnID";
-            this.returnID.Visible = false;
-            // 
-            // returnItemName
-            // 
-            this.returnItemName.FillWeight = 181.2614F;
-            this.returnItemName.HeaderText = "Item Name";
-            this.returnItemName.Name = "returnItemName";
-            this.returnItemName.ReadOnly = true;
-            // 
-            // returnQty
-            // 
-            this.returnQty.HeaderText = "Qty";
-            this.returnQty.Name = "returnQty";
-            // 
-            // option
-            // 
-            this.option.HeaderText = "Type";
-            this.option.Name = "option";
-            this.option.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.option.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // reason
-            // 
-            this.reason.HeaderText = "Reason";
-            this.reason.Name = "reason";
-            this.reason.Visible = false;
-            // 
-            // ogQty
-            // 
-            this.ogQty.HeaderText = "ogQty";
-            this.ogQty.Name = "ogQty";
-            this.ogQty.Visible = false;
+            this.qrScanner.Location = new System.Drawing.Point(11, 127);
+            this.qrScanner.Name = "qrScanner";
+            this.qrScanner.Size = new System.Drawing.Size(134, 113);
+            this.qrScanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.qrScanner.TabIndex = 22;
+            this.qrScanner.TabStop = false;
             // 
             // ReturnRefundManagement
             // 
@@ -895,9 +899,9 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             this.Text = "ReturnRefundManagement";
             ((System.ComponentModel.ISupportInitialize)(this.tableItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableReturnRefund)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qrScanner)).EndInit();
             this.panelReturnForm.ResumeLayout(false);
             this.panelReturnForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qrScanner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
