@@ -481,6 +481,10 @@
   <ItemGroup>
     <Content Include="Bunifu.Licensing.dll" />
     <Content Include="Resources\check.png" />
+    <Content Include="Resources\New_log_in.gif" />
+    <None Include="Resources\render_prime_loop1.gif" />
+    <None Include="Resources\New_log_in1.gif" />
+    <Content Include="Resources\render_prime_loop.gif" />
     <None Include="Resources\check1.png" />
   </ItemGroup>
   <ItemGroup>

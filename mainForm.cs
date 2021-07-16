@@ -133,6 +133,19 @@ namespace POS_ADET
             plm.setDataLogPanel(returnRefundLogData);
             openPanel(plm);
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("u sure u wanna logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+            else
+            {
+
+                 
+            }
+        }
     }
 }
 

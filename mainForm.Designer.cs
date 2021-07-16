@@ -104,7 +104,7 @@ namespace POS_ADET
             this.btnSalesAnalytics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnSalesAnalytics.Image = global::POS_ADET.Properties.Resources.diagram2;
             this.btnSalesAnalytics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalesAnalytics.Location = new System.Drawing.Point(0, 465);
+            this.btnSalesAnalytics.Location = new System.Drawing.Point(0, 430);
             this.btnSalesAnalytics.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalesAnalytics.Name = "btnSalesAnalytics";
             this.btnSalesAnalytics.Size = new System.Drawing.Size(273, 38);
@@ -120,7 +120,7 @@ namespace POS_ADET
             this.panelLogs.Controls.Add(this.btnReturnRefundLogs);
             this.panelLogs.Controls.Add(this.btnItemLogs);
             this.panelLogs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogs.Location = new System.Drawing.Point(0, 354);
+            this.panelLogs.Location = new System.Drawing.Point(0, 319);
             this.panelLogs.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogs.Name = "panelLogs";
             this.panelLogs.Size = new System.Drawing.Size(273, 111);
@@ -200,7 +200,7 @@ namespace POS_ADET
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.button1.Image = global::POS_ADET.Properties.Resources.diagram2;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 316);
+            this.button1.Location = new System.Drawing.Point(0, 281);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(273, 38);
@@ -220,7 +220,7 @@ namespace POS_ADET
             this.btnItemsManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnItemsManagement.Image = global::POS_ADET.Properties.Resources.settings;
             this.btnItemsManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnItemsManagement.Location = new System.Drawing.Point(0, 278);
+            this.btnItemsManagement.Location = new System.Drawing.Point(0, 243);
             this.btnItemsManagement.Margin = new System.Windows.Forms.Padding(4);
             this.btnItemsManagement.Name = "btnItemsManagement";
             this.btnItemsManagement.Size = new System.Drawing.Size(273, 38);
@@ -239,7 +239,7 @@ namespace POS_ADET
             this.panelUsersManagement.Location = new System.Drawing.Point(0, 196);
             this.panelUsersManagement.Margin = new System.Windows.Forms.Padding(4);
             this.panelUsersManagement.Name = "panelUsersManagement";
-            this.panelUsersManagement.Size = new System.Drawing.Size(273, 82);
+            this.panelUsersManagement.Size = new System.Drawing.Size(273, 47);
             this.panelUsersManagement.TabIndex = 1;
             this.panelUsersManagement.Visible = false;
             // 
@@ -262,6 +262,7 @@ namespace POS_ADET
             this.btnClients.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClients.UseVisualStyleBackColor = true;
+            this.btnClients.Visible = false;
             this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
             // 
             // btnEmployees
@@ -376,6 +377,7 @@ namespace POS_ADET
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnSalesManagement
             // 
