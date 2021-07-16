@@ -190,6 +190,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DAL\connector.cs" />
+    <Compile Include="Classes\DAL\Models\ReturnData.cs" />
+    <Compile Include="Classes\DAL\Models\ReturnList.cs" />
     <Compile Include="Classes\DAL\Models\TransactionData.cs" />
     <Compile Include="Classes\DAL\Models\TransactionItem.cs" />
     <Compile Include="Classes\Dropbox\DropBox.cs" />
@@ -250,6 +252,12 @@
     </Compile>
     <Compile Include="Modules\ItemsManagement\ItemManagementPanel.Designer.cs">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\ReturnRefundLogData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\ReturnRefundLogData.Designer.cs">
+      <DependentUpon>ReturnRefundLogData.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\LogsManagement\panelLogData\SalesLogData.cs">
       <SubType>UserControl</SubType>
@@ -342,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ItemsManagement\ItemManagementPanel.resx">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\LogsManagement\panelLogData\ReturnRefundLogData.resx">
+      <DependentUpon>ReturnRefundLogData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\LogsManagement\panelLogData\SalesLogData.resx">
       <DependentUpon>SalesLogData.cs</DependentUpon>

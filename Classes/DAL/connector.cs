@@ -11,7 +11,11 @@ namespace POS_ADET.Classes.DB
 {
     class connector:ParentConnector
     {
-
+        /// <summary>
+        /// titeeee
+        /// </summary>
+        /// <param name="procedure_name"></param>
+        /// <param name="data"></param>
         public void writeProcedure(string procedure_name, Dictionary<string, string> data)
         {
             this.procedure_name = procedure_name;
