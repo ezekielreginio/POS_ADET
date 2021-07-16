@@ -12,12 +12,12 @@ namespace POS_ADET.Classes.DAL.Models
         private string name;
         private int qty;
         private string type;
-        private string reason;
+        
 
         public string Name { get => name; set => name = value; }
         public int Qty { get => qty; set => qty = value; }
         public string Type { get => type; set => type = value; }
-        public string Reason { get => reason; set => reason = value; }
+        
         
     }
     

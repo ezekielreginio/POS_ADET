@@ -33,8 +33,9 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
         public void setdgvReturnItems(DataTable datatable)
         {
             dgvReturnItems.DataSource = datatable;
-            dgvReturnItems.Columns["Qty"].Width = 30;
-            dgvReturnItems.Columns["Type"].Width = 50;
+            dgvReturnItems.Columns["Name"].Width = 150;
+            dgvReturnItems.Columns["Qty"].Width = 35;
+            
             
         }
     }

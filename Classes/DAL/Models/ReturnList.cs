@@ -22,7 +22,7 @@ namespace POS_ADET.Classes.DAL.Models
                     Name = datatable.Rows[i]["Name"].ToString(),
                     Qty = Convert.ToInt32(datatable.Rows[i]["Qty"]),
                     Type = datatable.Rows[i]["Type"].ToString(),
-                    Reason = datatable.Rows[i]["Reason"].ToString()
+                    
                 });
             }
         }
