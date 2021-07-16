@@ -503,7 +503,7 @@ namespace POS_ADET
             this.btnItemsManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnItemsManagement.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnItemsManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnItemsManagement.Image = global::POS_ADET.Properties.Resources.settings;
+            //this.btnItemsManagement.Image = global::POS_ADET.Properties.Resources.settings;
             this.btnItemsManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnItemsManagement.Location = new System.Drawing.Point(0, 227);
             this.btnItemsManagement.Name = "btnItemsManagement";

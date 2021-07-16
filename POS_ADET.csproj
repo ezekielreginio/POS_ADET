@@ -255,7 +255,6 @@
     <Compile Include="Modules\ItemsManagement\ItemManagementPanel.Designer.cs">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Modules\Login\LoadingPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,8 +267,6 @@
     <Compile Include="Modules\Login\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-=======
->>>>>>> parent of 5b69e77 (#)
     <Compile Include="Modules\LogsManagement\panelLogData\ReturnRefundLogData.cs">
       <SubType>UserControl</SubType>
     </Compile>

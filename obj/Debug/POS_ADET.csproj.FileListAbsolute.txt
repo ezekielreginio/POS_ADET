@@ -112,31 +112,7 @@ C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.csproj.CopyComplete
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.exe
 C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.pdb
 =======
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.ItemCard.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.Receipts.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.Receipt.ReceiptItem.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.sample.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Controls.TextField.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\WinFormsApp1.Form1.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.mainForm.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.Dashboard.dashboardPanel.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.ItemsManagement.ItemManagementPanel.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.POSManagement.modalPay.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.POSManagement.POSManagement.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.ReturnRefundManagement.ReturnRefundManagement.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.UsersManagement.Client.ClientManagementPanel.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.UsersManagement.EmployeeManagementPanel.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Properties.Resources.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.csproj.GenerateResource.cache
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.exe.licenses
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.csproj.CoreCompileInputs.cache
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.csproj.CopyComplete
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.exe
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.pdb
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.csproj.AssemblyReference.cache
-<<<<<<< HEAD
 >>>>>>> returnItemSystem
-=======
 C:\Users\Acer\Documents\GitHub\POS_ADET\ezekielreginio\POS_ADET\bin\Debug\POS_ADET.exe.config
 C:\Users\Acer\Documents\GitHub\POS_ADET\ezekielreginio\POS_ADET\bin\Debug\POS_ADET.exe
 C:\Users\Acer\Documents\GitHub\POS_ADET\ezekielreginio\POS_ADET\bin\Debug\POS_ADET.pdb
@@ -244,12 +220,6 @@ C:\Users\Acer\Documents\GitHub\POS_ADET\ezekielreginio\POS_ADET\obj\Debug\POS_AD
 C:\Users\Acer\Documents\GitHub\POS_ADET\ezekielreginio\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.ItemLogData.resources
 C:\Users\Acer\Documents\GitHub\POS_ADET\ezekielreginio\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.ItemLogs.panelLogs.resources
 C:\Users\Acer\Documents\GitHub\POS_ADET\ezekielreginio\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.panelLogData.SalesLogData.resources
-<<<<<<< HEAD
-=======
 C:\Users\Acer\Documents\GitHub\POS_ADET\ezekielreginio\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.panelLogData.ReturnRefundLogData.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.panelLogData.ReturnRefundLogData.resources
 >>>>>>> LogsManagement
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.panelLogData.SalesLogData.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.ItemLogs.panelLogs.resources
-C:\Users\Zeke\source\repos\POS_ADET\obj\Debug\POS_ADET.Modules.LogsManagement.ItemLogData.resources
 >>>>>>> parent of 5b69e77 (#)

@@ -115,7 +115,7 @@ namespace POS_ADET.Modules.Login
             this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox1.AutoSizeHeight = true;
             this.bunifuPictureBox1.BorderRadius = 50;
-            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
+            //this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
             this.bunifuPictureBox1.Location = new System.Drawing.Point(113, 96);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
@@ -133,7 +133,7 @@ namespace POS_ADET.Modules.Login
             this.txtUsername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtUsername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtUsername.BackColor = System.Drawing.Color.Transparent;
-            this.txtUsername.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtUsername.BackgroundImage")));
+            //this.txtUsername.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtUsername.BackgroundImage")));
             this.txtUsername.BorderColorActive = System.Drawing.Color.DodgerBlue;
             this.txtUsername.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txtUsername.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
@@ -207,7 +207,7 @@ namespace POS_ADET.Modules.Login
             this.txtPassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtPassword.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtPassword.BackColor = System.Drawing.Color.Transparent;
-            this.txtPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPassword.BackgroundImage")));
+            //this.txtPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPassword.BackgroundImage")));
             this.txtPassword.BorderColorActive = System.Drawing.Color.DodgerBlue;
             this.txtPassword.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txtPassword.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
