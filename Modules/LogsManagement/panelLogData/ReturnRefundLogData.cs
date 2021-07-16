@@ -35,7 +35,7 @@ namespace POS_ADET.Modules.LogsManagement.panelLogData
             dgvReturnItems.DataSource = datatable;
             dgvReturnItems.Columns["Qty"].Width = 30;
             dgvReturnItems.Columns["Type"].Width = 50;
-            s
+            
         }
     }
 }
