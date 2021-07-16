@@ -133,8 +133,6 @@ namespace POS_ADET.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
-=======
         internal static System.Drawing.Bitmap New_log_in {
             get {
                 object obj = ResourceManager.GetObject("New_log_in", resourceCulture);
@@ -145,20 +143,9 @@ namespace POS_ADET.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
->>>>>>> LoginSystem
         internal static System.Drawing.Bitmap render_prime_loop {
             get {
                 object obj = ResourceManager.GetObject("render_prime_loop", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap settings {
-            get {
-                object obj = ResourceManager.GetObject("settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
