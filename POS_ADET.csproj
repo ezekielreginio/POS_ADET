@@ -255,6 +255,18 @@
     <Compile Include="Modules\ItemsManagement\ItemManagementPanel.Designer.cs">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\ItemsManagement\ReturnItemManagementPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ItemsManagement\ReturnItemManagementPanel.Designer.cs">
+      <DependentUpon>ReturnItemManagementPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\DefectiveItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\LogsManagement\panelLogData\DefectiveItems.Designer.cs">
+      <DependentUpon>DefectiveItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\LogsManagement\panelLogData\ReturnRefundLogData.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -352,6 +364,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ItemsManagement\ItemManagementPanel.resx">
       <DependentUpon>ItemManagementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ItemsManagement\ReturnItemManagementPanel.resx">
+      <DependentUpon>ReturnItemManagementPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\LogsManagement\panelLogData\DefectiveItems.resx">
+      <DependentUpon>DefectiveItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\LogsManagement\panelLogData\ReturnRefundLogData.resx">
       <DependentUpon>ReturnRefundLogData.cs</DependentUpon>

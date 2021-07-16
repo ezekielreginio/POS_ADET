@@ -141,6 +141,15 @@ namespace POS_ADET
             plm.setDataLogPanel(returnRefundLogData);
             openPanel(plm);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panelLogs plm = new panelLogs();
+            DefectiveItems defectiveItems = new DefectiveItems();
+            plm.Logtype = "returnedItems";
+            plm.setDataLogPanel(defectiveItems);
+            openPanel(plm);
+        }
     }
 }
 
