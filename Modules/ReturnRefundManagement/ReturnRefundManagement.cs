@@ -249,7 +249,7 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             }
             catch (Exception)
             {
-                tableReturnRefund.SelectedRows[0].Cells["returnQty"].Value = "";
+                //tableReturnRefund.SelectedRows[0].Cells["returnQty"].Value = "";
             }
         }
 
