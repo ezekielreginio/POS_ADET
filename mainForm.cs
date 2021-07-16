@@ -5,6 +5,7 @@ using POS_ADET.Modules.ReturnRefundManagement;
 using POS_ADET.Modules.UsersManagement;
 using POS_ADET.Modules.UsersManagement.Client;
 using POS_ADET.Modules.LogsManagement.ItemLogs;
+
 using System;
 using System.Windows.Forms;
 using POS_ADET.Modules.LogsManagement;
@@ -127,7 +128,10 @@ namespace POS_ADET
         private void btnReturnRefundLogs_Click(object sender, EventArgs e)
         {
             panelLogs plm = new panelLogs();
-
+            ReturnRefundLogData returnRefundLogData = new ReturnRefundLogData();
+            plm.Logtype = "returnrefundlog";
+            plm.setDataLogPanel(returnRefundLogData);
+            openPanel(plm);
         }
     }
 }

@@ -20,7 +20,9 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
         private connector conn = new connector();
         private ItemLogData itemLogData;
         private SalesLogData salesLogData;
+        private ReturnRefundLogData returnrefundLogData;
         private TransactionData transactionData = new TransactionData();
+        private ReturnList returnlist = new ReturnList();
         private string logtype;
 
         public string Logtype { get => logtype; set => logtype = value; }
@@ -40,6 +42,12 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
         {
             salesLogData = panel;
             lblSubheader.Text = "Transaction Logs";
+            panelLogData.Controls.Add(panel);
+        }
+        public void setDataLogPanel(ReturnRefundLogData panel)
+        {
+            returnrefundLogData = panel;
+            lblSubheader.Text = "Return Logs";
             panelLogData.Controls.Add(panel);
         }
 
@@ -66,9 +74,16 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
                 };
                 dto = conn.getDataTable("transaction_view_all");
             }
-            else if (true)
+            else if (logtype == "returnrefundlog")
             {
-
+                columnheaders = new string[]
+                {
+                    "Return Transaction ID",
+                    "Sales ID",
+                    "Date",
+                    
+                };
+                dto = conn.getDataTable("returnrefund_view_all");
             }
             for (int i = 0; i < dto.Columns.Count; i++)
             {
@@ -156,8 +171,29 @@ namespace POS_ADET.Modules.LogsManagement.ItemLogs
                 salesLogData.setdgvSalesItem(datatable);
 
             }
+            else if (logtype=="returnrefundlog")
+            {
+                returnrefundLogData.setReturnTransactionId(id);
+                MySqlDataReader reader = conn.readProcedure("return_log_view", data);
+                while (reader.Read())
+                {
+                    
+                    returnrefundLogData.setTransactionId(reader.GetValue(1).ToString());
+                    returnrefundLogData.setDate(reader.GetValue(2).ToString());
+                }
+                conn.closeConn();
+                data = new Dictionary<string, string>()
+                {
+                    {"id", id }
+                };
+                DataTable dataTable = conn.getDataTable("returnitem_join_view", data);
+                returnlist.setItemsFromDataTable(dataTable);
+                returnrefundLogData.setdgvReturnItems(dataTable);
+
+            }
             conn.closeConn();
         }
+
 
         private void dgvLog_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
