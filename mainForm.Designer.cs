@@ -92,28 +92,6 @@ namespace POS_ADET
             this.sidepanelMenu.Size = new System.Drawing.Size(205, 572);
             this.sidepanelMenu.TabIndex = 1;
             // 
-<<<<<<< HEAD
-=======
-            // btnSalesAnalytics
-            // 
-            this.btnSalesAnalytics.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSalesAnalytics.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSalesAnalytics.FlatAppearance.BorderSize = 0;
-            this.btnSalesAnalytics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalesAnalytics.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSalesAnalytics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnSalesAnalytics.Image = global::POS_ADET.Properties.Resources.diagram2;
-            this.btnSalesAnalytics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalesAnalytics.Location = new System.Drawing.Point(0, 430);
-            this.btnSalesAnalytics.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSalesAnalytics.Name = "btnSalesAnalytics";
-            this.btnSalesAnalytics.Size = new System.Drawing.Size(273, 38);
-            this.btnSalesAnalytics.TabIndex = 0;
-            this.btnSalesAnalytics.Text = "Sales Analytics";
-            this.btnSalesAnalytics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSalesAnalytics.UseVisualStyleBackColor = true;
-            // 
->>>>>>> LoginSystem
             // panelLogs
             // 
             this.panelLogs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
@@ -121,12 +99,8 @@ namespace POS_ADET
             this.panelLogs.Controls.Add(this.btnReturnRefundLogs);
             this.panelLogs.Controls.Add(this.btnItemLogs);
             this.panelLogs.Dock = System.Windows.Forms.DockStyle.Top;
-<<<<<<< HEAD
-            this.panelLogs.Location = new System.Drawing.Point(0, 289);
-=======
             this.panelLogs.Location = new System.Drawing.Point(0, 319);
             this.panelLogs.Margin = new System.Windows.Forms.Padding(4);
->>>>>>> LoginSystem
             this.panelLogs.Name = "panelLogs";
             this.panelLogs.Size = new System.Drawing.Size(205, 90);
             this.panelLogs.TabIndex = 3;
@@ -195,49 +169,6 @@ namespace POS_ADET
             this.btnItemLogs.UseVisualStyleBackColor = true;
             this.btnItemLogs.Click += new System.EventHandler(this.btnItemLogs_Click);
             // 
-<<<<<<< HEAD
-=======
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.button1.Image = global::POS_ADET.Properties.Resources.diagram2;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 281);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(273, 38);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "logs";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnItemsManagement
-            // 
-            this.btnItemsManagement.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnItemsManagement.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnItemsManagement.FlatAppearance.BorderSize = 0;
-            this.btnItemsManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItemsManagement.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnItemsManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnItemsManagement.Image = global::POS_ADET.Properties.Resources.settings;
-            this.btnItemsManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnItemsManagement.Location = new System.Drawing.Point(0, 243);
-            this.btnItemsManagement.Margin = new System.Windows.Forms.Padding(4);
-            this.btnItemsManagement.Name = "btnItemsManagement";
-            this.btnItemsManagement.Size = new System.Drawing.Size(273, 38);
-            this.btnItemsManagement.TabIndex = 0;
-            this.btnItemsManagement.Text = "Items Management";
-            this.btnItemsManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnItemsManagement.UseVisualStyleBackColor = true;
-            this.btnItemsManagement.Click += new System.EventHandler(this.btnItemsManagement_Click);
-            // 
->>>>>>> LoginSystem
             // panelUsersManagement
             // 
             this.panelUsersManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
@@ -246,11 +177,7 @@ namespace POS_ADET
             this.panelUsersManagement.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUsersManagement.Location = new System.Drawing.Point(0, 160);
             this.panelUsersManagement.Name = "panelUsersManagement";
-<<<<<<< HEAD
-            this.panelUsersManagement.Size = new System.Drawing.Size(205, 67);
-=======
             this.panelUsersManagement.Size = new System.Drawing.Size(273, 47);
->>>>>>> LoginSystem
             this.panelUsersManagement.TabIndex = 1;
             this.panelUsersManagement.Visible = false;
             // 
@@ -457,7 +384,7 @@ namespace POS_ADET
             this.btnItemsManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnItemsManagement.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnItemsManagement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnItemsManagement.Image = global::POS_ADET.Properties.Resources.settings;
+           // this.btnItemsManagement.Image = global::POS_ADET.Properties.Resources.settings;
             this.btnItemsManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnItemsManagement.Location = new System.Drawing.Point(0, 227);
             this.btnItemsManagement.Name = "btnItemsManagement";
