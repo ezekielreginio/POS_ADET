@@ -192,6 +192,7 @@
     <Compile Include="Classes\DAL\connector.cs" />
     <Compile Include="Classes\DAL\Models\TransactionData.cs" />
     <Compile Include="Classes\DAL\Models\TransactionItem.cs" />
+    <Compile Include="Classes\DGVtoDataTable.cs" />
     <Compile Include="Classes\Dropbox\DropBox.cs" />
     <Compile Include="Classes\DuplicateChecker.cs" />
     <Compile Include="Classes\QRCode.cs" />

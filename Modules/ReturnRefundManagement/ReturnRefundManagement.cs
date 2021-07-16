@@ -1,6 +1,7 @@
 ﻿using AForge.Video;
 using AForge.Video.DirectShow;
 using MySql.Data.MySqlClient;
+using POS_ADET.Classes;
 using POS_ADET.Classes.DAL.Models;
 using POS_ADET.Classes.DB;
 using System;
@@ -20,10 +21,10 @@ namespace POS_ADET.Modules.ReturnRefundManagement
     public partial class ReturnRefundManagement : Form
     {
         private connector conn = new connector();
-
+        private TransactionData transactionData = new TransactionData();
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice captureDevice;
-
+        
         public ReturnRefundManagement()
         {
             InitializeComponent();
@@ -56,17 +57,16 @@ namespace POS_ADET.Modules.ReturnRefundManagement
                 Result result = barcodeReader.Decode((Bitmap)qrScanner.Image);
                 if (result != null)
                 {
-                    
                     String id = result.ToString();
                     queryTransactionItems(id);
-
-
                 }
             }
         }
 
         private void queryTransactionItems(string id)
         {
+            transactionData.Transaction_id = Convert.ToInt32(id);
+            transactionData.Items.Clear();
             var data = new Dictionary<string, string>()
                     {
                         { "transaction_id", id }
@@ -75,7 +75,7 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             MySqlDataReader dummy = reader;
             resetModule();
 
-            TransactionData transactionData = new TransactionData();
+            
             while (reader.Read())
             {
                 transactionData.TransactionDate = (DateTime)reader["date"];
@@ -165,6 +165,7 @@ namespace POS_ADET.Modules.ReturnRefundManagement
             formItemName.Text = String.Empty;
             txtQty.Text = String.Empty;
             cboOption.Text = String.Empty;
+            cboReason.Text = String.Empty;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -209,6 +210,7 @@ namespace POS_ADET.Modules.ReturnRefundManagement
         {
             if(e.KeyChar == (char)Keys.Enter)
             {
+                resetModule();
                 queryTransactionItems(txtORNo.Text);
             }
         }
@@ -280,6 +282,41 @@ namespace POS_ADET.Modules.ReturnRefundManagement
         private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
         {
             tableReturnRefund.SelectedRows[0].Cells["reason"].Value = cboReason.SelectedItem;
+        }
+
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            string transaction_id = String.Empty;
+            var data = new Dictionary<string, string>()
+            {
+                { "transaction_id", transactionData.Transaction_id.ToString() }
+            };
+
+            MySqlDataReader result = conn.readProcedure("return_transaction_create", data);
+            while (result.Read())
+            {
+                transaction_id = result["last_transaction_id"].ToString();
+            }
+            conn.closeConn();
+
+            DataTable dataReturnItems = DGVtoDataTable.GetDataTableFromDGV(tableReturnRefund);
+
+            foreach (DataRow row in dataReturnItems.Rows)
+            {
+                data = new Dictionary<string, string>()
+                {
+                    { "return_transaction_id", transactionData.Transaction_id.ToString() },
+                    { "item_code", row["returnID"].ToString()},
+                    { "qty", row["returnQty"].ToString()},
+                    { "type", row["option"].ToString()},
+                    { "reason", row["reason"].ToString()},
+                };
+                conn.writeProcedure("return_transaction_add_item", data);
+
+                conn.closeConn();
+            }
+            resetModule();
+            MessageBox.Show("Return Transaction Successfully Processed");
         }
     }
 }
